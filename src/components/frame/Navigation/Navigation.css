@@ -1,0 +1,6 @@
+nav {
+    height: 12rem;
+    background-image: linear-gradient(to bottom, rgba(var(--black-one)), rgba(var(--black-one), 0));
+    position: sticky;
+    top: 0;
+}

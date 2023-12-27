@@ -1,11 +1,26 @@
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './App.css'
+import { MainLayout } from './layouts'
+import { Grocha } from './pages';
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <MainLayout />,
+    children: [
+      {
+        path: "/grocha",
+        element: <Grocha />
+      }
+    ],
+  },
+]);
 
 function App() {
 
   return (
-    <>
-      <h1>New Code changes with default styles and project structure</h1>
-    </>
+    <RouterProvider router={router} />
   )
 }
 

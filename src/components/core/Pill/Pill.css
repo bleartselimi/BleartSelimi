@@ -1,0 +1,7 @@
+.pill {
+    min-height: 50px;
+    min-width: 80px;
+    padding: 10px 25px;
+    background-color: rgba(var(--black-one));
+    border-radius: 50px;
+}

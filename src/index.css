@@ -35,6 +35,7 @@
 
 html,
 body {
+  font-family: 'Montserrat', sans-serif;
   height: 100%;
   overflow: hidden;
   font-size: 62.5%;
@@ -42,4 +43,5 @@ body {
 
 #root {
   height: 100%;
+  overflow-y: auto;
 }
