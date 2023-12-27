@@ -1,0 +1,9 @@
+footer {
+    border-top: 1px solid rgb(var(--gray-one));
+}
+
+.footer-avatar {
+    display: flex;
+    align-items: center;
+    padding: 40px 0px;
+}

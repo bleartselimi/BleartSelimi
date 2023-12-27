@@ -1,7 +1,7 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './App.css'
 import { MainLayout } from './layouts'
-import { Grocha } from './pages';
+import { Grocha, Portfolio } from './pages';
 
 
 const router = createBrowserRouter([
@@ -9,6 +9,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <MainLayout />,
     children: [
+      {
+        path: "/",
+        element: <Portfolio />
+      },
       {
         path: "/grocha",
         element: <Grocha />

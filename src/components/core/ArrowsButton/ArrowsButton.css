@@ -1,4 +1,5 @@
 .arrows-button {
     color: rgb(var(--white-one));
     font-size: var(--fs-20px);
+    cursor: pointer;
 }

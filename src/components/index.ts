@@ -1,5 +1,7 @@
 // Core - START
 import Pill from "./core/Pill/Pill";
+import Logo from "./core/Logo/Logo";
+import Avatar from "./core/Avatar/Avatar";
 // Core - END
 
 // Frame - START
@@ -9,6 +11,8 @@ import Footer from "./frame/Footer/Footer";
 
 export {
     Pill,
+    Logo,
+    Avatar,
     Navigation,
-    Footer
+    Footer,
 }

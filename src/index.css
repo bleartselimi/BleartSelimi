@@ -24,10 +24,14 @@
   /* Golden Haze */
   --goldenhaze-one: 219, 194, 130;
 
+  /* Gray */
+  --gray-one: 102, 102, 102;
+
   /* Font Sizes */
   --fs-128px: 12.8rem;
   --fs-64px: 6.4rem;
   --fs-36px: 3.6rem;
+  --fs-30px: 3rem;
   --fs-24px: 2.4rem;
   --fs-20px: 2.0rem;
   --fs-18px: 1.8rem;
@@ -39,6 +43,7 @@ body {
   height: 100%;
   overflow: hidden;
   font-size: 62.5%;
+  background-color: rgb(var(--black-one));
 }
 
 #root {
