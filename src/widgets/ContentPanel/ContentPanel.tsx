@@ -40,14 +40,15 @@ const ContentPanel = ({ className, areaOne, hasAreaOneMask, areaTwo, areaThree, 
     }
 
     useEffect(() => {
-        if (state.activeSplashScreen) {
+        // if (state.activeSplashScreen) {
             contentPanelAimation();
 
             window.addEventListener('resize', resizeEvent);
 
             return () => window.removeEventListener('resize', resizeEvent)
-        }
-    }, [state.activeSplashScreen]);
+        // }
+    // }, [state.activeSplashScreen]);
+    }, []);
 
     return (
         <div className={`content-panel-container ${className}`}>
