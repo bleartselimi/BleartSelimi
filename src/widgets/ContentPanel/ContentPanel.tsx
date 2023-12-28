@@ -1,11 +1,11 @@
 import { ContentPanelType } from "./ContentPanelType";
 import "./ContentPanel.css";
 import { useEffect, useRef } from "react";
-import { useGeneralContext } from "../../hooks/useGeneralContext";
+// import { useGeneralContext } from "../../hooks/useGeneralContext";
 
 const ContentPanel = ({ className, areaOne, hasAreaOneMask, areaTwo, areaThree, areaFour }: ContentPanelType) => {
 
-    const { state } = useGeneralContext();
+    // const { state } = useGeneralContext();
 
     const lineRef = useRef<HTMLDivElement | null>(null);
     const panelBodyContainer = useRef<HTMLDivElement | null>(null);
