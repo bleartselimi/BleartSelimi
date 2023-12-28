@@ -32,12 +32,24 @@ html,
 body {
   font-family: 'Montserrat', sans-serif;
   height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
   font-size: 62.5%;
   background-color: rgb(var(--black-one));
 }
 
 #root {
   height: 100%;
-  overflow-y: auto;
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
 }

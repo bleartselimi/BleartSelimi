@@ -1,12 +1,13 @@
+import { Link } from 'react-router-dom';
 import { ArrowTopRightIcon } from '../../assets';
 import './LinkedinButton.css';
 
 const LinkedinButton = () => {
     return (
-        <div className='linkedin-button'>
-            <span className='fs-20px m-semibold color-golden-haze mr-7px'>linkedin</span>
+        <Link className='linkedin-button' to="https://www.linkedin.com/in/bleart-selimi-677338224/" target='_blank'>
+            <span className='fs-20px m-semibold color-golden-haze'>linkedin</span>
             <ArrowTopRightIcon />
-        </div>
+        </Link>
     )
 }
 

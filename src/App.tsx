@@ -3,6 +3,7 @@ import './App.css';
 import './responsive.css';
 import { MainLayout } from './layouts';
 import { Grocha, Portfolio } from './pages';
+import GeneralContextProvider from './context/GeneralContext/GeneralContextProvider';
 
 const router = createBrowserRouter([
   {
@@ -21,10 +22,12 @@ const router = createBrowserRouter([
   },
 ]);
 
-function App() {
+const App = () => {
 
   return (
-    <RouterProvider router={router} />
+    <GeneralContextProvider>
+      <RouterProvider router={router} />
+    </GeneralContextProvider>
   )
 }
 

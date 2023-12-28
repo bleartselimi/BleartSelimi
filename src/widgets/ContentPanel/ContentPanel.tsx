@@ -1,15 +1,18 @@
 import { ContentPanelType } from "./ContentPanelType";
 import "./ContentPanel.css";
 import { useEffect, useRef } from "react";
+import { useGeneralContext } from "../../hooks/useGeneralContext";
 
 const ContentPanel = ({ className, areaOne, hasAreaOneMask, areaTwo, areaThree, areaFour }: ContentPanelType) => {
 
-    const lineRef = useRef<HTMLImageElement | null>(null);
-    const panelBodyContainer = useRef<HTMLImageElement | null>(null);
-    const panelBodyWrapper = useRef<HTMLImageElement | null>(null);
-    const panelBody = useRef<HTMLImageElement | null>(null);
-    const areaOneRef = useRef<HTMLImageElement | null>(null);
-    const panelFooter = useRef<HTMLImageElement | null>(null);
+    const { state } = useGeneralContext();
+
+    const lineRef = useRef<HTMLDivElement | null>(null);
+    const panelBodyContainer = useRef<HTMLDivElement | null>(null);
+    const panelBodyWrapper = useRef<HTMLDivElement | null>(null);
+    const panelBody = useRef<HTMLDivElement | null>(null);
+    const areaOneRef = useRef<HTMLDivElement | null>(null);
+    const panelFooter = useRef<HTMLDivElement | null>(null);
     //We are adding a area one mask since the text shadows are being cut from the parent overflow
     const areaOneMaskRef = useRef<HTMLImageElement | null>(null);
 
@@ -37,12 +40,14 @@ const ContentPanel = ({ className, areaOne, hasAreaOneMask, areaTwo, areaThree, 
     }
 
     useEffect(() => {
-        contentPanelAimation();
+        if (state.activeSplashScreen) {
+            contentPanelAimation();
 
-        window.addEventListener('resize', resizeEvent);
+            window.addEventListener('resize', resizeEvent);
 
-        return () => window.removeEventListener('resize', resizeEvent)
-    }, []);
+            return () => window.removeEventListener('resize', resizeEvent)
+        }
+    }, [state.activeSplashScreen]);
 
     return (
         <div className={`content-panel-container ${className}`}>
@@ -65,7 +70,7 @@ const ContentPanel = ({ className, areaOne, hasAreaOneMask, areaTwo, areaThree, 
                     <div className="area-four">{areaFour}</div>
                 </div>
             </div>
-        </div >
+        </div>
     )
 }
 

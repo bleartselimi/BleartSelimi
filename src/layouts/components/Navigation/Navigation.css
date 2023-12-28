@@ -7,6 +7,9 @@ nav {
     justify-content: space-between;
     padding: 30px 30px 53px 30px;
     z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    animation: fadeIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 3s forwards;
 }
 
 .nav-menu {
@@ -19,7 +22,9 @@ nav {
     nav {
         padding: 30px 15px 53px 15px;
     }
-    
+    .nav-menu * {
+        font-size: var(--fs-24px);
+    }
     .nav-menu-icon {
         width: 16px;
         height: 16px;

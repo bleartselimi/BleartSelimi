@@ -47,6 +47,7 @@
 
 .content-panel-footer-wrapper {
     overflow: hidden;
+    background-image: linear-gradient(to bottom, black, transparent);
 }
 
 .content-panel-footer {
@@ -109,5 +110,9 @@
     .content-panel-body .area-two,
     .content-panel-body .area-four {
         margin-left: unset;
+    }
+
+    .content-panel-body .area-two *{
+        line-height: 140%;
     }
 }

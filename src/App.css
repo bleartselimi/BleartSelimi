@@ -16,6 +16,10 @@
   line-height: 120%;
 }
 
+.lh-140 {
+  line-height: 140%;
+}
+
 .text-shadow-white {
   text-shadow: 0 0 100px rgba(var(--white-one), 0.4);
 }
