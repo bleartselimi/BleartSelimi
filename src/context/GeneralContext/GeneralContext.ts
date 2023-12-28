@@ -1,5 +1,5 @@
-import { Dispatch, createContext } from "react";
-import { ActionType, GeneralContextType, StateType } from "./GeneralContextTypes";
+import { createContext } from "react";
+import { GeneralContextType, StateType } from "./GeneralContextTypes";
 
 export const initialState: StateType = {
     activeSplashScreen: false

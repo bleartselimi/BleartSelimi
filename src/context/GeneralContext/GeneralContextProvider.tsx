@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useState } from "react";
+import { useEffect, useReducer } from "react";
 import { GeneralContext, initialState } from "./GeneralContext";
 import { GeneralContextProviderType } from "./GeneralContextTypes";
 import { GeneralContextReducer } from "./GeneralContextReducer";
