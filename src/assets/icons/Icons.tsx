@@ -12,7 +12,7 @@ export const MenuIcon = ({ width = 20, height = 20, className, onClick, fill = "
             onClick={onClick}
         >
             <path
-                fill="#fff"
+                fill={fill}
                 fillRule="evenodd"
                 d="M0 8h20V5H0v3zM0 16h13v-3H0v3z"
                 clipRule="evenodd"

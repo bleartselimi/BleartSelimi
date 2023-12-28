@@ -1,6 +1,6 @@
 import { ContentPanelType } from "./ContentPanelType";
 import "./ContentPanel.css";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 const ContentPanel = ({ className, areaOne, hasAreaOneMask, areaTwo, areaThree, areaFour }: ContentPanelType) => {
 
