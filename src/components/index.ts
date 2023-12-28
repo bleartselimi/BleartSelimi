@@ -1,18 +1,19 @@
 // Core - START
-import Pill from "./core/Pill/Pill";
-import Logo from "./core/Logo/Logo";
-import Avatar from "./core/Avatar/Avatar";
+import Pill from "./Pill/Pill";
+import Logo from "./Logo/Logo";
+import Avatar from "./Avatar/Avatar";
+import GitHubButton from "./GithubButton/GithubButton";
+import EmailButton from "./EmailButton/EmailButton";
+import TechnicalDetailsButton from "./TechnicalDetailsButton/TechnicalDetailsButton";
+import LinkedinButton from "./LinkedinButton/LinkedinButton";
 // Core - END
-
-// Frame - START
-import Navigation from "./frame/Navigation/Navigation";
-import Footer from "./frame/Footer/Footer";
-// Frame - END
 
 export {
     Pill,
     Logo,
     Avatar,
-    Navigation,
-    Footer,
+    GitHubButton,
+    EmailButton,
+    TechnicalDetailsButton,
+    LinkedinButton
 }

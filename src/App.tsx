@@ -1,8 +1,8 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import './App.css'
-import { MainLayout } from './layouts'
+import './App.css';
+import './responsive.css';
+import { MainLayout } from './layouts';
 import { Grocha, Portfolio } from './pages';
-
 
 const router = createBrowserRouter([
   {

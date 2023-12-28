@@ -1,0 +1,35 @@
+.portfolio-projects-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.portfolio-content-panel {
+    margin-bottom: 160px;
+}
+
+.portfolio-content-panel-area-two {
+    max-width: 373px;
+}
+
+@media screen and (max-width: 768px) {
+    .portfolio-projects-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-content-panel-area-two {
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .portfolio-content-panel {
+        margin-bottom: 100px;
+    }
+
+    .portfolio-content-panel-area-two {
+        max-width: 340px;
+    }
+}

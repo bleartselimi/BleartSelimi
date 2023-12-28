@@ -1,8 +1,38 @@
+import { LinkedinButton } from '../../components';
+import { ContentPanel, ProjectCard } from '../../widgets';
 import './Portfolio.css';
+import projectsList from './Projects.json';
 
 const Portfolio = () => {
+
   return (
-    <div>Portfolio</div>
+    <>
+      <div className='container-one'>
+        <ContentPanel
+          hasAreaOneMask={true}
+          className='content-panel-space-one portfolio-content-panel'
+          areaOne={
+            <h1 className='fs-64px color-white lh-100 text-shadow-white'>FRONTEND<br />SOFTWARE<br />ENGINEER</h1>
+          }
+          areaTwo={
+            <p className='portfolio-content-panel-area-two fs-24px color-silver lh-120 m-semibold'>Step into a preview of my portfolio a collection of digital initiatives and solutions showcasing my commitment to software engineering.</p>
+          }
+          areaThree={
+            <h1 className='fs-20px color-white m-semibold'>Bleart Selimi</h1>
+          }
+          areaFour={
+            <LinkedinButton />
+          }
+        />
+      </div>
+      <div className='portfolio-projects-wrapper'>
+        {
+          projectsList.projects.map((project, i) => {
+            return <ProjectCard key={i} src={project.img} projectNo={`${projectsList.projects.length} / ${i + 1}`} year={project.year} title={project.title} />
+          })
+        }
+      </div>
+    </>
   )
 }
 

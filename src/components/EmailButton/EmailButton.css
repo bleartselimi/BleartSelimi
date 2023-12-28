@@ -1,0 +1,12 @@
+.email-button {
+    display: flex;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 576px) {
+    .email-button svg {
+        width: 16px;
+        height: 16px;
+    }
+}

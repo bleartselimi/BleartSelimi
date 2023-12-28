@@ -1,3 +1,26 @@
+.container-one {
+  max-width: 1176px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.content-panel-space-one {
+  margin-top: 70px;
+}
+
+.lh-100 {
+  line-height: 100%;
+}
+
+.lh-120 {
+  line-height: 120%;
+}
+
+.text-shadow-white {
+  text-shadow: 0 0 100px rgba(var(--white-one), 0.4);
+}
+
+/* Text color - START */
 .color-white {
   color: rgb(var(--white-one));
 }
@@ -14,6 +37,8 @@
   color: rgb(var(--golden-haze-one));
 }
 
+/* Text color - END */
+
 /* Montserrat Font Family - START */
 .m-semibold {
   font-family: 'Montserrat', sans-serif;
@@ -24,13 +49,15 @@
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
 }
+
 /* Montserrat Font Family - END */
 
 /* Source Code Pro Font Family - START */
-.s-black {
+.s-extrabold {
   font-family: 'Source Code Pro', monospace;
   font-weight: 900;
 }
+
 /* Source Code Pro Font Family - END */
 
 /* Font Size - START */
@@ -61,6 +88,7 @@
 .fs-18px {
   font-size: var(--fs-18px);
 }
+
 /* Font Size - END */
 
 /* Padding - START */
@@ -315,6 +343,7 @@
 .pb-100px {
   padding-bottom: 100px;
 }
+
 /* Padding - END */
 
 /* Margin - START */
@@ -569,4 +598,5 @@
 .mb-100px {
   margin-bottom: 100px;
 }
+
 /* Margin - END */

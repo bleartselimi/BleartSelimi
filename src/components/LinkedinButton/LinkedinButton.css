@@ -1,0 +1,12 @@
+.linkedin-button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 576px) {
+    .linkedin-button svg {
+        width: 18px;
+        height: 18px;
+    }
+}

@@ -7,8 +7,12 @@ import { EmailIcon } from "./icons/Icons";
 // Icons - END
 
 // Images - START
-import BleartSelimiProfile from "./images/BleartSelimi.jpg"
+import BleartSelimiProfile from "./images/bleartselimi/bleart-selimi.jpg";
+import Noise from "./images/other/noise.jpg"
 // Images - END
+
+//Images for Grocha - START
+//Images for Grocha - END
 
 export {
     MenuIcon,
@@ -16,5 +20,6 @@ export {
     ArrowRightIcon,
     GithubIcon,
     EmailIcon,
-    BleartSelimiProfile
+    BleartSelimiProfile,
+    Noise,
 }

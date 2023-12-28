@@ -1,0 +1,113 @@
+.content-panel-container {
+    width: 100%;
+    position: relative;
+}
+
+.content-panel-body {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-bottom: 15px;
+}
+
+.content-panel-body-wrapper {
+    height: 0;
+    transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+    overflow: hidden;
+}
+
+.content-panel-body-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.content-panel-body .area-one {
+    padding-right: 60px;
+}
+
+.area-one.has-mask * {
+    text-shadow: none;
+}
+
+.content-panel-body .area-two,
+.content-panel-body .area-four {
+    margin-left: auto;
+}
+
+.area-one-mask {
+    position: absolute;
+    opacity: 0;
+    transition: all .7s .3s;
+}
+
+.area-one-mask * {
+    color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.content-panel-footer-wrapper {
+    overflow: hidden;
+}
+
+.content-panel-footer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-top: 15px;
+    transform: translateY(-100%);
+    transition: transform 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.content-panel-line {
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.content-panel-line::after,
+.content-panel-line::before {
+    content: '';
+    position: relative;
+    display: block;
+    height: 1px;
+    width: 50%;
+    background-color: rgb(var(--gray-one));
+    transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.content-panel-line::before {
+    left: -50%;
+}
+
+.content-panel-line::after {
+    right: -50%;
+}
+
+.content-panel-line.active::after {
+    right: 0;
+}
+
+.content-panel-line.active::before {
+    left: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .content-panel-body {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .content-panel-body .area-one {
+        margin-bottom: 40px;
+        padding-right: 0;
+    }
+
+    .content-panel-body .area-two,
+    .content-panel-body .area-four {
+        margin-left: unset;
+    }
+}

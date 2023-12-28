@@ -1,43 +1,43 @@
 import { IconsType } from "./IconsType";
 
-export const MenuIcon = ({ width = 20, height = 11, className, onClick, fill = "#ffffff" }: IconsType) => {
+export const MenuIcon = ({ width = 20, height = 20, className, onClick, fill = "#ffffff" }: IconsType) => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
-            viewBox="0 0 20 11"
+            viewBox="0 0 20 20"
             width={width}
             height={height}
             className={className}
             onClick={onClick}
         >
             <path
-                fill={fill}
+                fill="#fff"
                 fillRule="evenodd"
-                d="M0 3h20V0H0v3zM0 11h13V8H0v3z"
+                d="M0 8h20V5H0v3zM0 16h13v-3H0v3z"
                 clipRule="evenodd"
             ></path>
         </svg>
     );
 }
 
-export const ArrowTopRightIcon = ({ width = 40, height = 40, className, onClick, fill = "#ffffff" }: IconsType) => {
+export const ArrowTopRightIcon = ({ width = 24, height = 24, className, onClick, fill = "#DBC282" }: IconsType) => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
-            viewBox="0 0 40 40"
+            viewBox="0 0 24 24"
             width={width}
             height={height}
             className={className}
             onClick={onClick}
         >
             <path
-                fill={fill}
+                stroke={fill}
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth="3.356"
-                d="M11.666 28.333l16.667-16.666M11.666 11.666h16.667v16.667"
+                strokeWidth="2"
+                d="M7 17L17 7M7 7h10v10"
             ></path>
         </svg>
     );
@@ -117,14 +117,14 @@ export const EmailIcon = ({ width = 20, height = 20, className, onClick, fill = 
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                d="M3.334 3.333h13.333c.917 0 1.667.75 1.667 1.667v10c0 .916-.75 1.666-1.667 1.666H3.334c-.917 0-1.667-.75-1.667-1.666V5c0-.917.75-1.667 1.667-1.667z"
             ></path>
             <path
                 stroke={fill}
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                d="M22 6l-10 7L2 6"
+                d="M18.334 5L10 10.833 1.667 5"
             ></path>
         </svg>
     );

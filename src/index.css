@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@800&display=swap');
 
 *,
 *::after,
@@ -22,19 +22,10 @@
   --silver-one: 192, 192, 192;
 
   /* Golden Haze */
-  --goldenhaze-one: 219, 194, 130;
+  --golden-haze-one: 219, 194, 130;
 
   /* Gray */
   --gray-one: 102, 102, 102;
-
-  /* Font Sizes */
-  --fs-128px: 12.8rem;
-  --fs-64px: 6.4rem;
-  --fs-36px: 3.6rem;
-  --fs-30px: 3rem;
-  --fs-24px: 2.4rem;
-  --fs-20px: 2.0rem;
-  --fs-18px: 1.8rem;
 }
 
 html,

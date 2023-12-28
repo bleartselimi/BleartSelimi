@@ -1,0 +1,72 @@
+.pill {
+    background-color: rgba(var(--black-one), 0.15);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pill-small {
+    padding: 0px 25px;
+}
+
+.pill-big {
+    min-width: 137px;
+    padding: 0px 25px;
+}
+
+@media screen and (min-width: 0px) and (max-width: 576px) {
+    .pill {
+        min-height: 40px;
+    }
+
+    .pill-small {
+        min-width: 50px;
+    }
+
+    .pill-big {
+        min-width: 100px;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+    .pill {
+        min-height: 40px;
+    }
+
+    .pill-small {
+        min-width: 60px;
+    }
+
+    .pill-big {
+        min-width: 110px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .pill {
+        min-height: 50px;
+    }
+
+    .pill-small {
+        min-width: 70px;
+    }
+
+    .pill-big {
+        min-width: 120px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .pill {
+        min-height: 50px;
+    }
+
+    .pill-small {
+        min-width: 80px;
+    }
+
+    .pill-big {
+        min-width: 137px;
+    }
+}

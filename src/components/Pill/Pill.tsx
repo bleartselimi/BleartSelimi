@@ -1,9 +1,9 @@
 import "./Pill.css";
 import { PillType } from "./PillType";
 
-const Pill = ({ children }: PillType) => {
+const Pill = ({ children, className }: PillType) => {
     return (
-        <div className="pill">
+        <div className={`pill ${className}`}>
             {children}
         </div>
     )

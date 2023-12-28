@@ -1,14 +1,16 @@
 import { Outlet } from "react-router";
 import "./MainLayout.css";
-import { Footer, Navigation } from "../../components";
+import { Footer, Navigation } from "..";
 
 const MainLayout = () => {
     return (
-        <div className="main-layout">
+        <>
             <Navigation />
-            <Outlet />
-            <Footer />
-        </div>
+            <div className="main-layout">
+                <Outlet />
+                <Footer />
+            </div>
+        </>
     )
 }
 

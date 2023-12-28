@@ -1,0 +1,65 @@
+:root {
+    /* Font Sizes - START*/
+    --fs-128px: 12.8rem;
+    --fs-64px: 6.4rem;
+    --fs-36px: 3.6rem;
+    --fs-30px: 3rem;
+    --fs-24px: 2.4rem;
+    --fs-20px: 2.0rem;
+    --fs-18px: 1.8rem;
+    /* Font Sizes - END */
+}
+
+@media screen and (min-width: 0px) and (max-width: 576px) {
+    :root {
+        --fs-128px: 8rem;
+        --fs-64px: 4rem;
+        --fs-36px: 2.2rem;
+        --fs-30px: 2rem;
+        --fs-24px: 1.6rem;
+        --fs-20px: 1.4rem;
+        --fs-18px: 1.2rem;
+    }
+
+    .content-panel-space-one {
+        margin-top: 30px;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+    :root {
+        --fs-128px: 9.2rem;
+        --fs-64px: 4.6rem;
+        --fs-36px: 2.7rem;
+        --fs-30px: 2.3rem;
+        --fs-24px: 1.9rem;
+        --fs-20px: 1.7rem;
+        --fs-18px: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    :root {
+        --fs-128px: 10.5rem;
+        --fs-64px: 5.2rem;
+        --fs-36px: 3rem;
+        --fs-30px: 2.6rem;
+        --fs-24px: 2rem;
+        --fs-20px: 1.8rem;
+        --fs-18px: 1.6rem;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    :root {
+        --fs-128px: 11.5rem;
+        --fs-64px: 5.7rem;
+        --fs-36px: 3.3rem;
+        --fs-30px: 2.8rem;
+        --fs-24px: 2.2rem;
+        --fs-20px: 2rem;
+        --fs-18px: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 992px) {}

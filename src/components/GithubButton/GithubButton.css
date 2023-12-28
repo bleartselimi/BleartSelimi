@@ -1,0 +1,11 @@
+.github-button {
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 576px) {
+    .github-button svg {
+        width: 16px;
+        height: 16px;
+    }
+}

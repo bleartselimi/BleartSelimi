@@ -3,7 +3,7 @@ import { ArrowsButtonType } from "./ArrowsButtonType";
 
 const ArrowsButton = ({ text }: ArrowsButtonType) => {
     return (
-        <div className="arrows-button s-black"><span>&lt;</span> {text} <span>&gt;</span></div>
+        <div className="arrows-button s-extrabold"><span>&lt;</span> {text} <span>&gt;</span></div>
     )
 }
 

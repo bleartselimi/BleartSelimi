@@ -1,0 +1,83 @@
+.project-card-container {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.project-card-container:hover .project-card-container-header {
+    visibility: visible;
+    opacity: 1;
+}
+
+.project-card-container:hover .project-card-container-footer .pill {
+    visibility: visible;
+    opacity: 1;
+}
+
+.project-card-container-header,
+.project-card-container-footer {
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-card-container-header {
+    top: 30px;
+    align-items: flex-start;
+}
+
+.project-card-container-footer {
+    bottom: 30px;
+    align-items: flex-end;
+}
+
+.project-card-container-header,
+.project-card-container-footer .pill {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.project-card-container-title {
+    font-size: var(--fs-36px);
+}
+
+.project-card-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all 0.3s;
+}
+
+.project-card-container:hover .project-card-img {
+    transform: scale(1.1);
+}
+
+.project-card-noise {
+    background-image: url('./../../assets/images/other/noise.jpg');
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    opacity: 0.2;
+}
+
+@media screen and (max-width: 992px) {
+    .project-card-container-title {
+        font-size: var(--fs-24px);
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .project-card-container-title {
+        font-size: var(--fs-36px);
+    }
+
+    .project-card-container-footer .pill {
+        display: none;
+    }
+}
