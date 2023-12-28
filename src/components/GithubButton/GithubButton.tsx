@@ -1,4 +1,4 @@
-import "./GitHubButton.css";
+import "./GithubButton.css";
 import { Link } from "react-router-dom";
 import { GithubButtonType } from "./GithubButtonType";
 
