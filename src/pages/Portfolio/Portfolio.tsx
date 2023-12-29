@@ -1,9 +1,19 @@
+import './Portfolio.css';
 import { LinkedinButton } from '../../components';
 import { ContentPanel, ProjectCard } from '../../widgets';
-import './Portfolio.css';
 import projectsList from './Projects.json';
+import {
+  GrochaCardImage,
+  LinkMobileCardImage,
+  LinkWebCardImage,
+  MuseumInformationSystemCardImage,
+  MobileShopCardImage,
+  ProblementNprishtineCardImage
+} from '../../assets';
 
 const Portfolio = () => {
+
+  const images: string[] = [GrochaCardImage, LinkMobileCardImage, LinkWebCardImage, MuseumInformationSystemCardImage, MobileShopCardImage, ProblementNprishtineCardImage];
 
   return (
     <>
@@ -28,7 +38,7 @@ const Portfolio = () => {
       <div className='portfolio-projects-wrapper'>
         {
           projectsList.projects.map((project, i) => {
-            return <ProjectCard key={i} src={project.img} projectNo={`${projectsList.projects.length} / ${i + 1}`} year={project.year} title={project.title} />
+            return <ProjectCard key={i} src={images[i]} projectNo={`${projectsList.projects.length} / ${i + 1}`} year={project.year} title={project.title} />
           })
         }
       </div>

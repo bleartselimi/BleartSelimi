@@ -12,6 +12,12 @@ import Noise from "./images/other/noise.jpg"
 // Images - END
 
 //Images for Grocha - START
+import GrochaCardImage from "./images/grocha/card-image.jpg";
+import LinkMobileCardImage from "./images/link-mobile/card-image.jpg";
+import LinkWebCardImage from "./images/link-web/card-image.jpg";
+import MuseumInformationSystemCardImage from "./images/museum-information-system/card-image.jpg";
+import MobileShopCardImage from "./images/mobile-shop/card-image.jpg";
+import ProblementNprishtineCardImage from "./images/problemet-nprishtine/card-image.jpg";
 //Images for Grocha - END
 
 export {
@@ -22,4 +28,10 @@ export {
     EmailIcon,
     BleartSelimiProfile,
     Noise,
+    GrochaCardImage,
+    LinkMobileCardImage,
+    LinkWebCardImage,
+    MuseumInformationSystemCardImage,
+    MobileShopCardImage,
+    ProblementNprishtineCardImage
 }
