@@ -31,7 +31,7 @@ const ContentPanel = ({ className, areaOne, hasAreaOneMask, areaTwo, areaThree, 
                         if (panelFooter.current) panelFooter.current.style.transform = "translateY(0%)";
                     }, 1000)
                 }
-            }, 1000)
+            }, 500)
         }
     }
 
