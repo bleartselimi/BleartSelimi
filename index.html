@@ -58,19 +58,6 @@
 </head>
 
 <body>
-  <script>
-    window.documentReadyStateAnimationEvent = () => {};
-    document.onreadystatechange = function () {
-      if (document.readyState === "complete") {
-        document.querySelector(".splash-screen").setAttribute("data-ready-state", document.readyState);
-        window.documentReadyStateAnimationEvent(document.readyState)
-      } else {
-        const splashScreenElement = document.querySelector(".splash-screen");
-        splashScreenElement.style.opacity = "1";
-        splashScreenElement.style.visibility = "visible";
-      }
-    }
-  </script>
   <div id="root"></div>
   <div class="splash-screen">
     <h1 class="splash-screen-logo">
@@ -83,5 +70,17 @@
     </h1>
   </div>
 </body>
+<script>
+  document.onreadystatechange = function () {
+    if (document.readyState === "complete") {
+      document.querySelector(".splash-screen").setAttribute("data-ready-state", document.readyState);
+      window.documentReadyStateAnimationEvent(document.readyState)
+    } else {
+      const splashScreenElement = document.querySelector(".splash-screen");
+      splashScreenElement.style.opacity = "1";
+      splashScreenElement.style.visibility = "visible";
+    }
+  }
+</script>
 
 </html>
