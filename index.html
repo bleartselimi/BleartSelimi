@@ -53,11 +53,24 @@
       }
     }
   </style>
-  <script type="module" crossorigin src="/assets/index-aKuUHMY5.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-lpMpP-53.css">
+  <script type="module" crossorigin src="/assets/index-74gezvL1.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-UjiJXjAj.css">
 </head>
 
 <body>
+  <script>
+    document.onreadystatechange = function () {
+      if (document.readyState === "complete") {
+        document.querySelector(".splash-screen").setAttribute("data-ready-state", document.readyState);
+        window.documentReadyStateAnimationEvent(document.readyState)
+      } else {
+        const splashScreenElement = document.querySelector(".splash-screen");
+        splashScreenElement.style.opacity = "1";
+        splashScreenElement.style.visibility = "visible";
+      }
+    }
+  </script>
+  <div id="root"></div>
   <div class="splash-screen">
     <h1 class="splash-screen-logo">
       <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -68,7 +81,6 @@
       </svg>
     </h1>
   </div>
-  <div id="root"></div>
 </body>
 
 </html>
