@@ -42,13 +42,13 @@ const App = () => {
       setTimeout(() => {
         if (splashScreenElement && bodyElement) {
           bodyElement.style.overflowY = 'auto';
-          splashScreenElement.style.transition = "all .3s cubic-bezier(0.645, 0.045, 0.355, 1)";
+          splashScreenElement.style.transition = "all .2s cubic-bezier(0.645, 0.045, 0.355, 1)";
           splashScreenElement.style.opacity = "0";
           splashScreenElement.style.visibility = "collapse";
           dispatch({ type: "SPLASH_SCREEN_STATE", payload: true });
           sessionStorage.setItem('dontShowSplashScreen', 'true');
         }
-      }, 1500)
+      }, 1000)
     }
   }
 
