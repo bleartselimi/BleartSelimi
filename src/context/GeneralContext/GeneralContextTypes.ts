@@ -1,4 +1,4 @@
-import { Dispatch, MutableRefObject, ReactNode } from "react";
+import { Dispatch, ReactNode } from "react";
 
 export type ActionType = {
     type: 'SPLASH_SCREEN_STATE',
