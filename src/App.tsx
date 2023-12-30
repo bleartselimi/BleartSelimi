@@ -4,7 +4,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 // import { MainLayout } from './layouts';
 import { Grocha, Portfolio } from './pages';
 import { useEffect } from 'react';
-import { useGeneralContext } from './hooks/useGeneralContext';
+// import { useGeneralContext } from './hooks/useGeneralContext';
 import { MainLayout } from './layouts';
 
 declare global {
@@ -32,7 +32,7 @@ const router = createBrowserRouter([
 
 const App = () => {
 
-  const { dispatch } = useGeneralContext();
+  // const { dispatch } = useGeneralContext();
 
   const documentReadyStateAnimationEvent = () => {
     // const splashScreenElement = document.querySelector(".splash-screen") as HTMLElement | null;
@@ -43,7 +43,7 @@ const App = () => {
     // splashScreenElement!.style.opacity = "0";
     // splashScreenElement!.style.visibility = "collapse";
     // setTimeout(() => {
-    dispatch({ type: "SPLASH_SCREEN_STATE", payload: true });
+    // dispatch({ type: "SPLASH_SCREEN_STATE", payload: true });
     //   }, 500)
     // }, 2500)
   }

@@ -40,13 +40,13 @@ const ContentPanel = ({ className, areaOne, hasAreaOneMask, areaTwo, areaThree, 
     }
 
     useEffect(() => {
-        if (state.activeSplashScreen) {
+        // if (state.activeSplashScreen) {
             contentPanelAimation();
 
             window.addEventListener('resize', resizeEvent);
 
             return () => window.removeEventListener('resize', resizeEvent)
-        }
+        // }
     }, [state.activeSplashScreen]);
 
     return (
