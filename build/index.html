@@ -54,8 +54,8 @@
       }
     }
   </style>
-  <script type="module" crossorigin src="/assets/index-f53a0k0p.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-UjiJXjAj.css">
+  <script type="module" crossorigin src="/assets/index-C-WgEGRI.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-5dYkxyzH.css">
 </head>
 
 <body>
@@ -70,8 +70,10 @@
       </svg>
     </h1>
   </div>
+  <span id="error-message"></span>
   <script>
     document.onreadystatechange = function () {
+      let asd = 2 / 0;
       const splashScreenElement = document.querySelector(".splash-screen");
       splashScreenElement.style.opacity = "1";
       splashScreenElement.style.visibility = "visible";
@@ -82,6 +84,7 @@
           }
         } catch (error) {
           console.error("OnReadyStateChangeError: ", error);
+          document.getElementById("error-message").textContent = error;
         }
       }, 500)
     }
