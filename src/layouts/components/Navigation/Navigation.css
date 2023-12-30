@@ -9,7 +9,6 @@ nav {
     z-index: 999;
     opacity: 0;
     visibility: hidden;
-    animation: fadeIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 3s forwards;
 }
 
 .nav-menu {

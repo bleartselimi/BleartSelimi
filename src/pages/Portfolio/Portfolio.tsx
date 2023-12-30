@@ -10,10 +10,22 @@ import {
   MobileShopCardImage,
   ProblementNprishtineCardImage
 } from '../../assets';
+import { useEffect, useRef } from 'react';
+import { useGeneralContext } from '../../hooks/useGeneralContext';
 
 const Portfolio = () => {
 
   const images: string[] = [GrochaCardImage, LinkMobileCardImage, LinkWebCardImage, MuseumInformationSystemCardImage, MobileShopCardImage, ProblementNprishtineCardImage];
+
+  const portfolioProjectsWrapper = useRef<HTMLDivElement | null>(null)
+
+  const { state } = useGeneralContext();
+
+  useEffect(() => {
+    if (state.activeSplashScreen && portfolioProjectsWrapper.current) {
+      portfolioProjectsWrapper.current.style.animation = "fadeIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 3s forwards"
+    }
+  }, [state.activeSplashScreen]);
 
   return (
     <>
@@ -35,7 +47,7 @@ const Portfolio = () => {
           }
         />
       </div>
-      <div className='portfolio-projects-wrapper'>
+      <div ref={portfolioProjectsWrapper} className='portfolio-projects-wrapper'>
         {
           projectsList.projects.map((project, i) => {
             return <ProjectCard key={i} src={images[i]} projectNo={`${projectsList.projects.length} / ${i + 1}`} year={project.year} title={project.title} />

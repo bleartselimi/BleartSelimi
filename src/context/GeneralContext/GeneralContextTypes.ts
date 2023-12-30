@@ -1,4 +1,4 @@
-import { Dispatch, ReactNode } from "react";
+import { Dispatch, MutableRefObject, ReactNode } from "react";
 
 export type ActionType = {
     type: 'SPLASH_SCREEN_STATE',
@@ -11,7 +11,7 @@ export interface StateType {
 
 export type GeneralContextType = {
     state: StateType,
-    dispatch: Dispatch<ActionType>
+    dispatch: Dispatch<ActionType>,
 }
 
 export type GeneralContextProviderType = {

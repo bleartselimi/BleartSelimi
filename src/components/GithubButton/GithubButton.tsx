@@ -4,7 +4,7 @@ import { GithubButtonType } from "./GithubButtonType";
 
 const GitHubButton = ({ children, to }: GithubButtonType) => {
     return (
-        <Link to={to} className="github-button">
+        <Link target="_blank" to={to} className="github-button">
             {children}
         </Link>
     )
