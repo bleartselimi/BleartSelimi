@@ -62,6 +62,7 @@
 
 <body>
   <script>
+    window.documentReadyStateAnimationEvent = () => {};
     document.onreadystatechange = function () {
       if (document.readyState === "complete") {
         document.querySelector(".splash-screen").setAttribute("data-ready-state", document.readyState);
