@@ -22,8 +22,7 @@ const Portfolio = () => {
   const { state } = useGeneralContext();
 
   useEffect(() => {
-    // if (state.activeSplashScreen && portfolioProjectsWrapper.current) {
-    if (portfolioProjectsWrapper.current) {
+    if (state.activeSplashScreen && portfolioProjectsWrapper.current) {
       portfolioProjectsWrapper.current.style.animation = "fadeIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 3s forwards"
     }
   }, [state.activeSplashScreen]);
