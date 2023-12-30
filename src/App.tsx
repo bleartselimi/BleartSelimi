@@ -38,8 +38,6 @@ const App = () => {
     const splashScreenElement = document.querySelector(".splash-screen") as HTMLElement | null;
     const bodyElement = document.querySelector("body") as HTMLElement | null;
     if (splashScreenElement) {
-      splashScreenElement.style.opacity = "1";
-      splashScreenElement.style.visibility = "visible";
       setTimeout(() => {
         if (splashScreenElement && bodyElement) {
           bodyElement.style.overflowY = 'auto';
