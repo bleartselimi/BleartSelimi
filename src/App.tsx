@@ -1,10 +1,12 @@
 import './App.css';
 import './responsive.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { MainLayout } from './layouts';
+// import { MainLayout } from './layouts';
 import { Grocha, Portfolio } from './pages';
-import { useEffect } from 'react';
+import { Suspense, lazy, useEffect } from 'react';
 import { useGeneralContext } from './hooks/useGeneralContext';
+
+const MainLayout = lazy(() => import('./layouts/MainLayout/MainLayout'));
 
 declare global {
   interface Window {
