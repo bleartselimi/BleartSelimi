@@ -75,24 +75,6 @@
     </h1>
   </div>
   <script type="module" src="/src/main.tsx" defer></script>
-  <script>
-    document.onreadystatechange = function () {
-      const splashScreenElement = document.querySelector(".splash-screen");
-      splashScreenElement.style.opacity = "1";
-      splashScreenElement.style.visibility = "visible";
-      setTimeout(() => {
-        try {
-          if (document.readyState === "complete") {
-            window.documentReadyStateAnimationEvent(document.readyState)
-          }
-        } catch (error) {
-          console.log(error.message);
-          // console.error("OnReadyStateChangeError: ", error);
-          document.querySelector(".error-message").innerHTML = error.message;
-        }
-      }, 5000)
-    }
-  </script>
 </body>
 
 </html>

@@ -33,29 +33,28 @@ const App = () => {
 
   const { dispatch } = useGeneralContext();
 
-  window.documentReadyStateAnimationEvent = (readyStateValue) => {
+  const documentReadyStateAnimationEvent = () => {
     const splashScreenElement = document.querySelector(".splash-screen") as HTMLElement | null;
     const bodyElement = document.querySelector("body") as HTMLElement | null;
-    if (splashScreenElement && readyStateValue) {
+    if (splashScreenElement) {
       splashScreenElement.style.opacity = "1";
       splashScreenElement.style.visibility = "visible";
       setTimeout(() => {
         if (splashScreenElement && bodyElement) {
           bodyElement.style.overflowY = 'auto';
-          splashScreenElement.style.transition = "all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1)";
+          splashScreenElement.style.transition = "all .3s cubic-bezier(0.645, 0.045, 0.355, 1)";
           splashScreenElement.style.opacity = "0";
           splashScreenElement.style.visibility = "collapse";
           setTimeout(() => {
             dispatch({ type: "SPLASH_SCREEN_STATE", payload: true });
           }, 500)
-          sessionStorage.setItem('dontShowSplashScreen', 'true');
         }
-      }, 1000)
+      }, 2500)
     }
   }
 
   useEffect(() => {
-    window.documentReadyStateAnimationEvent();
+    documentReadyStateAnimationEvent();
   }, [])
 
   return (
