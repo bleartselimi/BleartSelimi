@@ -61,6 +61,19 @@
 </head>
 
 <body>
+  <script>
+    document.onreadystatechange = function () {
+      if (document.readyState === "complete") {
+        document.querySelector(".splash-screen").setAttribute("data-ready-state", document.readyState);
+        window.documentReadyStateAnimationEvent(document.readyState)
+      } else {
+        const splashScreenElement = document.querySelector(".splash-screen");
+        splashScreenElement.style.opacity = "1";
+        splashScreenElement.style.visibility = "visible";
+      }
+    }
+  </script>
+  <div id="root"></div>
   <div class="splash-screen">
     <h1 class="splash-screen-logo">
       <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -71,7 +84,6 @@
       </svg>
     </h1>
   </div>
-  <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>
 </body>
 
