@@ -35,6 +35,7 @@ const App = () => {
   const { dispatch } = useGeneralContext();
 
   const documentReadyStateAnimationEvent = () => {
+    dispatch({ type: "SPLASH_SCREEN_STATE", payload: true });
     const splashScreenElement = document.querySelector(".splash-screen") as HTMLElement | null;
     const bodyElement = document.querySelector("body") as HTMLElement | null;
     setTimeout(() => {
