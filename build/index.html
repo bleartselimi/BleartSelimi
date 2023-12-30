@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bleart Selimi - Portfolio</title>
   <style>
@@ -80,12 +81,9 @@
             window.documentReadyStateAnimationEvent(document.readyState)
           }
         } catch (error) {
-          console.log(error);
-          // const splashScreenElement = document.querySelector(".splash-screen");
-          // splashScreenElement.style.opacity = "1";
-          // splashScreenElement.style.visibility = "visible";
+          console.error("OnReadyStateChangeError: ", error);
         }
-      }, 1000)
+      }, 500)
     }
   </script>
 </body>

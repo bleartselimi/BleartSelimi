@@ -45,7 +45,9 @@ const App = () => {
           splashScreenElement.style.transition = "all .2s cubic-bezier(0.645, 0.045, 0.355, 1)";
           splashScreenElement.style.opacity = "0";
           splashScreenElement.style.visibility = "collapse";
-          dispatch({ type: "SPLASH_SCREEN_STATE", payload: true });
+          setTimeout(() => {
+            dispatch({ type: "SPLASH_SCREEN_STATE", payload: true });
+          }, 500)
           sessionStorage.setItem('dontShowSplashScreen', 'true');
         }
       }, 1000)

@@ -1,5 +1,5 @@
-import { ContentPanelType } from "./ContentPanelType";
 import "./ContentPanel.css";
+import { ContentPanelType } from "./ContentPanelType";
 import { useEffect, useRef } from "react";
 import { useGeneralContext } from "../../hooks/useGeneralContext";
 
