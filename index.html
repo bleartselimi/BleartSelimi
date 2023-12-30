@@ -53,7 +53,7 @@
       }
     }
   </style>
-  <script type="module" crossorigin src="/assets/index-74gezvL1.js"></script>
+  <script type="module" crossorigin src="/assets/index-f53a0k0p.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/index-UjiJXjAj.css">
 </head>
 
@@ -71,14 +71,18 @@
   </div>
   <script>
     document.onreadystatechange = function () {
-      if (document.readyState === "complete") {
-        document.querySelector(".splash-screen").setAttribute("data-ready-state", document.readyState);
-        window.documentReadyStateAnimationEvent(document.readyState)
-      } else {
-        const splashScreenElement = document.querySelector(".splash-screen");
-        splashScreenElement.style.opacity = "1";
-        splashScreenElement.style.visibility = "visible";
-      }
+      const splashScreenElement = document.querySelector(".splash-screen");
+      splashScreenElement.style.opacity = "1";
+      splashScreenElement.style.visibility = "visible";
+      setTimeout(() => {
+        try {
+          if (document.readyState === "complete") {
+            window.documentReadyStateAnimationEvent(document.readyState)
+          }
+        } catch (error) {
+          console.error("OnReadyStateChangeError: ", error);
+        }
+      }, 1000)
     }
   </script>
 </body>
