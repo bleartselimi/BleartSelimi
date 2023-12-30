@@ -1,14 +1,68 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bleart Selimi - Portfolio</title>
-    <script type="module" crossorigin src="/assets/index-bO6FZ3UR.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-8_T3KOdo.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bleart Selimi - Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@800&display=swap');
+    :root {
+      /* Black */
+      --black-one: 0, 0, 0;
+
+      /* White */
+      --white-one: 255, 255, 255;
+
+      /* Silver */
+      --silver-one: 192, 192, 192;
+
+      /* Golden Haze */
+      --golden-haze-one: 219, 194, 130;
+
+      /* Gray */
+      --gray-one: 102, 102, 102;
+    }
+    body {
+      overflow-y: hidden;
+    }
+    .splash-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 9999;
+      background-color: rgb(var(--black-one));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      visibility: collapse;
+      opacity: 0;
+    }
+    .splash-screen-logo {
+      font-size: 8.335vw;
+      color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+    }
+    @media screen and (min-width: 0px) and (max-width: 768px) {
+      .splash-screen-logo {
+        font-size: 16.335vw;
+      }
+    }
+  </style>
+  <script type="module" crossorigin src="/assets/index-aKuUHMY5.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-lpMpP-53.css">
+</head>
+
+<body>
+  <div class="splash-screen">
+    <h1 class="splash-screen-logo">BS</h1>
+  </div>
+  <div id="root"></div>
+</body>
+
 </html>
