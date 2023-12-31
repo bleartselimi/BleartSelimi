@@ -7,11 +7,14 @@ import GeneralContextProvider from './context/GeneralContext/GeneralContextProvi
 
 alert("main.tsx")
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  
-  <React.StrictMode>
-    <GeneralContextProvider>
-      <App />
-    </GeneralContextProvider >
-  </React.StrictMode>,
-)
+try {
+  ReactDOM.createRoot(document.getElementById('root')!).render(
+    <React.StrictMode>
+      <GeneralContextProvider>
+        <App />
+      </GeneralContextProvider >
+    </React.StrictMode>,
+  );
+} catch (error: any) {
+  alert(error.message);
+}
