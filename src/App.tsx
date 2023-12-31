@@ -7,12 +7,6 @@ import { useEffect } from 'react';
 import { useGeneralContext } from './hooks/useGeneralContext';
 import { MainLayout } from './layouts';
 
-declare global {
-  interface Window {
-    documentReadyStateAnimationEvent: (readyStateValue?: string) => void;
-  }
-}
-
 const router = createBrowserRouter([
   {
     path: "/",
