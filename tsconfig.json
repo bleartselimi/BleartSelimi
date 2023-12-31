@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ES5",
     "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "lib": ["ES5", "ES2020", "DOM", "DOM.Iterable"],
     "module": "ES6",
     "skipLibCheck": true,
 
