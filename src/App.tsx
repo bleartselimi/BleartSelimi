@@ -56,6 +56,7 @@ const App = () => {
 
   useEffect(() => {
     console.log("Hello");
+    alert("app.tsx")
     
     documentReadyStateAnimationEvent();
   }, [])
