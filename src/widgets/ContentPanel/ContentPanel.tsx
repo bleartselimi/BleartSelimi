@@ -7,31 +7,22 @@ const ContentPanel = ({ className = "", areaOne, hasAreaOneMask = false, areaTwo
 
     const { state } = useGeneralContext();
 
-    const lineRef = useRef<HTMLDivElement | null>(null);
+    const contentPanelContainer = useRef<HTMLDivElement | null>(null);
+
     const panelBodyContainer = useRef<HTMLDivElement | null>(null);
     const panelBodyWrapper = useRef<HTMLDivElement | null>(null);
     const panelBody = useRef<HTMLDivElement | null>(null);
     const areaOneRef = useRef<HTMLDivElement | null>(null);
-    const panelFooter = useRef<HTMLDivElement | null>(null);
-    //We are adding a area one mask since the text shadows are being cut from the parent overflow
-    const areaOneMaskRef = useRef<HTMLImageElement | null>(null);
 
     const contentPanelAimation = () => {
         if (panelBodyContainer.current && panelBody.current) {
             panelBodyContainer.current.style.height = panelBody.current.clientHeight + "px";
 
             setTimeout(() => {
-                if (lineRef.current)lineRef.current.classList.add("active");
+                if (contentPanelContainer.current) contentPanelContainer.current.classList.add("active");
                 setTimeout(() => {
-                    if (lineRef.current && panelBodyWrapper.current && panelBody.current && areaOneMaskRef.current) {
-                        lineRef.current.style.top = "calc(100% - 1px)";
+                    if (panelBodyWrapper.current && panelBody.current) {
                         panelBodyWrapper.current.style.height = panelBody.current.clientHeight + "px";
-                        areaOneMaskRef.current.style.opacity = "1";
-                        setTimeout(() => {
-                            if (panelFooter.current) {
-                                panelFooter.current.style.transform = "translateY(0%)";
-                            }
-                        }, 1000)
                     }
                 }, 1000)
             }, delay * 1000)
@@ -53,10 +44,11 @@ const ContentPanel = ({ className = "", areaOne, hasAreaOneMask = false, areaTwo
     }, [state.activeSplashScreen]);
 
     return (
-        <div className={`content-panel-container ${className}`}>
+        <div className={`content-panel-container ${className}`} ref={contentPanelContainer}>
             {
+                //We are adding a area one mask since the text shadows are being cut from the parent overflow
                 hasAreaOneMask &&
-                <div className="area-one-mask" ref={areaOneMaskRef}>{areaOne}</div>
+                <div className="area-one-mask">{areaOne}</div>
             }
             <div className="content-panel-body-container" ref={panelBodyContainer}>
                 <div className="content-panel-body-wrapper" ref={panelBodyWrapper}>
@@ -65,10 +57,10 @@ const ContentPanel = ({ className = "", areaOne, hasAreaOneMask = false, areaTwo
                         <div className="area-two">{areaTwo}</div>
                     </div>
                 </div>
-                <div className="content-panel-line" ref={lineRef}></div>
+                <div className="content-panel-line"></div>
             </div>
             <div className="content-panel-footer-wrapper">
-                <div className="content-panel-footer" ref={panelFooter}>
+                <div className="content-panel-footer">
                     <div className="area-three">{areaThree}</div>
                     <div className="area-four">{areaFour}</div>
                 </div>

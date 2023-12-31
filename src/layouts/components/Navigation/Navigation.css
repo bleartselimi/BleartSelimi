@@ -26,6 +26,8 @@ nav {
     background-color: rgb(var(--black-one));
     display: flex;
     flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
 }
 
 .navigation .arrows-button {

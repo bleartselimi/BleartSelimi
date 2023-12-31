@@ -19,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "/grocha",
         element: <Grocha />
+      },
+      {
+        path: "*",
+        element: <Portfolio />
       }
     ],
   },

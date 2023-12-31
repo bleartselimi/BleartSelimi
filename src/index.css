@@ -19,8 +19,9 @@ body {
 
 #root {
   min-height: 100%;
+  max-width: 1840px;
+  margin: 0 auto;
 }
-
 
 @keyframes fadeIn {
   0% {
@@ -31,5 +32,17 @@ body {
   100% {
     opacity: 1;
     visibility: visible;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
   }
 }
