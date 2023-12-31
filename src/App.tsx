@@ -29,8 +29,8 @@ const App = () => {
   const { dispatch } = useGeneralContext();
 
   const documentReadyStateAnimationEvent = () => {
-    const splashScreenElement = document.querySelector(".splash-screen") as HTMLElement | null;
-    const bodyElement = document.querySelector("body") as HTMLElement | null;
+    const splashScreenElement = document.querySelector(".splash-screen") as HTMLDivElement | null;
+    const bodyElement = document.querySelector("body") as HTMLBodyElement | null;
     if (splashScreenElement) {
       splashScreenElement.style.opacity = "1";
       splashScreenElement.style.visibility = "visible";

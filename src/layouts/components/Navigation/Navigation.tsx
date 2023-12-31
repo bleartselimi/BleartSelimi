@@ -6,7 +6,7 @@ import "./Navigation.css";
 
 const Navigation = () => {
 
-  const navRef = useRef<HTMLElement | null>(null)
+  const navRef = useRef<HTMLDivElement | null>(null)
 
   const { state } = useGeneralContext();
 
