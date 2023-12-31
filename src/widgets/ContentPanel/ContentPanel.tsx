@@ -28,7 +28,9 @@ const ContentPanel = ({ className, areaOne, hasAreaOneMask, areaTwo, areaThree, 
                     panelBodyWrapper.current.style.height = panelBody.current.clientHeight + "px";
                     areaOneMaskRef.current.style.opacity = "1";
                     setTimeout(() => {
-                        if (panelFooter.current) panelFooter.current.style.transform = "translateY(0%)";
+                        if (panelFooter.current) {
+                            panelFooter.current.style.transform = "translateY(0%)";
+                        }
                     }, 1000)
                 }
             }, 1000)
