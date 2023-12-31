@@ -101,16 +101,6 @@
 }
 
 @media screen and (max-width: 768px) {
-    .content-panel-body {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .content-panel-body .area-one {
-        margin-bottom: 40px;
-        padding-right: 0;
-    }
-
     .content-panel-body .area-two,
     .content-panel-body .area-four {
         margin-left: unset;

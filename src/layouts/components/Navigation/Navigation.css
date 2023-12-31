@@ -25,8 +25,7 @@ nav {
     bottom: 0;
     background-color: rgb(var(--black-one));
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
 }
 
 .navigation .arrows-button {
@@ -47,18 +46,19 @@ nav {
 .navigation-links-container {
     width: 100%;
     z-index: 9999;
+    margin: auto 0;
+    overflow-y: auto;
 }
 
 .navigation-links-wrapper {
     z-index: 999;
     width: 100%;
     padding: 175px;
+    opacity: 1;
 }
 
 @keyframes tvBlink {
-    0% {
-        opacity: 1;
-    }
+    0% {}
 
     5% {
         opacity: 0.5;
@@ -97,7 +97,11 @@ nav {
     }
 
     80% {
-        opacity: 0.8;
+        opacity: 0.2;
+    }
+
+    85% {
+        opacity: 1;
     }
 
     100% {
@@ -122,10 +126,45 @@ nav {
     .tv-image {
         width: 25vh;
     }
+
+    .navigation-links-wrapper {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .navigation-links-wrapper {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .navigation-links-wrapper .content-panel-container {
+        margin-bottom: 20px;
+    }
+
+    .navigation-link-title {
+        font-size: var(--fs-36px);
+    }
+
+    .navigation-link-icon {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+    .navigation-links-wrapper {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
     .tv-image {
         width: 35vh;
+    }
+
+    .navigation-links-wrapper {
+        padding-left: 50px;
+        padding-right: 50px;
     }
 }

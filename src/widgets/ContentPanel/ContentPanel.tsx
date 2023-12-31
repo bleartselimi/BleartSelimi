@@ -3,7 +3,7 @@ import { ContentPanelType } from "./ContentPanelType";
 import { useEffect, useRef } from "react";
 import { useGeneralContext } from "../../hooks/useGeneralContext";
 
-const ContentPanel = ({ className, areaOne, hasAreaOneMask = false, areaTwo, areaThree, areaFour }: ContentPanelType) => {
+const ContentPanel = ({ className = "", areaOne, hasAreaOneMask = false, areaTwo, areaThree, areaFour, delay = 0 }: ContentPanelType) => {
 
     const { state } = useGeneralContext();
 
@@ -17,23 +17,24 @@ const ContentPanel = ({ className, areaOne, hasAreaOneMask = false, areaTwo, are
     const areaOneMaskRef = useRef<HTMLImageElement | null>(null);
 
     const contentPanelAimation = () => {
-        if (lineRef.current && panelBodyContainer.current && panelBody.current) {
+        if (panelBodyContainer.current && panelBody.current) {
             panelBodyContainer.current.style.height = panelBody.current.clientHeight + "px";
 
-            lineRef.current.classList.add("active");
-
             setTimeout(() => {
-                if (lineRef.current && panelBodyWrapper.current && panelBody.current && areaOneMaskRef.current) {
-                    lineRef.current.style.top = "calc(100% - 1px)";
-                    panelBodyWrapper.current.style.height = panelBody.current.clientHeight + "px";
-                    areaOneMaskRef.current.style.opacity = "1";
-                    setTimeout(() => {
-                        if (panelFooter.current) {
-                            panelFooter.current.style.transform = "translateY(0%)";
-                        }
-                    }, 1000)
-                }
-            }, 1000)
+                if (lineRef.current)lineRef.current.classList.add("active");
+                setTimeout(() => {
+                    if (lineRef.current && panelBodyWrapper.current && panelBody.current && areaOneMaskRef.current) {
+                        lineRef.current.style.top = "calc(100% - 1px)";
+                        panelBodyWrapper.current.style.height = panelBody.current.clientHeight + "px";
+                        areaOneMaskRef.current.style.opacity = "1";
+                        setTimeout(() => {
+                            if (panelFooter.current) {
+                                panelFooter.current.style.transform = "translateY(0%)";
+                            }
+                        }, 1000)
+                    }
+                }, 1000)
+            }, delay * 1000)
         }
     }
 

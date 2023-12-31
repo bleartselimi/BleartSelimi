@@ -24,6 +24,16 @@
     .portfolio-content-panel-area-two {
         max-width: 400px;
     }
+
+    .portfolio-content-panel .content-panel-body .area-one {
+        margin-bottom: 40px;
+        padding-right: 0;
+    }
+
+    .portfolio-content-panel .content-panel-body {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
 @media screen and (max-width: 576px) {

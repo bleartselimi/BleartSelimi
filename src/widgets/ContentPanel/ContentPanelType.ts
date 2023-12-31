@@ -7,4 +7,5 @@ export type ContentPanelType = {
     areaTwo?: ReactNode,
     areaThree?: ReactNode,
     areaFour?: ReactNode,
+    delay?: number
 }
