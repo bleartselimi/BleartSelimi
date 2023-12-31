@@ -1,3 +1,4 @@
 export type ArrowsButtonType = {
-    text: string
+    text: string,
+    onClick: () => void
 }

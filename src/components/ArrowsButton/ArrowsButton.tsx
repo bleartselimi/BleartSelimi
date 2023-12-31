@@ -1,9 +1,9 @@
 import "./ArrowsButton.css";
 import { ArrowsButtonType } from "./ArrowsButtonType";
 
-const ArrowsButton = ({ text }: ArrowsButtonType) => {
+const ArrowsButton = ({ text, onClick }: ArrowsButtonType) => {
     return (
-        <div className="arrows-button s-extrabold"><span>&lt;</span> {text} <span>&gt;</span></div>
+        <div onClick={onClick} className="arrows-button s-extrabold"><span>&lt;</span> {text} <span>&gt;</span></div>
     )
 }
 

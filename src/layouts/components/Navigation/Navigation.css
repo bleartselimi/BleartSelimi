@@ -17,15 +17,115 @@ nav {
     align-items: center;
 }
 
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(var(--black-one));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation .arrows-button {
+    position: absolute;
+    top: 35px;
+    right: 30px;
+}
+
+.tv-image {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 45vh;
+    animation: tvBlink 4s infinite;
+    opacity: 1;
+}
+
+.navigation-links-container {
+    width: 100%;
+    z-index: 9999;
+}
+
+.navigation-links-wrapper {
+    z-index: 999;
+    width: 100%;
+    padding: 175px;
+}
+
+@keyframes tvBlink {
+    0% {
+        opacity: 1;
+    }
+
+    5% {
+        opacity: 0.5;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    35% {
+        opacity: 0.2;
+    }
+
+    37% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 0.5;
+    }
+
+    80% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 @media screen and (min-width: 0px) and (max-width: 576px) {
     nav {
         padding: 30px 15px 53px 15px;
     }
+
     .nav-menu * {
         font-size: var(--fs-24px);
     }
+
     .nav-menu-icon {
         width: 16px;
         height: 16px;
+    }
+
+    .tv-image {
+        width: 25vh;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .tv-image {
+        width: 35vh;
     }
 }

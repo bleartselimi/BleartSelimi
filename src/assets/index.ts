@@ -8,7 +8,8 @@ import { EmailIcon } from "./icons/Icons";
 
 // Images - START
 import BleartSelimiProfile from "./images/bleartselimi/bleart-selimi.jpg";
-import Noise from "./images/other/noise.jpg"
+import Noise from "./images/other/noise.jpg";
+import Tv from "./images/other/tv.png";
 // Images - END
 
 //Images for Grocha - START
@@ -28,6 +29,7 @@ export {
     EmailIcon,
     BleartSelimiProfile,
     Noise,
+    Tv,
     GrochaCardImage,
     LinkMobileCardImage,
     LinkWebCardImage,

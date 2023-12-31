@@ -3,7 +3,7 @@ import { ContentPanelType } from "./ContentPanelType";
 import { useEffect, useRef } from "react";
 import { useGeneralContext } from "../../hooks/useGeneralContext";
 
-const ContentPanel = ({ className, areaOne, hasAreaOneMask, areaTwo, areaThree, areaFour }: ContentPanelType) => {
+const ContentPanel = ({ className, areaOne, hasAreaOneMask = false, areaTwo, areaThree, areaFour }: ContentPanelType) => {
 
     const { state } = useGeneralContext();
 
