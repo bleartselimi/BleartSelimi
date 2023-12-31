@@ -75,9 +75,6 @@
 </head>
 
 <body>
-  <script>window.onerror = function (message, source, lineno, colno, error) {
-      document.getElementById("unsupported-message").style.display = "block";
-    };</script>
   <div id="root"></div>
   <div class="splash-screen">
     <svg class="splash-screen-logo" width="100" height="100" viewBox="0 0 100 100" fill="none"
@@ -89,10 +86,50 @@
     </svg>
     <div id="unsupported-message">
       <div class="horizontal-line"></div>
-      <p class="unsupported-message-text"><strong>Unsupported browser!</strong><br />Please try updating your browser to a
+      <p class="unsupported-message-text"><strong>Unsupported browser!</strong><br />Please try updating your browser to
+        a
         newer version.</p>
     </div>
   </div>
+  <script type="text/javascript">
+    var browser = (function () {
+      var ua = navigator.userAgent,
+        tem,
+        M =
+          ua.match(
+            /(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i
+          ) || [];
+
+      if (/trident/i.test(M[1])) {
+        tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
+        return { name: "IE", version: tem[1] || "" };
+      }
+
+      if (M[1] === "Chrome") {
+        tem = ua.match(/\b(OPR|Edge)\/(\d+)/);
+        if (tem != null) {
+          return { name: tem[1].replace("OPR", "Opera"), version: tem[2] };
+        }
+      }
+
+      M = M[2] ? [M[1], M[2]] : [navigator.appName, navigator.appVersion, "-?"];
+
+      if ((tem = ua.match(/version\/(\d+)/i)) != null) {
+        M.splice(1, 1, tem[1]);
+      }
+
+      return { name: M[0], version: M[1] };
+    })();
+
+    if (
+      (browser.name === 'IE' && parseInt(browser.version) < 11) ||
+      (browser.name === 'Chrome' && parseInt(browser.version) < 70) ||
+      (browser.name === 'Firefox' && parseInt(browser.version) < 65) ||
+      (browser.name === 'Safari' && parseInt(browser.version) < 10)
+    ) {
+      document.getElementById("unsupported-message").style.display = "block";
+    }
+  </script>
 </body>
 
 </html>
