@@ -4,12 +4,12 @@
     cursor: pointer;
 }
 
-.linkedin-button svg {
+.linkedin-button-icon {
     margin-left: 7px;
 }
 
 @media screen and (max-width: 576px) {
-    .linkedin-button svg {
+    .linkedin-button-icon {
         width: 18px;
         margin-left: 4px;
         height: 18px;

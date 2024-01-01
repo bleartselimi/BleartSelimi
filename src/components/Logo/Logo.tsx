@@ -1,8 +1,9 @@
 import './Logo.css';
+import { Link } from 'react-router-dom';
 
 const Logo = () => {
   return (
-    <h1 className="fs-30px m-black color-white">BS</h1>
+    <Link to="/" className="fs-30px m-black color-white">BS</Link>
   )
 }
 

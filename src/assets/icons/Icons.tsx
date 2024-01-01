@@ -1,26 +1,5 @@
 import { IconsType } from "./IconsType";
 
-export const MenuIcon = ({ width = 20, height = 20, className, onClick, fill = "#ffffff" }: IconsType) => {
-    return (
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 20 20"
-            width={width}
-            height={height}
-            className={className}
-            onClick={onClick}
-        >
-            <path
-                fill={fill}
-                fillRule="evenodd"
-                d="M0 8h20V5H0v3zM0 16h13v-3H0v3z"
-                clipRule="evenodd"
-            ></path>
-        </svg>
-    );
-}
-
 export const ArrowTopRightIcon = ({ width = 24, height = 24, className, onClick, fill = "#DBC282" }: IconsType) => {
     return (
         <svg

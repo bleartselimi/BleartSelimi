@@ -1,0 +1,22 @@
+.technical-details-button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.technical-details-title {
+    color: rgb(var(--golden-haze-one));
+    font-size: var(--fs-18px);
+}
+
+.technical-details-icon {
+    margin-left: 7px;
+}
+
+@media screen and (max-width: 576px) {
+    .technical-details-icon {
+        width: 18px;
+        margin-left: 4px;
+        height: 18px;
+    }
+}

@@ -3,3 +3,20 @@
     font-size: var(--fs-20px);
     cursor: pointer;
 }
+
+.arrows-button-chevron {
+    display: inline-block;
+    transition: all .3s ease-out;
+}
+
+.arrows-button:hover .arrows-button-chevron {
+    transform: rotateY(180deg);
+}
+
+.arrows-button:active .arrows-button-chevron-one {
+    transform: translateX(7px) rotateY(180deg);
+}
+
+.arrows-button:active .arrows-button-chevron-two {
+    transform: translateX(-7px) rotateY(180deg);
+}

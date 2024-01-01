@@ -2,11 +2,12 @@ import './ProjectCard.css';
 import { ArrowTopRightIcon } from '../../assets';
 import { Noise, Pill } from '../../components';
 import { ProjectCardType } from './ProjectCardType';
+import { Link } from 'react-router-dom';
 
-const ProjectCard = ({ src, projectNo, year, title }: ProjectCardType) => {
+const ProjectCard = ({ to, src, projectNo, year, title }: ProjectCardType) => {
 
   return (
-    <div className='project-card-container'>
+    <Link to={to} className='project-card-container'>
       <img className='project-card-img' src={src} alt="" />
       <Noise />
       <div className='project-card-container-header'>
@@ -23,7 +24,7 @@ const ProjectCard = ({ src, projectNo, year, title }: ProjectCardType) => {
           <ArrowTopRightIcon fill='#ffffff' width={30} height={30} />
         </Pill>
       </div>
-    </div>
+    </Link>
   )
 }
 

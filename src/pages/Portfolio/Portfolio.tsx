@@ -16,10 +16,10 @@ import { useGeneralContext } from '../../hooks/useGeneralContext';
 const Portfolio = () => {
 
   const images: string[] = [GrochaCardImage, LinkMobileCardImage, LinkWebCardImage, MuseumInformationSystemCardImage, MobileShopCardImage, ProblementNprishtineCardImage];
+  
+  const { state } = useGeneralContext();
 
   const portfolioProjectsWrapper = useRef<HTMLDivElement | null>(null)
-
-  const { state } = useGeneralContext();
 
   useEffect(() => {
     if (state.activeSplashScreen && portfolioProjectsWrapper.current) {
@@ -50,7 +50,7 @@ const Portfolio = () => {
       <div ref={portfolioProjectsWrapper} className='portfolio-projects-wrapper'>
         {
           projectsList.projects.map((project, i) => {
-            return <ProjectCard key={i} src={images[i]} projectNo={`${projectsList.projects.length} / ${i + 1}`} year={project.year} title={project.title} />
+            return <ProjectCard to={project.link} key={i} src={images[i]} projectNo={`${projectsList.projects.length} / ${i + 1}`} year={project.year} title={project.title} />
           })
         }
       </div>

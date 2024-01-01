@@ -12,6 +12,22 @@
 
 @media screen and (min-width: 0px) and (max-width: 576px) {
     :root {
+        --fs-128px: 7rem;
+        --fs-64px: 3.2rem;
+        --fs-36px: 2rem;
+        --fs-30px: 1.8rem;
+        --fs-24px: 1.5rem;
+        --fs-20px: 1.4rem;
+        --fs-18px: 1.2rem;
+    }
+
+    .content-panel-space-one {
+        margin-top: 30px;
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 576px) {
+    :root {
         --fs-128px: 8rem;
         --fs-64px: 4rem;
         --fs-36px: 2.2rem;

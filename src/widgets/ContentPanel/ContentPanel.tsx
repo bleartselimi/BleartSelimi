@@ -8,25 +8,25 @@ const ContentPanel = ({ className = "", areaOne, hasAreaOneMask = false, areaTwo
     const { state } = useGeneralContext();
 
     const contentPanelContainer = useRef<HTMLDivElement | null>(null);
-
     const panelBodyContainer = useRef<HTMLDivElement | null>(null);
     const panelBodyWrapper = useRef<HTMLDivElement | null>(null);
     const panelBody = useRef<HTMLDivElement | null>(null);
-    const areaOneRef = useRef<HTMLDivElement | null>(null);
+    const areaOneMask = useRef<HTMLDivElement | null>(null);
+    const contentPanelFooter = useRef<HTMLDivElement | null>(null);
 
     const contentPanelAimation = () => {
-        if (panelBodyContainer.current && panelBody.current) {
-            panelBodyContainer.current.style.height = panelBody.current.clientHeight + "px";
-
+        if (panelBodyContainer.current && panelBody.current) panelBodyContainer.current.style.height = panelBody.current.clientHeight + "px";
+        setTimeout(() => {
+            if (contentPanelContainer.current && contentPanelFooter.current && areaOneMask.current) {
+                areaOneMask.current.style.bottom = contentPanelFooter.current.clientHeight + 15 + "px"; //15px is the bottom padding
+                contentPanelContainer.current.classList.add("active");
+            }
             setTimeout(() => {
-                if (contentPanelContainer.current) contentPanelContainer.current.classList.add("active");
-                setTimeout(() => {
-                    if (panelBodyWrapper.current && panelBody.current) {
-                        panelBodyWrapper.current.style.height = panelBody.current.clientHeight + "px";
-                    }
-                }, 1000)
-            }, delay * 1000)
-        }
+                if (panelBodyWrapper.current && panelBody.current) {
+                    panelBodyWrapper.current.style.height = panelBody.current.clientHeight + "px";
+                }
+            }, 1000)
+        }, delay * 1000)
     }
 
     const resizeEvent = () => {
@@ -34,6 +34,7 @@ const ContentPanel = ({ className = "", areaOne, hasAreaOneMask = false, areaTwo
     }
 
     useEffect(() => {
+        if (panelBodyContainer.current && panelBody.current) panelBodyContainer.current.style.height = panelBody.current.clientHeight + "px";
         if (state.activeSplashScreen) {
             contentPanelAimation();
 
@@ -48,18 +49,18 @@ const ContentPanel = ({ className = "", areaOne, hasAreaOneMask = false, areaTwo
             {
                 //We are adding a area one mask since the text shadows are being cut from the parent overflow
                 hasAreaOneMask &&
-                <div className="area-one-mask">{areaOne}</div>
+                <div className="area-one-mask" ref={areaOneMask}>{areaOne}</div>
             }
             <div className="content-panel-body-container" ref={panelBodyContainer}>
                 <div className="content-panel-body-wrapper" ref={panelBodyWrapper}>
                     <div className="content-panel-body" ref={panelBody}>
-                        <div className={`area-one ${hasAreaOneMask ? "has-mask" : ""}`} ref={areaOneRef}>{areaOne}</div>
+                        <div className={`area-one ${hasAreaOneMask ? "has-mask" : ""}`}>{areaOne}</div>
                         <div className="area-two">{areaTwo}</div>
                     </div>
                 </div>
                 <div className="content-panel-line"></div>
             </div>
-            <div className="content-panel-footer-wrapper">
+            <div className="content-panel-footer-wrapper" ref={contentPanelFooter}>
                 <div className="content-panel-footer">
                     <div className="area-three">{areaThree}</div>
                     <div className="area-four">{areaFour}</div>

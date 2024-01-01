@@ -11,6 +11,10 @@ nav {
     visibility: hidden;
 }
 
+.navigation-close-button {
+    text-align: right;
+}
+
 .nav-menu {
     cursor: pointer;
     display: flex;
@@ -28,6 +32,7 @@ nav {
     flex-direction: column;
     opacity: 0;
     visibility: hidden;
+    animation: fadeIn .5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards
 }
 
 .navigation .arrows-button {
@@ -41,8 +46,8 @@ nav {
     bottom: 0;
     right: 0;
     width: 45vh;
-    animation: tvBlink 4s infinite;
-    opacity: 1;
+    opacity: 0;
+    animation: tvBlink 4s infinite 3s;
 }
 
 .navigation-links-container {
@@ -59,11 +64,55 @@ nav {
     opacity: 1;
 }
 
+.navigation-content-panel:hover .content-panel-line::after,
+.navigation-content-panel:hover .content-panel-line::before {
+    background-color: rgb(var(--white-one));
+}
+
+.navigation-content-panel:hover .area-one-mask .navigation-link-title {
+    text-shadow: 0 0 100px rgb(var(--white-one));
+}
+
+.nav-menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+}
+
+.nav-menu-icon span {
+    background-color: white;
+    height: 3px;
+    transition: width .3s;
+}
+
+.nav-menu-icon-rect-one {
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.nav-menu-icon-rect-two {
+    width: 65%;
+}
+
+.nav-menu:hover .nav-menu-icon-rect-one {
+    width: 65%;
+}
+
+.nav-menu:hover .nav-menu-icon-rect-two {
+    width: 100%;
+}
+
+
 @keyframes tvBlink {
-    0% {}
+    0% {
+        opacity: 0;
+    }
 
     5% {
-        opacity: 0.5;
+        opacity: 0.4;
     }
 
     10% {
@@ -75,7 +124,7 @@ nav {
     }
 
     35% {
-        opacity: 0.2;
+        opacity: 0.4;
     }
 
     37% {
@@ -95,19 +144,23 @@ nav {
     }
 
     75% {
-        opacity: 0.5;
+        opacity: 0.6;
     }
 
     80% {
-        opacity: 0.2;
+        opacity: 0.4;
     }
 
     85% {
         opacity: 1;
     }
 
-    100% {
+    95% {
         opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
     }
 }
 

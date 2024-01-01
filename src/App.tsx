@@ -1,10 +1,9 @@
 import './App.css';
 import './responsive.css';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-// import { MainLayout } from './layouts';
-import { Grocha, Portfolio } from './pages';
 import { useEffect } from 'react';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { useGeneralContext } from './hooks/useGeneralContext';
+import { Grocha, LinkMobile, Portfolio } from './pages';
 import { MainLayout } from './layouts';
 
 const router = createBrowserRouter([
@@ -19,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: "/grocha",
         element: <Grocha />
+      },
+      {
+        path: "/link-mobile",
+        element: <LinkMobile />
       },
       {
         path: "*",
@@ -48,7 +51,7 @@ const App = () => {
             dispatch({ type: "SPLASH_SCREEN_STATE", payload: true });
           }, 500)
         }
-      }, 2500)
+      }, 2000)
     }
   }
 

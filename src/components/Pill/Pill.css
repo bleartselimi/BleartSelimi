@@ -4,10 +4,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: 50px;
 }
 
 .pill-small {
     padding: 0px 25px;
+    min-width: 80px;
 }
 
 .pill-big {
@@ -54,19 +56,5 @@
 
     .pill-big {
         min-width: 120px;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    .pill {
-        min-height: 50px;
-    }
-
-    .pill-small {
-        min-width: 80px;
-    }
-
-    .pill-big {
-        min-width: 137px;
     }
 }
