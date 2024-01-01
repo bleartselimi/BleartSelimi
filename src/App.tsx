@@ -3,7 +3,7 @@ import './responsive.css';
 import { useEffect } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { useGeneralContext } from './hooks/useGeneralContext';
-import { Grocha, LinkMobile, Portfolio } from './pages';
+import { Grocha, LinkMobile, LinkWeb, MobileShop, MuseumInformationSystem, Portfolio, ProblemetNprishtine } from './pages';
 import { MainLayout } from './layouts';
 
 const router = createBrowserRouter([
@@ -24,8 +24,24 @@ const router = createBrowserRouter([
         element: <LinkMobile />
       },
       {
+        path: "/link-web",
+        element: <LinkWeb />
+      },
+      {
+        path: "/museum-information-system",
+        element: <MuseumInformationSystem />
+      },
+      {
+        path: "/mobile-shop",
+        element: <MobileShop />
+      },
+      {
+        path: "/problemet-nprishtine",
+        element: <ProblemetNprishtine />
+      },
+      {
         path: "*",
-        element: <Portfolio />
+        element: <h1>Not Found</h1>
       }
     ],
   },
@@ -37,13 +53,11 @@ const App = () => {
 
   const documentReadyStateAnimationEvent = () => {
     const splashScreenElement = document.querySelector(".splash-screen") as HTMLDivElement | null;
-    const bodyElement = document.querySelector("body") as HTMLBodyElement | null;
     if (splashScreenElement) {
       splashScreenElement.style.opacity = "1";
       splashScreenElement.style.visibility = "visible";
       setTimeout(() => {
-        if (splashScreenElement && bodyElement) {
-          bodyElement.style.overflowY = 'auto';
+        if (splashScreenElement) {
           splashScreenElement.style.transition = "all .3s cubic-bezier(0.645, 0.045, 0.355, 1)";
           splashScreenElement.style.opacity = "0";
           splashScreenElement.style.visibility = "collapse";

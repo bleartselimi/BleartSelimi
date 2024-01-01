@@ -81,4 +81,16 @@
     margin-bottom: 40px;
     padding-right: 0;
   }
+
+  .project-about-content-panel .area-one-mask {
+    bottom: unset !important;
+  }
+
+  .project-image-wrapper {
+    margin-bottom: 50px;
+  }
+
+  .project-about-content-panel {
+    margin: 35vh 0;
+  }
 }
