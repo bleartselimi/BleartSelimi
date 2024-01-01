@@ -1,5 +1,7 @@
 footer {
     margin-top: auto;
+    opacity: 0;
+    visibility: hidden;
 }
 
 .footer-wrapper {

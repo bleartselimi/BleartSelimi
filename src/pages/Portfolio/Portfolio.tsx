@@ -1,7 +1,7 @@
 import './Portfolio.css';
 import { LinkedinButton } from '../../components';
 import { ContentPanel, ProjectCard } from '../../widgets';
-import projectsList from './Projects.json';
+import projectsList from '../../assets/json/Projects.json';
 import {
   GrochaCardImage,
   LinkMobileCardImage,

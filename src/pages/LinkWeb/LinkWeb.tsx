@@ -3,6 +3,7 @@ import { TechnicalDetailsButton } from "../../components"
 import { ContentPanel } from "../../widgets"
 import { useEffect, useRef } from "react";
 import { useGeneralContext } from "../../hooks/useGeneralContext";
+import OtherProjects from "../../widgets/OtherProjects/OtherProjects";
 
 const LinkWeb = () => {
 
@@ -88,6 +89,7 @@ const LinkWeb = () => {
           <div className="project-image-wrapper">
             <img src={LinkWebImageFourteen} alt="Link Mobile Project Image 1." />
           </div>
+          <OtherProjects />
         </div>
       </div>
     </>

@@ -20,3 +20,9 @@
 .arrows-button:active .arrows-button-chevron-two {
     transform: translateX(-7px) rotateY(180deg);
 }
+
+@media (hover: none) {
+    .arrows-button:hover .arrows-button-chevron {
+        transform: unset;
+    }
+}

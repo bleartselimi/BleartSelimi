@@ -2,10 +2,23 @@ import "./Footer.css";
 import { Link } from "react-router-dom";
 import { BleartSelimiProfile, EmailIcon, GithubIcon } from "../../../assets";
 import { Avatar, EmailButton, GitHubButton } from "../../../components";
+import { useGeneralContext } from "../../../hooks/useGeneralContext";
+import { useEffect, useRef } from "react";
 
 const Footer = () => {
+
+  const { state } = useGeneralContext();
+
+  const footerRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    if (state.activeSplashScreen && footerRef.current) {
+      footerRef.current.style.animation = "fadeIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 3s forwards"
+    }
+  }, [state.activeSplashScreen]);
+
   return (
-    <footer className="fs-30px color-white">
+    <footer className="fs-30px color-white" ref={footerRef}>
       <div className="footer-wrapper">
         <Link target="_blank" to="https://www.linkedin.com/in/bleart-selimi-677338224/" className="footer-avatar">
           <Avatar img={BleartSelimiProfile} />

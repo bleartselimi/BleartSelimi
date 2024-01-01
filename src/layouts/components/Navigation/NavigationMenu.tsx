@@ -1,9 +1,8 @@
 import { useRef } from "react";
 import { Link, NavLink } from "react-router-dom"
-import { Noise } from "../../../components"
+import { ArrowsButton, Noise } from "../../../components"
 import { ContentPanel } from "../../../widgets"
 import { ArrowTopRightIcon, Tv } from "../../../assets"
-import ArrowsButton from "../../../components/ArrowsButton/ArrowsButton"
 import { NavigationMenuType } from "./NavigationMenuType";
 
 const NavigationMenu = ({ opened, setOpened }: NavigationMenuType) => {
@@ -12,8 +11,8 @@ const NavigationMenu = ({ opened, setOpened }: NavigationMenuType) => {
 
     const navigationState = () => {
         if (opened) {
-            navigationRef.current!.style.animation = "fadeOut .3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards";
-            setTimeout(() => setOpened(false), 300)
+            navigationRef.current!.style.animation = "fadeOut .5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards";
+            setTimeout(() => setOpened(false), 500)
         }
     }
 

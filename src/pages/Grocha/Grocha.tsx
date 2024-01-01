@@ -3,6 +3,7 @@ import { TechnicalDetailsButton } from "../../components"
 import { ContentPanel } from "../../widgets"
 import { useEffect, useRef } from "react";
 import { useGeneralContext } from "../../hooks/useGeneralContext";
+import OtherProjects from "../../widgets/OtherProjects/OtherProjects";
 
 const Grocha = () => {
 
@@ -46,6 +47,7 @@ const Grocha = () => {
               <TechnicalDetailsButton />
             }
           />
+          <OtherProjects />
         </div>
       </div>
     </>

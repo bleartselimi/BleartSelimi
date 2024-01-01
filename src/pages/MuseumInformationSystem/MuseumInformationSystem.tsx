@@ -3,6 +3,7 @@ import { ContentPanel } from "../../widgets"
 import { useEffect, useRef } from "react";
 import { useGeneralContext } from "../../hooks/useGeneralContext";
 import { MuseumInformationSystemCoverImage, MuseumInformationSystemImageEight, MuseumInformationSystemImageEleven, MuseumInformationSystemImageFive, MuseumInformationSystemImageFour, MuseumInformationSystemImageFourteen, MuseumInformationSystemImageNine, MuseumInformationSystemImageOne, MuseumInformationSystemImageSeven, MuseumInformationSystemImageSix, MuseumInformationSystemImageTen, MuseumInformationSystemImageThirteen, MuseumInformationSystemImageThree, MuseumInformationSystemImageTwelve, MuseumInformationSystemImageTwo } from "../../assets";
+import OtherProjects from "../../widgets/OtherProjects/OtherProjects";
 
 const MuseumInformationSystem = () => {
 
@@ -88,6 +89,7 @@ const MuseumInformationSystem = () => {
           <div className="project-image-wrapper">
             <img src={MuseumInformationSystemImageFourteen} alt="Link Mobile Project Image 1." />
           </div>
+          <OtherProjects />
         </div>
       </div>
     </>

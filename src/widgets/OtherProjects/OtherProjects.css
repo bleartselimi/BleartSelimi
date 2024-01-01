@@ -1,0 +1,23 @@
+.other-projects-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.other-projects-wrapper .project-card-container-title {
+    font-size: var(--fs-20px);
+}
+
+@media screen and (max-width: 768px) {
+    .other-projects-wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .other-projects-wrapper .project-card-container-footer {
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+    }
+}

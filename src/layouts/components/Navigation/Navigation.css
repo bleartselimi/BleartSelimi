@@ -13,6 +13,9 @@ nav {
 
 .navigation-close-button {
     text-align: right;
+    opacity: 0;
+    visibility: collapse;
+    animation: fadeIn .5s cubic-bezier(0.645, 0.045, 0.355, 1) 3s forwards
 }
 
 .nav-menu {
@@ -225,5 +228,25 @@ nav {
     .navigation-links-wrapper {
         padding-left: 50px;
         padding-right: 50px;
+    }
+}
+
+@media (hover: none) {
+
+    .navigation-content-panel:hover .content-panel-line::after,
+    .navigation-content-panel:hover .content-panel-line::before {
+        background-color: rgb(var(--gray-one));
+    }
+
+    .navigation-content-panel:hover .area-one-mask .navigation-link-title {
+        text-shadow: 0 0 100px rgba(var(--white-one), 0.4);
+    }
+
+    .nav-menu:hover .nav-menu-icon-rect-one {
+        width: 100%;
+    }
+
+    .nav-menu:hover .nav-menu-icon-rect-two {
+        width: 65%;
     }
 }

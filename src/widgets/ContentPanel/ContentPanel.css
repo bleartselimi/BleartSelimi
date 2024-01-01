@@ -140,4 +140,8 @@
     .content-panel-body .area-two * {
         line-height: 140%;
     }
+
+    .content-panel-body .area-one {
+        padding-right: 0px;
+    }
 }

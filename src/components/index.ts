@@ -1,3 +1,4 @@
+import ArrowsButton from "./ArrowsButton/ArrowsButton";
 import Pill from "./Pill/Pill";
 import Logo from "./Logo/Logo";
 import Avatar from "./Avatar/Avatar";
@@ -6,8 +7,10 @@ import EmailButton from "./EmailButton/EmailButton";
 import TechnicalDetailsButton from "./TechnicalDetailsButton/TechnicalDetailsButton";
 import LinkedinButton from "./LinkedinButton/LinkedinButton";
 import Noise from "./Noise/Noise";
+import Modal from "./Modal/Modal";
 
 export {
+    ArrowsButton,
     Pill,
     Logo,
     Avatar,
@@ -15,5 +18,6 @@ export {
     EmailButton,
     TechnicalDetailsButton,
     LinkedinButton,
-    Noise
+    Noise,
+    Modal
 }

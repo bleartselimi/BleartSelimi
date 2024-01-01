@@ -3,6 +3,7 @@ import { ContentPanel } from "../../widgets"
 import { useEffect, useRef } from "react";
 import { useGeneralContext } from "../../hooks/useGeneralContext";
 import { MobileShopCoverImage, MobileShopImageEight, MobileShopImageFive, MobileShopImageFour, MobileShopImageNine, MobileShopImageOne, MobileShopImageSeven, MobileShopImageSix, MobileShopImageTen, MobileShopImageThree, MobileShopImageTwo } from "../../assets";
+import OtherProjects from "../../widgets/OtherProjects/OtherProjects";
 
 const MobileShop = () => {
 
@@ -76,6 +77,7 @@ const MobileShop = () => {
           <div className="project-image-wrapper">
             <img src={MobileShopImageTen} alt="Link Mobile Project Image 1." />
           </div>
+          <OtherProjects />
         </div>
       </div>
     </>
