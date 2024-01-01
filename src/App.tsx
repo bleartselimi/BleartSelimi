@@ -1,51 +1,8 @@
 import './App.css';
 import './responsive.css';
 import { useEffect } from 'react';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { useGeneralContext } from './hooks/useGeneralContext';
-import { Grocha, LinkMobile, LinkWeb, MobileShop, MuseumInformationSystem, Portfolio, ProblemetNprishtine } from './pages';
-import { MainLayout } from './layouts';
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <MainLayout />,
-    children: [
-      {
-        path: "/",
-        element: <Portfolio />
-      },
-      {
-        path: "/grocha",
-        element: <Grocha />
-      },
-      {
-        path: "/link-mobile",
-        element: <LinkMobile />
-      },
-      {
-        path: "/link-web",
-        element: <LinkWeb />
-      },
-      {
-        path: "/museum-information-system",
-        element: <MuseumInformationSystem />
-      },
-      {
-        path: "/mobile-shop",
-        element: <MobileShop />
-      },
-      {
-        path: "/problemet-nprishtine",
-        element: <ProblemetNprishtine />
-      },
-      {
-        path: "*",
-        element: <h1>Not Found</h1>
-      }
-    ],
-  },
-]);
+import Routing from './routes';
 
 const App = () => {
 
@@ -74,7 +31,7 @@ const App = () => {
   }, [])
 
   return (
-    <RouterProvider router={router} />
+    <Routing />
   )
 }
 
