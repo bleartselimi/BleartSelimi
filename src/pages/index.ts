@@ -5,6 +5,7 @@ import LinkWeb from "./LinkWeb/LinkWeb";
 import MuseumInformationSystem from "./MuseumInformationSystem/MuseumInformationSystem";
 import MobileShop from "./MobileShop/MobileShop";
 import ProblemetNprishtine from "./ProblemetNprishtine/ProblemetNprishtine";
+import NotFound from "./NotFound/NotFound";
 
 export {
     Portfolio,
@@ -13,5 +14,6 @@ export {
     LinkWeb,
     MuseumInformationSystem,
     MobileShop,
-    ProblemetNprishtine
+    ProblemetNprishtine,
+    NotFound
 }

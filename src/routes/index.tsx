@@ -1,6 +1,6 @@
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import { MainLayout } from '../layouts'
-import { Grocha, LinkMobile, LinkWeb, MobileShop, MuseumInformationSystem, Portfolio, ProblemetNprishtine } from '../pages'
+import { Grocha, LinkMobile, LinkWeb, MobileShop, MuseumInformationSystem, NotFound, Portfolio, ProblemetNprishtine } from '../pages'
 
 const Routing = () => {
   return (
@@ -14,8 +14,8 @@ const Routing = () => {
           <Route path='/museum-information-system' element={<MuseumInformationSystem />} />
           <Route path='/mobile-shop' element={<MobileShop />} />
           <Route path='/problemet-nprishtine' element={<ProblemetNprishtine />} />
-          <Route path='/*' element={<h1>Not Found</h1>} />
         </Route>
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </HashRouter>
   )
