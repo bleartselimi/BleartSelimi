@@ -26,6 +26,26 @@ body {
   flex-direction: column;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background:rgb(var(--gray-one));
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--silver-one));
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background:rgb(var(--white-one));
+}
+
 .lh-100 {
   line-height: 100%;
 }
@@ -42,8 +62,17 @@ body {
   line-height: 150%;
 }
 
+.lh-160 {
+  line-height: 160%;
+}
+
 .text-shadow-white {
   text-shadow: 0 0 100px rgba(var(--white-one), 0.4);
+}
+
+button {
+  background-color: rgba(0,0,0,0);
+  border-style: none;
 }
 
 /* Text color - START */
@@ -79,7 +108,7 @@ body {
 /* Montserrat Font Family - END */
 
 /* Source Code Pro Font Family - START */
-.s-extrabold {
+.s-black {
   font-family: 'Source Code Pro', monospace;
   font-weight: 900;
 }

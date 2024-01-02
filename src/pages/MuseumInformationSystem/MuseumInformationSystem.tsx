@@ -1,9 +1,8 @@
 import { TechnicalDetailsButton } from "../../components"
-import { ContentPanel } from "../../widgets"
+import { ContentPanel, OtherProjects } from "../../widgets"
 import { useEffect, useRef } from "react";
 import { useGeneralContext } from "../../hooks/useGeneralContext";
 import { MuseumInformationSystemCoverImage, MuseumInformationSystemImageEight, MuseumInformationSystemImageEleven, MuseumInformationSystemImageFive, MuseumInformationSystemImageFour, MuseumInformationSystemImageFourteen, MuseumInformationSystemImageNine, MuseumInformationSystemImageOne, MuseumInformationSystemImageSeven, MuseumInformationSystemImageSix, MuseumInformationSystemImageTen, MuseumInformationSystemImageThirteen, MuseumInformationSystemImageThree, MuseumInformationSystemImageTwelve, MuseumInformationSystemImageTwo } from "../../assets";
-import OtherProjects from "../../widgets/OtherProjects/OtherProjects";
 
 const MuseumInformationSystem = () => {
 

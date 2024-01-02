@@ -1,12 +1,14 @@
+import './TechnicalDetailsButton.css';
 import { ArrowRightIcon } from '../../assets'
-import './TechnicalDetailsButton.css'
+import { TechnicalDetailsButtonType } from './TechnicalDetailsButtonType';
 
-const TechnicalDetailsButton = () => {
+const TechnicalDetailsButton = ({ onClick }: TechnicalDetailsButtonType) => {
+
   return (
-    <div className='technical-details-button'>
-      <span className='technical-details-title'>technical details</span>
+    <button onClick={onClick} className='technical-details-button'>
+      <span className='technical-details-button-title m-semibold'>technical details</span>
       <ArrowRightIcon className='technical-details-icon' />
-    </div>
+    </button>
   )
 }
 

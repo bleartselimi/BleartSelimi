@@ -1,9 +1,8 @@
 import { LinkWebCoverImage, LinkWebImageEight, LinkWebImageEleven, LinkWebImageFive, LinkWebImageFour, LinkWebImageFourteen, LinkWebImageNine, LinkWebImageOne, LinkWebImageSeven, LinkWebImageSix, LinkWebImageTen, LinkWebImageThirteen, LinkWebImageThree, LinkWebImageTwelve, LinkWebImageTwo } from "../../assets"
 import { TechnicalDetailsButton } from "../../components"
-import { ContentPanel } from "../../widgets"
+import { ContentPanel, OtherProjects } from "../../widgets"
 import { useEffect, useRef } from "react";
 import { useGeneralContext } from "../../hooks/useGeneralContext";
-import OtherProjects from "../../widgets/OtherProjects/OtherProjects";
 
 const LinkWeb = () => {
 

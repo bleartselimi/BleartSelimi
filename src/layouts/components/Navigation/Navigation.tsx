@@ -22,7 +22,7 @@ const Navigation = () => {
     <nav ref={navRef}>
       <Logo />
       <div className="nav-menu" onClick={() => setOpened(true)}>
-        <span className="fs-20px s-extrabold color-white mr-7px">MENU</span>
+        <span className="fs-20px s-black color-white mr-7px">MENU</span>
         <div className="nav-menu-icon">
           <span className="nav-menu-icon-rect-one" />
           <span className="nav-menu-icon-rect-two" />

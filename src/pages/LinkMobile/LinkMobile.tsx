@@ -1,9 +1,8 @@
 import { LinkMobileCoverImage, LinkMobileImageFive, LinkMobileImageFour, LinkMobileImageOne, LinkMobileImageEight, LinkMobileImageNine, LinkMobileImageSeven, LinkMobileImageSix, LinkMobileImageThree, LinkMobileImageTwo } from "../../assets"
 import { TechnicalDetailsButton } from "../../components"
-import { ContentPanel } from "../../widgets"
+import { ContentPanel, OtherProjects } from "../../widgets"
 import { useEffect, useRef } from "react";
 import { useGeneralContext } from "../../hooks/useGeneralContext";
-import OtherProjects from "../../widgets/OtherProjects/OtherProjects";
 
 const LinkMobile = () => {
 

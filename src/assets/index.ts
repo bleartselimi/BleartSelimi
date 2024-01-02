@@ -11,6 +11,35 @@ import Noise from "./images/other/noise.jpg";
 import Tv from "./images/other/tv.png";
 // Images - END
 
+// Technologies - END
+import ReactImage from "./images/tenchnologies/react.png";
+import ReactNativeImage from "./images/tenchnologies/react-native.png";
+import ReduxImage from "./images/tenchnologies/redux.png";
+import ViteImage from "./images/tenchnologies/vite.png";
+import TypescriptImage from "./images/tenchnologies/typescript.png";
+import AxiosImage from "./images/tenchnologies/axios.png";
+import I18nextImage from "./images/tenchnologies/i18next.png";
+import WindowsFormsImage from "./images/tenchnologies/windows-forms.png";
+import KotlinImage from "./images/tenchnologies/kotlin.png";
+import CssImage from "./images/tenchnologies/css.png";
+import AspNetImage from "./images/tenchnologies/aspnet.png";
+import AspNetCoreImage from "./images/tenchnologies/aspnet-core.png";
+import MssqlImage from "./images/tenchnologies/mssql.png";
+import EntityFrameworkImage from "./images/tenchnologies/entity-framework.png";
+import JwtImage from "./images/tenchnologies/jwt.png";
+import MediatrImage from "./images/tenchnologies/mediatr.png";
+import AzureImage from "./images/tenchnologies/azure.png";
+import AwsImage from "./images/tenchnologies/aws.png";
+import FigmaImage from "./images/tenchnologies/figma.png";
+import SocketioImage from "./images/tenchnologies/socketio.png";
+import MongodbImage from "./images/tenchnologies/mongodb.png";
+import MysqlImage from "./images/tenchnologies/mysql.png";
+import SeriologImage from "./images/tenchnologies/seriolog.png";
+import RedisImage from "./images/tenchnologies/redis.png";
+import SignalrImage from "./images/tenchnologies/signalr.png";
+import SwaggerImage from "./images/tenchnologies/swagger.png";
+// Technologies - END
+
 //Images for Grocha - START
 import GrochaCardImage from "./images/grocha/card-image.jpg";
 import GrochaCoverImage from "./images/grocha/project-image-cover.jpg";
@@ -102,6 +131,36 @@ export {
     BleartSelimiProfile,
     Noise,
     Tv,
+
+    // Technologies - START
+    ReactImage,
+    ReactNativeImage,
+    ReduxImage,
+    ViteImage,
+    TypescriptImage,
+    AxiosImage,
+    I18nextImage,
+    WindowsFormsImage,
+    KotlinImage,
+    CssImage,
+    AspNetImage,
+    AspNetCoreImage,
+    MssqlImage,
+    EntityFrameworkImage,
+    JwtImage,
+    MediatrImage,
+    AzureImage,
+    AwsImage,
+    FigmaImage,
+    SocketioImage,
+    MongodbImage,
+    MysqlImage,
+    SeriologImage,
+    RedisImage,
+    SignalrImage,
+    SwaggerImage,
+    // Technologies - END
+
     //Grocha - START
     GrochaCardImage,
     GrochaCoverImage,

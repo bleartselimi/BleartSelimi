@@ -14,13 +14,13 @@ const ProjectCard = ({ to, src, projectNo, year, title, showTopRightArrow = true
         {
           projectNo &&
           <Pill className='pill-big'>
-            <span className='fs-20px s-extrabold color-white'>{projectNo}</span>
+            <span className='fs-20px s-black color-white'>{projectNo}</span>
           </Pill>
         }
         {
           year &&
           <Pill className='pill-big'>
-            <span className='fs-20px s-extrabold color-white'>{year}</span>
+            <span className='fs-20px s-black color-white'>{year}</span>
           </Pill>
         }
 
