@@ -21,10 +21,10 @@ const NavigationMenu = ({ opened, setOpened }: NavigationMenuType) => {
         <div className="navigation" ref={navigationRef}>
             <Noise />
             <img className="tv-image" src={Tv} alt="tv image" />
+            <div className="navigation-close-button">
+                <ArrowsButton onClick={navigationState} text="CLOSE MENU" />
+            </div>
             <div className="navigation-links-container">
-                <div className="navigation-close-button">
-                    <ArrowsButton onClick={navigationState} text="CLOSE MENU" />
-                </div>
                 <div className="navigation-links-wrapper">
                     <NavLink to="/">
                         <ContentPanel

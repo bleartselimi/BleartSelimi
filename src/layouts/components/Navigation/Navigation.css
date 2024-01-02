@@ -11,10 +11,20 @@ nav {
     visibility: hidden;
 }
 
+.navigation-links-container {
+    width: 100%;
+    z-index: 9999;
+    margin: auto 0;
+    overflow-y: auto;
+}
+
 .navigation-close-button {
     text-align: right;
     opacity: 0;
     visibility: collapse;
+    position: absolute;
+    top: 35px;
+    right: 30px;
     animation: fadeIn .5s cubic-bezier(0.645, 0.045, 0.355, 1) 3s forwards
 }
 
@@ -38,12 +48,6 @@ nav {
     animation: fadeIn .5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards
 }
 
-.navigation .arrows-button {
-    position: absolute;
-    top: 35px;
-    right: 30px;
-}
-
 .tv-image {
     position: absolute;
     bottom: 0;
@@ -53,17 +57,10 @@ nav {
     animation: tvBlink 4s infinite 3s;
 }
 
-.navigation-links-container {
-    width: 100%;
-    z-index: 9999;
-    margin: auto 0;
-    overflow-y: auto;
-}
-
 .navigation-links-wrapper {
     z-index: 999;
     width: 100%;
-    padding: 175px;
+    padding: 100px;
     opacity: 1;
 }
 
@@ -193,10 +190,6 @@ nav {
     .navigation-links-wrapper {
         padding-left: 15px;
         padding-right: 15px;
-    }
-
-    .navigation-links-wrapper .content-panel-container {
-        margin-bottom: 20px;
     }
 
     .navigation-link-title {
