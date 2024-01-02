@@ -26,7 +26,7 @@ const ProblemetNprishtine = () => {
             <h1 className='fs-64px color-white lh-100 text-shadow-white'>PROBLEMET<br />N’PRISHTINË</h1>
           }
           areaFour={
-            <TechnicalDetailsButton />
+            <TechnicalDetailsButton onClick={() => {}} />
           }
         />
         <div className="project-container" ref={projectContainer}>
@@ -43,7 +43,7 @@ const ProblemetNprishtine = () => {
               <p className='project-content-panel-area-two fs-18px color-silver lh-150 m-semibold'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
             }
             areaFour={
-              <TechnicalDetailsButton />
+              <TechnicalDetailsButton onClick={() => {}} />
             }
           />
           <div className="project-image-wrapper">
