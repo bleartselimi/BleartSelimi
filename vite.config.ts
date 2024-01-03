@@ -9,6 +9,7 @@ export default defineConfig({
   },
   base: "/",
   build: {
-    outDir: './build'
+    outDir: './build',
+    target: "ES2015"
   }
 })
