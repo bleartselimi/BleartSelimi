@@ -9,6 +9,21 @@ export const GeneralContextReducer = (state: StateType, action: ActionType) => {
             };
 
             return { ...splashScreenState };
+
+        case "TRANSITION_IN":
+            const transitionInState: StateType = {
+                ...state,
+                transitionIn: action.payload
+            };
+
+            return { ...transitionInState };
+        case "TRANSITION_OUT":
+            const transitionOutState: StateType = {
+                ...state,
+                transitionOut: action.payload
+            };
+
+            return { ...transitionOutState };
         default:
             return state;
     }

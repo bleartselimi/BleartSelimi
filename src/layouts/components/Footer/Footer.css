@@ -20,7 +20,11 @@ footer {
 
 .footer-social-media {
     display: flex;
-    gap: 50px;
+    align-items: center;
+}
+
+.footer-social-media .github-button {
+    margin-right: 50px;
 }
 
 @media screen and (min-width: 0px) and (max-width: 576px) {

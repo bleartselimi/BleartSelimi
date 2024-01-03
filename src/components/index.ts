@@ -8,6 +8,7 @@ import TechnicalDetailsButton from "./TechnicalDetailsButton/TechnicalDetailsBut
 import LinkedinButton from "./LinkedinButton/LinkedinButton";
 import Noise from "./Noise/Noise";
 import Modal from "./Modal/Modal";
+import Transition from "./Transition/Transition";
 
 export {
     ArrowsButton,
@@ -19,5 +20,6 @@ export {
     TechnicalDetailsButton,
     LinkedinButton,
     Noise,
-    Modal
+    Modal,
+    Transition
 }

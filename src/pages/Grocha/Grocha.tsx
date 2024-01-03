@@ -132,25 +132,27 @@ const Grocha = () => {
                 description:
                   <>
                     <p className="fs-18px color-silver m-semibold lh-160">
-                      I designed and implemented a microservices architecture comprising four key components:
+                      I designed and implemented a microservices architecture comprising five key components:
                     </p>
+                    <br />
                     <br />
                     <ul className="fs-18px color-silver m-semibold lh-160">
                       <li>
-                        <span className="color-white">User Management:</span> This microservice is dedicated to handling authentication, registration, profiles, and permissions.
+                        <span className="color-golden-haze">User Management:</span> This microservice is dedicated to handling authentication, registration, profiles, and permissions.
                       </li>
                       <li>
-                        <span className="color-white">Communication:</span> Focused on real-time chatting and notifications.
+                        <span className="color-golden-haze">Communication:</span> Focused on real-time chatting and notifications.
                       </li>
                       <li>
-                        <span className="color-white">ConnectionHub:</span> Managing user connections, friendships, and requests.
+                        <span className="color-golden-haze">ConnectionHub:</span> Managing user connections, friendships, and requests.
                       </li>
                       <li>
-                        <span className="color-white">Media Handling:</span> Dedicated to file management, this microservice utilizes efficient handling of media files.
+                        <span className="color-golden-haze">Media Handling:</span> Dedicated to file management, this microservice utilizes efficient handling of media files.
                       </li>
                       <li>
-                        <span className="color-white">Analytics:</span> This microservice is responsible for collecting and analyzing user-related data for seamless expansion and maintenance.
+                        <span className="color-golden-haze">Analytics:</span> This microservice is responsible for collecting and analyzing user-related data for seamless expansion and maintenance.
                       </li>
+                      <br />
                     </ul>
                     <br />
                     <p className="fs-18px color-silver m-semibold lh-160">
@@ -179,4 +181,4 @@ const Grocha = () => {
   )
 }
 
-export default Grocha
+export default Grocha;

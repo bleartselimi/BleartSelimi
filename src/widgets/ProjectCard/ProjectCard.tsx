@@ -3,8 +3,11 @@ import { ArrowTopRightIcon } from '../../assets';
 import { Noise, Pill } from '../../components';
 import { ProjectCardType } from './ProjectCardType';
 import { Link } from 'react-router-dom';
+// import { useGeneralContext } from '../../hooks/useGeneralContext';
 
 const ProjectCard = ({ to, src, projectNo, year, title, showTopRightArrow = true }: ProjectCardType) => {
+
+  // const { transitionIn } = useGeneralContext();
 
   return (
     <Link to={to} className='project-card-container'>
