@@ -19,20 +19,23 @@ const Navigation = () => {
   }, [state.activeSplashScreen]);
 
   return (
-    <nav ref={navRef}>
-      <Logo />
-      <div className="nav-menu" onClick={() => setOpened(true)}>
-        <span className="fs-20px s-black color-white mr-7px">MENU</span>
-        <div className="nav-menu-icon">
-          <span className="nav-menu-icon-rect-one" />
-          <span className="nav-menu-icon-rect-two" />
+    <>
+      <nav ref={navRef}>
+        <Logo />
+        <div className="nav-menu" onClick={() => setOpened(true)}>
+          <span className="fs-20px s-black color-white mr-7px">MENU</span>
+          <div className="nav-menu-icon">
+            <span className="nav-menu-icon-rect-one" />
+            <span className="nav-menu-icon-rect-two" />
+          </div>
         </div>
-      </div>
+
+      </nav >
       {
         opened &&
         <NavigationMenu opened={opened} setOpened={setOpened} />
       }
-    </nav >
+    </>
   )
 }
 
