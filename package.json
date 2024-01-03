@@ -4,11 +4,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "babel": {
-    "presets": [
-      "@babel/preset-react"
-    ]
-  },
+  "browserslist": "> 0.25%, not dead",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
@@ -18,8 +14,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@babel/preset-react": "^7.23.3",
-    "@vitejs/plugin-react": "^4.2.1",
+    "@vitejs/plugin-react-swc": "^3.5.0",
     "gh-pages": "^6.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
