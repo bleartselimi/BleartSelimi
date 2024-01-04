@@ -11,10 +11,10 @@ const MuseumInformationSystem = () => {
   const projectContainer = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
-    if (state.activeSplashScreen && projectContainer.current) {
+    if (state.globalLoadingState && projectContainer.current) {
       projectContainer.current.style.animation = "fadeIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 3s forwards"
     }
-  }, [state.activeSplashScreen]);
+  }, [state.globalLoadingState]);
 
   return (
     <>
@@ -47,46 +47,46 @@ const MuseumInformationSystem = () => {
             }
           />
           <div className="project-image-wrapper">
-            <img src={MuseumInformationSystemImageOne} alt="Link Mobile Project Image 1." />
+            <img src={MuseumInformationSystemImageOne} alt="Museum Information System Project Image 1." />
           </div>
           <div className="project-image-wrapper">
-            <img src={MuseumInformationSystemImageTwo} alt="Link Mobile Project Image 1." />
+            <img src={MuseumInformationSystemImageTwo} alt="Museum Information System Project Image 2." />
           </div>
           <div className="project-image-wrapper">
-            <img src={MuseumInformationSystemImageThree} alt="Link Mobile Project Image 1." />
+            <img src={MuseumInformationSystemImageThree} alt="Museum Information System Project Image 3." />
           </div>
           <div className="project-image-wrapper">
-            <img src={MuseumInformationSystemImageFour} alt="Link Mobile Project Image 1." />
+            <img src={MuseumInformationSystemImageFour} alt="Museum Information System Project Image 4." />
           </div>
           <div className="project-image-wrapper">
-            <img src={MuseumInformationSystemImageFive} alt="Link Mobile Project Image 1." />
+            <img src={MuseumInformationSystemImageFive} alt="Museum Information System Project Image 5." />
           </div>
           <div className="project-image-wrapper">
-            <img src={MuseumInformationSystemImageSix} alt="Link Mobile Project Image 1." />
+            <img src={MuseumInformationSystemImageSix} alt="Museum Information System Project Image 6." />
           </div>
           <div className="project-image-wrapper">
-            <img src={MuseumInformationSystemImageSeven} alt="Link Mobile Project Image 1." />
+            <img src={MuseumInformationSystemImageSeven} alt="Museum Information System Project Image 7." />
           </div>
           <div className="project-image-wrapper">
-            <img src={MuseumInformationSystemImageEight} alt="Link Mobile Project Image 1." />
+            <img src={MuseumInformationSystemImageEight} alt="Museum Information System Project Image 8." />
           </div>
           <div className="project-image-wrapper">
-            <img src={MuseumInformationSystemImageNine} alt="Link Mobile Project Image 1." />
+            <img src={MuseumInformationSystemImageNine} alt="Museum Information System Project Image 9." />
           </div>
           <div className="project-image-wrapper">
-            <img src={MuseumInformationSystemImageTen} alt="Link Mobile Project Image 1." />
+            <img src={MuseumInformationSystemImageTen} alt="Museum Information System Project Image 10." />
           </div>
           <div className="project-image-wrapper">
-            <img src={MuseumInformationSystemImageEleven} alt="Link Mobile Project Image 1." />
+            <img src={MuseumInformationSystemImageEleven} alt="Museum Information System Project Image 11." />
           </div>
           <div className="project-image-wrapper">
-            <img src={MuseumInformationSystemImageTwelve} alt="Link Mobile Project Image 1." />
+            <img src={MuseumInformationSystemImageTwelve} alt="Museum Information System Project Image 12." />
           </div>
           <div className="project-image-wrapper">
-            <img src={MuseumInformationSystemImageThirteen} alt="Link Mobile Project Image 1." />
+            <img src={MuseumInformationSystemImageThirteen} alt="Museum Information System Project Image 13." />
           </div>
           <div className="project-image-wrapper">
-            <img src={MuseumInformationSystemImageFourteen} alt="Link Mobile Project Image 1." />
+            <img src={MuseumInformationSystemImageFourteen} alt="Museum Information System Project Image 14." />
           </div>
           <OtherProjects />
         </div>

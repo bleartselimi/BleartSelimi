@@ -2,13 +2,13 @@ import { ActionType, StateType } from "./GeneralContextTypes";
 
 export const GeneralContextReducer = (state: StateType, action: ActionType) => {
     switch (action.type) {
-        case "SPLASH_SCREEN_STATE":
-            const splashScreenState: StateType = {
+        case "GLOBAL_LOADING_STATE":
+            const globalLoadingState: StateType = {
                 ...state,
-                activeSplashScreen: action.payload
+                globalLoadingState: action.payload
             };
 
-            return { ...splashScreenState };
+            return { ...globalLoadingState };
 
         case "TRANSITION_IN":
             const transitionInState: StateType = {

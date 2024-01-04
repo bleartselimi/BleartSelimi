@@ -39,6 +39,7 @@ import SeriologImage from "./images/tenchnologies/seriolog.png";
 import RedisImage from "./images/tenchnologies/redis.png";
 import SignalrImage from "./images/tenchnologies/signalr.png";
 import SwaggerImage from "./images/tenchnologies/swagger.png";
+import SwiperImage from "./images/tenchnologies/swiper.png";
 // Technologies - END
 
 //Images for Grocha - START
@@ -161,6 +162,7 @@ export {
     RedisImage,
     SignalrImage,
     SwaggerImage,
+    SwiperImage,
     // Technologies - END
 
     //Grocha - START

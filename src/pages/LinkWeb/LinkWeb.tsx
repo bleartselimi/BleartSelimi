@@ -11,10 +11,10 @@ const LinkWeb = () => {
   const projectContainer = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
-    if (state.activeSplashScreen && projectContainer.current) {
+    if (state.globalLoadingState && projectContainer.current) {
       projectContainer.current.style.animation = "fadeIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 3s forwards"
     }
-  }, [state.activeSplashScreen]);
+  }, [state.globalLoadingState]);
 
   return (
     <>
@@ -47,46 +47,46 @@ const LinkWeb = () => {
             }
           />
           <div className="project-image-wrapper">
-            <img src={LinkWebImageOne} alt="Link Mobile Project Image 1." />
+            <img src={LinkWebImageOne} alt="Link Web Project Image 1." />
           </div>
           <div className="project-image-wrapper">
-            <img src={LinkWebImageTwo} alt="Link Mobile Project Image 1." />
+            <img src={LinkWebImageTwo} alt="Link Web Project Image 2." />
           </div>
           <div className="project-image-wrapper">
-            <img src={LinkWebImageThree} alt="Link Mobile Project Image 1." />
+            <img src={LinkWebImageThree} alt="Link Web Project Image 3." />
           </div>
           <div className="project-image-wrapper">
-            <img src={LinkWebImageFour} alt="Link Mobile Project Image 1." />
+            <img src={LinkWebImageFour} alt="Link Web Project Image 4." />
           </div>
           <div className="project-image-wrapper">
-            <img src={LinkWebImageFive} alt="Link Mobile Project Image 1." />
+            <img src={LinkWebImageFive} alt="Link Web Project Image 5." />
           </div>
           <div className="project-image-wrapper">
-            <img src={LinkWebImageSix} alt="Link Mobile Project Image 1." />
+            <img src={LinkWebImageSix} alt="Link Web Project Image 6." />
           </div>
           <div className="project-image-wrapper">
-            <img src={LinkWebImageSeven} alt="Link Mobile Project Image 1." />
+            <img src={LinkWebImageSeven} alt="Link Web Project Image 7." />
           </div>
           <div className="project-image-wrapper">
-            <img src={LinkWebImageEight} alt="Link Mobile Project Image 1." />
+            <img src={LinkWebImageEight} alt="Link Web Project Image 8." />
           </div>
           <div className="project-image-wrapper">
-            <img src={LinkWebImageNine} alt="Link Mobile Project Image 1." />
+            <img src={LinkWebImageNine} alt="Link Web Project Image 9." />
           </div>
           <div className="project-image-wrapper">
-            <img src={LinkWebImageTen} alt="Link Mobile Project Image 1." />
+            <img src={LinkWebImageTen} alt="Link Web Project Image 10." />
           </div>
           <div className="project-image-wrapper">
-            <img src={LinkWebImageEleven} alt="Link Mobile Project Image 1." />
+            <img src={LinkWebImageEleven} alt="Link Web Project Image 11." />
           </div>
           <div className="project-image-wrapper">
-            <img src={LinkWebImageTwelve} alt="Link Mobile Project Image 1." />
+            <img src={LinkWebImageTwelve} alt="Link Web Project Image 12." />
           </div>
           <div className="project-image-wrapper">
-            <img src={LinkWebImageThirteen} alt="Link Mobile Project Image 1." />
+            <img src={LinkWebImageThirteen} alt="Link Web Project Image 13." />
           </div>
           <div className="project-image-wrapper">
-            <img src={LinkWebImageFourteen} alt="Link Mobile Project Image 1." />
+            <img src={LinkWebImageFourteen} alt="Link Web Project Image 14." />
           </div>
           <OtherProjects />
         </div>

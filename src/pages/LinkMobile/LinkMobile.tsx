@@ -1,7 +1,7 @@
-import { LinkMobileCoverImage, LinkMobileImageFive, LinkMobileImageFour, LinkMobileImageOne, LinkMobileImageEight, LinkMobileImageNine, LinkMobileImageSeven, LinkMobileImageSix, LinkMobileImageThree, LinkMobileImageTwo } from "../../assets"
-import { TechnicalDetailsButton } from "../../components"
-import { ContentPanel, OtherProjects } from "../../widgets"
-import { useEffect, useRef } from "react";
+import { LinkMobileCoverImage, LinkMobileImageFive, LinkMobileImageFour, LinkMobileImageOne, LinkMobileImageEight, LinkMobileImageNine, LinkMobileImageSeven, LinkMobileImageSix, LinkMobileImageThree, LinkMobileImageTwo, ReactNativeImage, ReduxImage, AxiosImage, CssImage, FigmaImage, AspNetCoreImage, EntityFrameworkImage, MssqlImage, SwaggerImage, MediatrImage, JwtImage } from "../../assets"
+import { Modal, TechnicalDetailsButton } from "../../components"
+import { ContentPanel, OtherProjects, TechnicalDetails } from "../../widgets"
+import { useEffect, useRef, useState } from "react";
 import { useGeneralContext } from "../../hooks/useGeneralContext";
 
 const LinkMobile = () => {
@@ -10,11 +10,13 @@ const LinkMobile = () => {
 
   const projectContainer = useRef<HTMLDivElement | null>(null)
 
+  const [opened, setOpened] = useState(false);
+
   useEffect(() => {
-    if (state.activeSplashScreen && projectContainer.current) {
+    if (state.globalLoadingState && projectContainer.current) {
       projectContainer.current.style.animation = "fadeIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 3s forwards"
     }
-  }, [state.activeSplashScreen]);
+  }, [state.globalLoadingState]);
 
   return (
     <>
@@ -26,7 +28,7 @@ const LinkMobile = () => {
             <h1 className='fs-64px color-white lh-100 text-shadow-white'>LINK, A SOCIAL NETWORK<br />FOR MOBILE</h1>
           }
           areaFour={
-            <TechnicalDetailsButton onClick={() => {}} />
+            <TechnicalDetailsButton onClick={() => setOpened(true)} />
           }
         />
         <div className="project-container" ref={projectContainer}>
@@ -40,42 +42,134 @@ const LinkMobile = () => {
               <h1 className='fs-64px color-white lh-100 text-shadow-white'>About the<br />project</h1>
             }
             areaTwo={
-              <p className='project-content-panel-area-two fs-18px color-silver lh-150 m-semibold'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+              <p className='project-content-panel-area-two fs-18px color-silver lh-150 m-semibold'>
+                In the dynamic realm of social connectivity, I crafted Link, a mobile app that seamlessly bridges friendships. Link empowers users to effortlessly add or remove friends, share moments through posts, express appreciation with likes, engage through comments, and privately connect via a chat feature.</p>
             }
             areaFour={
-            <TechnicalDetailsButton onClick={() => {}} />
+              <TechnicalDetailsButton onClick={() => setOpened(true)} />
             }
           />
           <div className="project-image-wrapper">
             <img src={LinkMobileImageOne} alt="Link Mobile Project Image 1." />
           </div>
           <div className="project-image-wrapper">
-            <img src={LinkMobileImageTwo} alt="Link Mobile Project Image 1." />
+            <img src={LinkMobileImageTwo} alt="Link Mobile Project Image 2." />
           </div>
           <div className="project-image-wrapper">
-            <img src={LinkMobileImageThree} alt="Link Mobile Project Image 1." />
+            <img src={LinkMobileImageThree} alt="Link Mobile Project Image 3." />
           </div>
           <div className="project-image-wrapper">
-            <img src={LinkMobileImageFour} alt="Link Mobile Project Image 1." />
+            <img src={LinkMobileImageFour} alt="Link Mobile Project Image 4." />
           </div>
           <div className="project-image-wrapper">
-            <img src={LinkMobileImageFive} alt="Link Mobile Project Image 1." />
+            <img src={LinkMobileImageFive} alt="Link Mobile Project Image 5." />
           </div>
           <div className="project-image-wrapper">
-            <img src={LinkMobileImageSix} alt="Link Mobile Project Image 1." />
+            <img src={LinkMobileImageSix} alt="Link Mobile Project Image 6." />
           </div>
           <div className="project-image-wrapper">
-            <img src={LinkMobileImageSeven} alt="Link Mobile Project Image 1." />
+            <img src={LinkMobileImageSeven} alt="Link Mobile Project Image 7." />
           </div>
           <div className="project-image-wrapper">
-            <img src={LinkMobileImageEight} alt="Link Mobile Project Image 1." />
+            <img src={LinkMobileImageEight} alt="Link Mobile Project Image 8." />
           </div>
           <div className="project-image-wrapper">
-            <img src={LinkMobileImageNine} alt="Link Mobile Project Image 1." />
+            <img src={LinkMobileImageNine} alt="Link Mobile Project Image 9." />
           </div>
           <OtherProjects />
         </div>
       </div>
+      {
+        opened &&
+        <Modal opened={opened} setOpened={setOpened}>
+          <div className="modal-boundries">
+            <TechnicalDetails
+              overview="I developed Link, a social media mobile app using React Native, Redux, and React Context, the app leverages Axios for seamless communication with an ASP.NET backend powered by MSSQL, Entity Framework and MediatR while using Swagger for API Documentation. Authentication is fortified by JWT, ensuring secure connections. Figma sculpted the design, while functionalities like liking, commenting, sharing, saving posts, searching friends, and managing user profiles redefine the social experience."
+              frontendTechnologies={[
+                {
+                  icon: ReactNativeImage,
+                  title: "React Native"
+                },
+                {
+                  icon: ReduxImage,
+                  title: "Redux"
+                },
+                {
+                  icon: AxiosImage,
+                  title: "Axios"
+                },
+                {
+                  icon: CssImage,
+                  title: "CSS"
+                },
+              ]}
+              backendTechnologies={[
+                {
+                  icon: AspNetCoreImage,
+                  title: "ASP.NET Core"
+                },
+                {
+                  icon: EntityFrameworkImage,
+                  title: "Entity Framework Core"
+                },
+                {
+                  icon: MediatrImage,
+                  title: "MediatR"
+                },
+                {
+                  icon: JwtImage,
+                  title: "JWT Bearer Authentication"
+                },
+                {
+                  icon: MssqlImage,
+                  title: "Microsoft SQL server"
+                },
+                {
+                  icon: SwaggerImage,
+                  title: "Swagger"
+                },
+              ]}
+              otherTechnologies={[
+                {
+                  icon: FigmaImage,
+                  title: "Figma"
+                }
+              ]}
+              architecture={{
+                description:
+                  <>
+                    <p className="fs-18px color-silver m-semibold lh-160">
+
+                      Within the framework of Link, I embraced Onion Architecture with MediatR, orchestrating a seamless blend of efficiency and scalability. The project's architecture unfolds across four distinct layers:
+                    </p>
+                    <br />
+                    <br />
+                    <ul className="fs-18px color-silver m-semibold lh-160">
+                      <li>
+                        <span className="color-golden-haze">Application:</span> A project of DTOs, models, and JWT configurations, ensures seamless user interactions
+                      </li>
+                      <li>
+                        <span className="color-golden-haze">Core:</span> Holds entities and enums at its core, establishing the project's foundational elements.
+                      </li>
+                      <li>
+                        <span className="color-golden-haze">Infrastructure:</span> Home to DbContext and migrations intricately tied to Entity Framework, lays the groundwork for robust data management.
+                      </li>
+                      <li>
+                        <span className="color-golden-haze">Services:</span> A testament to the CQRS(Command and Query Responsibility Segregation) pattern, hosts a symphony of handlers, orchestrating a harmonious integration of functionalities.
+                      </li>
+                      <br />
+                    </ul>
+                    <br />
+                    <p className="fs-18px color-silver m-semibold lh-160">
+                    By adopting this architecture, Link becomes more manageable, adaptable, and reaches a higher level of technological sophistication.
+                    </p>
+                  </>,
+                images: [""]
+              }}
+            />
+          </div>
+        </Modal>
+      }
     </>
   )
 }

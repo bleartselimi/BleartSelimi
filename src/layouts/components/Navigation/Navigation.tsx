@@ -11,10 +11,10 @@ const Navigation = () => {
   const navRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    if (state.activeSplashScreen && navRef.current) {
+    if (state.globalLoadingState && navRef.current) {
       navRef.current.style.animation = "fadeIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 3s forwards"
     }
-  }, [state.activeSplashScreen]);
+  }, [state.globalLoadingState]);
 
   return (
     <>

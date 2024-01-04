@@ -16,10 +16,10 @@ const Transition = () => {
             state.transitionIn.transition &&
             !state.transitionOut
         ) {
-            dispatch({ type: "SPLASH_SCREEN_STATE", payload: false });
-            slideTopRef.current!.style.transform = "translateY(0%)";
+            dispatch({ type: "GLOBAL_LOADING_STATE", payload: false });
+            slideTopRef.current!.style.transform = "translateY(calc(0% - 1px))";
             setTimeout(() => {
-                document.querySelector("body")!.scrollTop = 0;
+                document.querySelector("html")!.scrollTop = 0;
                 menuOpend(false);
                 transitionOut(true);
                 navigate(state.transitionIn.to);
@@ -28,7 +28,7 @@ const Transition = () => {
                     transitionOut(false);
                     transitionIn("", false);
                     setTimeout(() => {
-                        dispatch({ type: "SPLASH_SCREEN_STATE", payload: true });
+                        dispatch({ type: "GLOBAL_LOADING_STATE", payload: true });
                     }, 1000)
                 }, 300)
             }, 1000)
@@ -36,8 +36,6 @@ const Transition = () => {
     }
 
     useEffect(() => {
-        console.log("HELLO");
-        
         transitionEvent();
     }, [state.transitionIn.transition, state.transitionOut])
 

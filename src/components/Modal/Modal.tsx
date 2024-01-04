@@ -15,10 +15,10 @@ const Modal = ({ children, opened, setOpened }: ModalType) => {
   }
 
   useEffect(() => {
-    document.querySelector("body")!.style.overflowY = "hidden";
+    document.querySelector("html")!.style.overflowY = "hidden";
 
     return () => {
-      document.querySelector("body")!.style.overflowY = "auto";
+      document.querySelector("html")!.style.overflowY = "auto";
     }
   }, [])
 

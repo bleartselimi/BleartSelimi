@@ -19,7 +19,7 @@ const App = () => {
           splashScreenElement.style.opacity = "0";
           splashScreenElement.style.visibility = "collapse";
           setTimeout(() => {
-            dispatch({ type: "SPLASH_SCREEN_STATE", payload: true });
+            dispatch({ type: "GLOBAL_LOADING_STATE", payload: true });
           }, 500)
         }
       }, 1500)

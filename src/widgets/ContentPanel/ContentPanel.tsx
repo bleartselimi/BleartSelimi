@@ -35,14 +35,14 @@ const ContentPanel = ({ className = "", areaOne, hasAreaOneMask = false, areaTwo
 
     useEffect(() => {
         if (panelBodyContainer.current && panelBody.current) panelBodyContainer.current.style.height = panelBody.current.clientHeight + "px";
-        if (state.activeSplashScreen) {
+        if (state.globalLoadingState) {
             contentPanelAimation();
 
             window.addEventListener('resize', resizeEvent);
 
             return () => window.removeEventListener('resize', resizeEvent)
         }
-    }, [state.activeSplashScreen]);
+    }, [state.globalLoadingState]);
 
     return (
         <div className={`content-panel-container ${className}`} ref={contentPanelContainer}>

@@ -12,10 +12,10 @@ const Footer = () => {
   const footerRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
-    if (state.activeSplashScreen && footerRef.current) {
+    if (state.globalLoadingState && footerRef.current) {
       footerRef.current.style.animation = "fadeIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 3s forwards"
     }
-  }, [state.activeSplashScreen]);
+  }, [state.globalLoadingState]);
 
   return (
     <footer className="fs-30px color-white" ref={footerRef}>

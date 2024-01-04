@@ -22,10 +22,10 @@ const Portfolio = () => {
   const portfolioProjectsWrapper = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
-    if (state.activeSplashScreen && portfolioProjectsWrapper.current) {
+    if (state.globalLoadingState && portfolioProjectsWrapper.current) {
       portfolioProjectsWrapper.current.style.animation = "fadeIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 3s forwards"
     }
-  }, [state.activeSplashScreen]);
+  }, [state.globalLoadingState]);
 
   return (
     <>

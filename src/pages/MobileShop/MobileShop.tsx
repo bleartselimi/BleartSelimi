@@ -11,10 +11,10 @@ const MobileShop = () => {
   const projectContainer = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
-    if (state.activeSplashScreen && projectContainer.current) {
+    if (state.globalLoadingState && projectContainer.current) {
       projectContainer.current.style.animation = "fadeIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 3s forwards"
     }
-  }, [state.activeSplashScreen]);
+  }, [state.globalLoadingState]);
 
   return (
     <>
@@ -47,34 +47,34 @@ const MobileShop = () => {
             }
           />
           <div className="project-image-wrapper">
-            <img src={MobileShopImageOne} alt="Link Mobile Project Image 1." />
+            <img src={MobileShopImageOne} alt="Mobile Shop Project Image 1." />
           </div>
           <div className="project-image-wrapper">
-            <img src={MobileShopImageTwo} alt="Link Mobile Project Image 1." />
+            <img src={MobileShopImageTwo} alt="Mobile Shop Project Image 2." />
           </div>
           <div className="project-image-wrapper">
-            <img src={MobileShopImageThree} alt="Link Mobile Project Image 1." />
+            <img src={MobileShopImageThree} alt="Mobile Shop Project Image 3." />
           </div>
           <div className="project-image-wrapper">
-            <img src={MobileShopImageFour} alt="Link Mobile Project Image 1." />
+            <img src={MobileShopImageFour} alt="Mobile Shop Project Image 4." />
           </div>
           <div className="project-image-wrapper">
-            <img src={MobileShopImageFive} alt="Link Mobile Project Image 1." />
+            <img src={MobileShopImageFive} alt="Mobile Shop Project Image 5." />
           </div>
           <div className="project-image-wrapper">
-            <img src={MobileShopImageSix} alt="Link Mobile Project Image 1." />
+            <img src={MobileShopImageSix} alt="Mobile Shop Project Image 6." />
           </div>
           <div className="project-image-wrapper">
-            <img src={MobileShopImageSeven} alt="Link Mobile Project Image 1." />
+            <img src={MobileShopImageSeven} alt="Mobile Shop Project Image 7." />
           </div>
           <div className="project-image-wrapper">
-            <img src={MobileShopImageEight} alt="Link Mobile Project Image 1." />
+            <img src={MobileShopImageEight} alt="Mobile Shop Project Image 8." />
           </div>
           <div className="project-image-wrapper">
-            <img src={MobileShopImageNine} alt="Link Mobile Project Image 1." />
+            <img src={MobileShopImageNine} alt="Mobile Shop Project Image 9." />
           </div>
           <div className="project-image-wrapper">
-            <img src={MobileShopImageTen} alt="Link Mobile Project Image 1." />
+            <img src={MobileShopImageTen} alt="Mobile Shop Project Image 10." />
           </div>
           <OtherProjects />
         </div>

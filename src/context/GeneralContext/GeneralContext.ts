@@ -2,7 +2,7 @@ import { createContext } from "react";
 import { GeneralContextType, StateType } from "./GeneralContextTypes";
 
 export const initialState: StateType = {
-    activeSplashScreen: false,
+    globalLoadingState: false,
     openedMenu: false,
     transitionIn: {
         to: "",

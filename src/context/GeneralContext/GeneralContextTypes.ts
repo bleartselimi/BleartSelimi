@@ -1,7 +1,7 @@
 import { Dispatch, ReactNode } from "react";
 
 export type ActionType = {
-    type: 'SPLASH_SCREEN_STATE',
+    type: 'GLOBAL_LOADING_STATE',
     payload: boolean
 } | {
     type: 'TRANSITION_IN',
@@ -18,7 +18,7 @@ export type ActionType = {
 };
 
 export interface StateType {
-    activeSplashScreen: boolean,
+    globalLoadingState: boolean,
     openedMenu: boolean,
     transitionIn: {
         to: string,

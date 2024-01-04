@@ -11,10 +11,10 @@ const ProblemetNprishtine = () => {
   const projectContainer = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
-    if (state.activeSplashScreen && projectContainer.current) {
+    if (state.globalLoadingState && projectContainer.current) {
       projectContainer.current.style.animation = "fadeIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 3s forwards"
     }
-  }, [state.activeSplashScreen]);
+  }, [state.globalLoadingState]);
 
   return (
     <>
@@ -47,22 +47,22 @@ const ProblemetNprishtine = () => {
             }
           />
           <div className="project-image-wrapper">
-            <img src={ProblementNprishtineImageOne} alt="Link Mobile Project Image 1." />
+            <img src={ProblementNprishtineImageOne} alt="Problemet n'Prishtine Project Image 1." />
           </div>
           <div className="project-image-wrapper">
-            <img src={ProblementNprishtineImageTwo} alt="Link Mobile Project Image 1." />
+            <img src={ProblementNprishtineImageTwo} alt="Problemet n'Prishtine Project Image 2." />
           </div>
           <div className="project-image-wrapper">
-            <img src={ProblementNprishtineImageThree} alt="Link Mobile Project Image 1." />
+            <img src={ProblementNprishtineImageThree} alt="Problemet n'Prishtine Project Image 3." />
           </div>
           <div className="project-image-wrapper">
-            <img src={ProblementNprishtineImageFour} alt="Link Mobile Project Image 1." />
+            <img src={ProblementNprishtineImageFour} alt="Problemet n'Prishtine Project Image 4." />
           </div>
           <div className="project-image-wrapper">
-            <img src={ProblementNprishtineImageFive} alt="Link Mobile Project Image 1." />
+            <img src={ProblementNprishtineImageFive} alt="Problemet n'Prishtine Project Image 5." />
           </div>
           <div className="project-image-wrapper">
-            <img src={ProblementNprishtineImageSix} alt="Link Mobile Project Image 1." />
+            <img src={ProblementNprishtineImageSix} alt="Problemet n'Prishtine Project Image 6." />
           </div>
           <OtherProjects />
         </div>
