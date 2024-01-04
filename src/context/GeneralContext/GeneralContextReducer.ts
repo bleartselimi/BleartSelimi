@@ -24,6 +24,13 @@ export const GeneralContextReducer = (state: StateType, action: ActionType) => {
             };
 
             return { ...transitionOutState };
+        case "MENU_STATE":
+            const menuState: StateType = {
+                ...state,
+                openedMenu: action.payload
+            };
+
+            return { ...menuState };
         default:
             return state;
     }

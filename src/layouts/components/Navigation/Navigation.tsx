@@ -1,16 +1,14 @@
 import "./Navigation.css";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { Logo } from "../../../components";
 import { useGeneralContext } from "../../../hooks/useGeneralContext";
 import NavigationMenu from "./NavigationMenu";
 
 const Navigation = () => {
 
-  const { state } = useGeneralContext();
+  const { state, menuOpend } = useGeneralContext();
 
   const navRef = useRef<HTMLDivElement | null>(null);
-
-  const [opened, setOpened] = useState(false);
 
   useEffect(() => {
     if (state.activeSplashScreen && navRef.current) {
@@ -22,7 +20,7 @@ const Navigation = () => {
     <>
       <nav ref={navRef}>
         <Logo />
-        <div className="nav-menu" onClick={() => setOpened(true)}>
+        <div className="nav-menu" onClick={() => menuOpend(true)}>
           <span className="fs-20px s-black color-white mr-7px">MENU</span>
           <div className="nav-menu-icon">
             <span className="nav-menu-icon-rect-one" />
@@ -32,8 +30,8 @@ const Navigation = () => {
 
       </nav >
       {
-        opened &&
-        <NavigationMenu opened={opened} setOpened={setOpened} />
+        state.openedMenu &&
+        <NavigationMenu />
       }
     </>
   )

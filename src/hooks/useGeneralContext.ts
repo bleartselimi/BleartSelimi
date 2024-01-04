@@ -6,7 +6,8 @@ export const useGeneralContext = (): GeneralContextType => {
     const context = useContext(GeneralContext);
 
     if (!context) {
-        throw new Error('useGeneralContext must be used within a GeneralContextProvider');
+        console.error("useGeneralContext must be used within a GeneralContextProvider!");
+        throw new Error('useGeneralContext must be used within a GeneralContextProvider!');
     }
 
     return context;

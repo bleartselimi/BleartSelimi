@@ -1,4 +1,5 @@
 // Icons - START
+import { LogoIcon } from "./icons/Icons";
 import { ArrowTopRightIcon } from "./icons/Icons";
 import { ArrowRightIcon } from "./icons/Icons";
 import { GithubIcon } from "./icons/Icons";
@@ -124,6 +125,7 @@ import ProblementNprishtineImageSix from "./images/problemet-nprishtine/project-
 //Images for Problement N'prishtine - END
 
 export {
+    LogoIcon,
     ArrowTopRightIcon,
     ArrowRightIcon,
     GithubIcon,

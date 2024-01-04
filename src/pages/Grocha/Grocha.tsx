@@ -13,8 +13,8 @@ const Grocha = () => {
   const [opened, setOpened] = useState(false);
 
   useEffect(() => {
-    if (state.activeSplashScreen && projectContainer.current) {
-      projectContainer.current.style.animation = "fadeIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 3s forwards"
+    if (state.activeSplashScreen) {
+      projectContainer.current!.style.animation = "fadeIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 3s forwards"
     }
   }, [state.activeSplashScreen]);
 

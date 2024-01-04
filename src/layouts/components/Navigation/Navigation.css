@@ -64,6 +64,10 @@ nav {
     opacity: 1;
 }
 
+.navigation-content-panel {
+    cursor: pointer;
+}
+
 .navigation-content-panel:hover .content-panel-line::after,
 .navigation-content-panel:hover .content-panel-line::before {
     background-color: rgb(var(--white-one));

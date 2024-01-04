@@ -2,6 +2,6 @@ export type IconsType = {
     width?: number,
     height?: number,
     className?: string,
-    onClick?: () => {},
+    onClick?: () => void,
     fill?: string
 }

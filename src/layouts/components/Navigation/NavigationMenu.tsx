@@ -1,19 +1,21 @@
 import { useEffect, useRef } from "react";
-import { Link, NavLink } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { ArrowsButton, Noise } from "../../../components"
 import { ContentPanel } from "../../../widgets"
 import { ArrowTopRightIcon, Tv } from "../../../assets"
-import { NavigationMenuType } from "./NavigationMenuType";
+import { useGeneralContext } from "../../../hooks/useGeneralContext";
 
-const NavigationMenu = ({ opened, setOpened }: NavigationMenuType) => {
+const NavigationMenu = () => {
+
+    const { state, transitionIn, menuOpend } = useGeneralContext();
 
     const navigationRef = useRef<HTMLDivElement | null>(null);
 
     const navigationState = () => {
-        if (opened) {
+        if (state.openedMenu) {
             document.querySelector("body")!.style.overflowY = "auto";
             navigationRef.current!.style.animation = "fadeOut .5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards";
-            setTimeout(() => setOpened(false), 500)
+            setTimeout(() => menuOpend(false), 500)
         }
     }
 
@@ -26,7 +28,7 @@ const NavigationMenu = ({ opened, setOpened }: NavigationMenuType) => {
     }, [])
 
     return (
-        opened &&
+        state.openedMenu &&
         <div className="navigation" ref={navigationRef}>
             <Noise />
             <img className="tv-image" src={Tv} alt="tv image" />
@@ -35,7 +37,13 @@ const NavigationMenu = ({ opened, setOpened }: NavigationMenuType) => {
             </div>
             <div className="navigation-links-container">
                 <div className="navigation-links-wrapper">
-                    <NavLink to="/">
+                    <div onClick={() => {
+                        console.log(window.location.hash);
+                        
+                        if (window.location.hash !== "" && window.location.hash !== "#/") {
+                            transitionIn("/", true)
+                        }
+                    }}>
                         <ContentPanel
                             className="navigation-content-panel"
                             hasAreaOneMask={true}
@@ -47,7 +55,7 @@ const NavigationMenu = ({ opened, setOpened }: NavigationMenuType) => {
                             }
                             delay={0.5}
                         />
-                    </NavLink>
+                    </div>
                     <Link to="https://www.linkedin.com/in/bleart-selimi-677338224/" target="_blank">
                         <ContentPanel
                             className="navigation-content-panel"

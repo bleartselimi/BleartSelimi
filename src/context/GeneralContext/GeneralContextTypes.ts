@@ -5,23 +5,34 @@ export type ActionType = {
     payload: boolean
 } | {
     type: 'TRANSITION_IN',
-    payload: boolean
+    payload: {
+        to: string,
+        transition: boolean
+    }
 } | {
     type: 'TRANSITION_OUT',
+    payload: boolean
+} | {
+    type: 'MENU_STATE',
     payload: boolean
 };
 
 export interface StateType {
     activeSplashScreen: boolean,
-    transitionIn: boolean
+    openedMenu: boolean,
+    transitionIn: {
+        to: string,
+        transition: boolean
+    }
     transitionOut: boolean
 }
 
 export type GeneralContextType = {
     state: StateType,
     dispatch: Dispatch<ActionType>,
-    transitionIn: (transition: boolean) => void,
-    transitionOut: (transition: boolean) => void
+    transitionIn: (to: string, transition: boolean) => void,
+    transitionOut: (transition: boolean) => void,
+    menuOpend: (open: boolean) => void
 }
 
 export type GeneralContextProviderType = {

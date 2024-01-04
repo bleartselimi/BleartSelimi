@@ -22,7 +22,7 @@ const App = () => {
             dispatch({ type: "SPLASH_SCREEN_STATE", payload: true });
           }, 500)
         }
-      }, 2000)
+      }, 1500)
     }
   }
 

@@ -1,10 +1,49 @@
+import { useEffect, useRef } from 'react';
 import './Transition.css';
+import { useGeneralContext } from '../../hooks/useGeneralContext';
+import { useNavigate } from 'react-router';
 
 const Transition = () => {
+
+    const navigate = useNavigate();
+
+    const { state, dispatch, transitionIn, transitionOut, menuOpend } = useGeneralContext();
+    const slideTopRef = useRef<HTMLDivElement | null>(null);
+
+    const transitionEvent = () => {
+        if (
+            (window.location.hash.slice(1, window.location.hash.length) !== state.transitionIn.to) &&
+            state.transitionIn.transition &&
+            !state.transitionOut
+        ) {
+            dispatch({ type: "SPLASH_SCREEN_STATE", payload: false });
+            slideTopRef.current!.style.transform = "translateY(0%)";
+            setTimeout(() => {
+                document.querySelector("body")!.scrollTop = 0;
+                menuOpend(false);
+                transitionOut(true);
+                navigate(state.transitionIn.to);
+                setTimeout(() => {
+                    slideTopRef.current!.style.transform = "translateY(-100%)";
+                    transitionOut(false);
+                    transitionIn("", false);
+                    setTimeout(() => {
+                        dispatch({ type: "SPLASH_SCREEN_STATE", payload: true });
+                    }, 1000)
+                }, 300)
+            }, 1000)
+        }
+    }
+
+    useEffect(() => {
+        console.log("HELLO");
+        
+        transitionEvent();
+    }, [state.transitionIn.transition, state.transitionOut])
+
     return (
         <>
-            <div className='slide-in'></div>
-            <div className='slide-out'></div>
+            <div className='slide-top' ref={slideTopRef}></div>
         </>
     )
 };

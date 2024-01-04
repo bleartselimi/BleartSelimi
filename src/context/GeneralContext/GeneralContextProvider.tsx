@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from "react";
+import { useReducer } from "react";
 import { GeneralContext, initialState } from "./GeneralContext";
 import { GeneralContextProviderType } from "./GeneralContextTypes";
 import { GeneralContextReducer } from "./GeneralContextReducer";
@@ -8,24 +8,30 @@ const GeneralContextProvider = ({ children }: GeneralContextProviderType) => {
 
   const [state, dispatch] = useReducer(GeneralContextReducer, initialState);
 
-  const transitionIn = (transition: boolean) => {
-    dispatch({ type: "TRANSITION_IN", payload: transition })
+  const transitionIn = (to: string, transition: boolean) => {
+    dispatch({
+      type: "TRANSITION_IN", payload: {
+        to: to,
+        transition: transition
+      }
+    })
   }
 
   const transitionOut = (transition: boolean) => {
-    dispatch({ type: "TRANSITION_IN", payload: transition })
+    dispatch({ type: "TRANSITION_OUT", payload: transition })
   }
 
-  useEffect(() => {
-    
-  }, [state.transitionIn, state.transitionOut])
+  const menuOpend = (open: boolean) => {
+    dispatch({ type: "MENU_STATE", payload: open })
+  }
 
   return (
     <GeneralContext.Provider value={{
       state,
       dispatch,
       transitionIn,
-      transitionOut
+      transitionOut,
+      menuOpend
     }}>
       <Transition />
       {children}

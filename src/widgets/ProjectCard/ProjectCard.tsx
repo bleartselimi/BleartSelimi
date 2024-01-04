@@ -2,15 +2,14 @@ import './ProjectCard.css';
 import { ArrowTopRightIcon } from '../../assets';
 import { Noise, Pill } from '../../components';
 import { ProjectCardType } from './ProjectCardType';
-import { Link } from 'react-router-dom';
-// import { useGeneralContext } from '../../hooks/useGeneralContext';
+import { useGeneralContext } from '../../hooks/useGeneralContext';
 
 const ProjectCard = ({ to, src, projectNo, year, title, showTopRightArrow = true }: ProjectCardType) => {
 
-  // const { transitionIn } = useGeneralContext();
+  const { transitionIn } = useGeneralContext();
 
   return (
-    <Link to={to} className='project-card-container'>
+    <div className='project-card-container' onClick={() => transitionIn(to, true)}>
       <img className='project-card-img' src={src} alt="" />
       <Noise />
       <div className='project-card-container-header'>
@@ -37,7 +36,7 @@ const ProjectCard = ({ to, src, projectNo, year, title, showTopRightArrow = true
           </Pill>
         }
       </div>
-    </Link >
+    </div >
   )
 }
 

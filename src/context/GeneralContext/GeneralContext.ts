@@ -3,7 +3,11 @@ import { GeneralContextType, StateType } from "./GeneralContextTypes";
 
 export const initialState: StateType = {
     activeSplashScreen: false,
-    transitionIn: false,
+    openedMenu: false,
+    transitionIn: {
+        to: "",
+        transition: false
+    },
     transitionOut: false
 };
 

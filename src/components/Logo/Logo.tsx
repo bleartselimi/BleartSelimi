@@ -1,9 +1,17 @@
 import './Logo.css';
-import { Link } from 'react-router-dom';
+import { LogoIcon } from '../../assets';
+import { useGeneralContext } from '../../hooks/useGeneralContext';
 
 const Logo = () => {
+
+  const { transitionIn } = useGeneralContext();
+
   return (
-    <Link to="/" className="fs-30px m-black color-white">BS</Link>
+    <LogoIcon className='logo' onClick={() => {
+      if (window.location.hash !== "" && window.location.hash !== "#/") {
+        transitionIn("/", true)
+      }
+    }} />
   )
 }
 
