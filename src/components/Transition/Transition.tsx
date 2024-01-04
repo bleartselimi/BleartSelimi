@@ -19,7 +19,7 @@ const Transition = () => {
             dispatch({ type: "GLOBAL_LOADING_STATE", payload: false });
             slideTopRef.current!.style.transform = "translateY(calc(0% - 1px))";
             setTimeout(() => {
-                document.querySelector("html")!.scrollTop = 0;
+                document.querySelector("body")!.scrollTop = 0;
                 menuOpend(false);
                 transitionOut(true);
                 navigate(state.transitionIn.to);
@@ -29,9 +29,9 @@ const Transition = () => {
                     transitionIn("", false);
                     setTimeout(() => {
                         dispatch({ type: "GLOBAL_LOADING_STATE", payload: true });
-                    }, 1000)
+                    }, 500)
                 }, 300)
-            }, 1000)
+            }, 750)
         }
     }
 

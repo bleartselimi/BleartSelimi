@@ -1,7 +1,7 @@
 import { ReactElement } from "react"
 
 export type TechnicalDetailsType = {
-    overview: string,
+    overview: ReactElement,
     frontendTechnologies?: TechnologyType[],
     backendTechnologies?: TechnologyType[],
     otherTechnologies?: TechnologyType[],

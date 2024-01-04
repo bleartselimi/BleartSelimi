@@ -56,12 +56,19 @@ const Grocha = () => {
         <Modal opened={opened} setOpened={setOpened}>
           <div className="modal-boundries">
             <TechnicalDetails
-              overview="I designed and currently develop Grocha(Gro-group, cha-chat), a comprehensive group chat application. Utilizing Figma, I
-              planned the app's layout and interface. For a robust front-end, I employed React + Vite + TypeScript. The
-              backend, built on ASP.NET Core, includes various libraries for authentication and logging. The database
-              utilizes Redis for quick caching, MySQL for structured data, and MongoDB for seamless chat message
-              management. Grocha offers features like real-time individual/group chats, friend management, and easy
-              media file sharing."
+              overview={
+                <>
+                  <p className="fs-18px color-silver m-semibold lh-160">
+                    I designed and currently develop Grocha(Gro-group, cha-chat), a comprehensive group chat application. Utilizing Figma, I
+                    planned the app's layout and interface. For a robust front-end, I employed React + Vite + TypeScript.
+                    <br />
+                    The backend, built on ASP.NET Core, includes various libraries for authentication and logging. The database
+                    utilizes Redis for quick caching, MySQL for structured data, and MongoDB for seamless chat message
+                    management. Grocha offers features like real-time individual/group chats, friend management, and easy
+                    media file sharing.
+                  </p>
+                </>
+              }
               frontendTechnologies={[
                 {
                   icon: ReactImage,

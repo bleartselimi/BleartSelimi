@@ -84,7 +84,13 @@ const LinkMobile = () => {
         <Modal opened={opened} setOpened={setOpened}>
           <div className="modal-boundries">
             <TechnicalDetails
-              overview="I developed Link, a social media mobile app using React Native, Redux, and React Context, the app leverages Axios for seamless communication with an ASP.NET backend powered by MSSQL, Entity Framework and MediatR while using Swagger for API Documentation. Authentication is fortified by JWT, ensuring secure connections. Figma sculpted the design, while functionalities like liking, commenting, sharing, saving posts, searching friends, and managing user profiles redefine the social experience."
+              overview={
+                <>
+                  <p className="fs-18px color-silver m-semibold lh-160">
+                    I developed Link, a social media mobile app using React Native, Redux, and React Context, the app leverages Axios for seamless communication with an ASP.NET backend powered by MSSQL, Entity Framework and MediatR while using Swagger for API Documentation. Authentication is fortified by JWT, ensuring secure connections. Figma sculpted the design, while functionalities like liking, commenting, sharing, saving posts, searching friends, and managing user profiles redefine the social experience.
+                  </p>
+                </>
+              }
               frontendTechnologies={[
                 {
                   icon: ReactNativeImage,
@@ -161,7 +167,7 @@ const LinkMobile = () => {
                     </ul>
                     <br />
                     <p className="fs-18px color-silver m-semibold lh-160">
-                    By adopting this architecture, Link becomes more manageable, adaptable, and reaches a higher level of technological sophistication.
+                      By adopting this architecture, Link becomes more manageable, adaptable, and reaches a higher level of technological sophistication.
                     </p>
                   </>,
                 images: [""]

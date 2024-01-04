@@ -5,7 +5,7 @@ const TechnicalDetails = ({ overview, frontendTechnologies, backendTechnologies,
     return (
         <div>
             <h1 className="technical-details-title fs-64px color-white mb-20px">Overview</h1>
-            <p className="fs-18px color-silver m-semibold lh-160">{overview}</p>
+            {overview}
             <h1 className="technical-details-title fs-64px color-white mt-100px">Technologies</h1>
             {
                 frontendTechnologies &&
@@ -16,7 +16,7 @@ const TechnicalDetails = ({ overview, frontendTechnologies, backendTechnologies,
                             frontendTechnologies?.map((technology, i) => {
                                 return (
                                     <div key={i} className="technology-box">
-                                        <img src={technology.icon} alt="" className="mr-7px" />
+                                        <img src={technology.icon} alt="" className="mr-10px" />
                                         <h2 className="fs-18px color-white s-black">{technology.title}</h2>
                                     </div>
                                 )
@@ -34,7 +34,7 @@ const TechnicalDetails = ({ overview, frontendTechnologies, backendTechnologies,
                             backendTechnologies?.map((technology, i) => {
                                 return (
                                     <div key={i} className="technology-box">
-                                        <img src={technology.icon} alt="" className="mr-7px" />
+                                        <img src={technology.icon} alt="" className="mr-10px" />
                                         <h2 className="fs-18px color-white s-black">{technology.title}</h2>
                                     </div>
                                 )
@@ -52,7 +52,7 @@ const TechnicalDetails = ({ overview, frontendTechnologies, backendTechnologies,
                             otherTechnologies?.map((technology, i) => {
                                 return (
                                     <div key={i} className="technology-box">
-                                        <img src={technology.icon} alt="" className="mr-7px" />
+                                        <img src={technology.icon} alt="" className="mr-10px" />
                                         <h2 className="fs-18px color-white s-black">{technology.title}</h2>
                                     </div>
                                 )

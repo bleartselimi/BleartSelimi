@@ -29,9 +29,7 @@ const ContentPanel = ({ className = "", areaOne, hasAreaOneMask = false, areaTwo
         }, delay * 1000)
     }
 
-    const resizeEvent = () => {
-        contentPanelAimation();
-    }
+    const resizeEvent = () => contentPanelAimation();
 
     useEffect(() => {
         if (panelBodyContainer.current && panelBody.current) panelBodyContainer.current.style.height = panelBody.current.clientHeight + "px";

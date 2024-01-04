@@ -1,14 +1,16 @@
-import { TechnicalDetailsButton } from "../../components"
-import { ContentPanel, OtherProjects } from "../../widgets"
-import { useEffect, useRef } from "react";
+import { Modal, TechnicalDetailsButton } from "../../components"
+import { ContentPanel, OtherProjects, TechnicalDetails } from "../../widgets"
+import { useEffect, useRef, useState } from "react";
 import { useGeneralContext } from "../../hooks/useGeneralContext";
-import { ProblementNprishtineCoverImage, ProblementNprishtineImageFive, ProblementNprishtineImageFour, ProblementNprishtineImageOne, ProblementNprishtineImageSix, ProblementNprishtineImageThree, ProblementNprishtineImageTwo } from "../../assets";
+import { AspNetCoreImage, FigmaImage, KotlinImage, MssqlImage, ProblementNprishtineCoverImage, ProblementNprishtineImageFive, ProblementNprishtineImageFour, ProblementNprishtineImageOne, ProblementNprishtineImageSix, ProblementNprishtineImageThree, ProblementNprishtineImageTwo } from "../../assets";
 
 const ProblemetNprishtine = () => {
 
   const { state } = useGeneralContext();
 
   const projectContainer = useRef<HTMLDivElement | null>(null)
+
+  const [opened, setOpened] = useState(false);
 
   useEffect(() => {
     if (state.globalLoadingState && projectContainer.current) {
@@ -26,7 +28,7 @@ const ProblemetNprishtine = () => {
             <h1 className='fs-64px color-white lh-100 text-shadow-white'>PROBLEMET<br />N’PRISHTINË</h1>
           }
           areaFour={
-            <TechnicalDetailsButton onClick={() => {}} />
+            <TechnicalDetailsButton onClick={() => setOpened(true)} />
           }
         />
         <div className="project-container" ref={projectContainer}>
@@ -40,10 +42,12 @@ const ProblemetNprishtine = () => {
               <h1 className='fs-64px color-white lh-100 text-shadow-white'>About the<br />project</h1>
             }
             areaTwo={
-              <p className='project-content-panel-area-two fs-18px color-silver lh-150 m-semibold'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+              <p className='project-content-panel-area-two fs-18px color-silver lh-150 m-semibold'>
+                Designed and built a simple Android application named "Problement n'Prishtine" which translates to "Problems in Prishtina" using Kotlin, empowering citizens to report issues within the city of Prishtina seamlessly.
+              </p>
             }
             areaFour={
-              <TechnicalDetailsButton onClick={() => {}} />
+              <TechnicalDetailsButton onClick={() => setOpened(true)} />
             }
           />
           <div className="project-image-wrapper">
@@ -67,6 +71,50 @@ const ProblemetNprishtine = () => {
           <OtherProjects />
         </div>
       </div>
+      {
+        opened &&
+        <Modal opened={opened} setOpened={setOpened}>
+          <div className="modal-boundries">
+            <TechnicalDetails
+              overview={
+                <>
+                  <p className="fs-18px color-silver m-semibold lh-160">
+                    Through the app's user-friendly interface, individuals can submit problem reports by comments, photos, and precise location.
+                    <br />
+                    <br />
+                    To enhance the app's functionality, I integrated Retrofit for making API calls, enabling the retrieval of precise location information. This technology streamlined the communication between the app and external APIs, ensuring accurate and efficient data exchange. The use of Kotlin, coupled with Retrofit, resulted in a robust and responsive solution.
+                    <br />
+                    <br />
+                    Additionally, I utilized Figma for the logo design, creating a cohesive and recognizable visual identity for the application.
+                  </p>
+                </>
+              }
+              frontendTechnologies={[
+                {
+                  icon: KotlinImage,
+                  title: "Kotlin"
+                }
+              ]}
+              backendTechnologies={[
+                {
+                  icon: AspNetCoreImage,
+                  title: "ASP.NET Core"
+                },
+                {
+                  icon: MssqlImage,
+                  title: "Microsoft SQL server"
+                },
+              ]}
+              otherTechnologies={[
+                {
+                  icon: FigmaImage,
+                  title: "Figma"
+                }
+              ]}
+            />
+          </div>
+        </Modal>
+      }
     </>
   )
 }
