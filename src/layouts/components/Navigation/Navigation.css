@@ -38,7 +38,7 @@ nav {
 .navigation-close-button {
     text-align: right;
     opacity: 0;
-    visibility: collapse;
+    visibility: hidden;
     margin-top: 35px;
     margin-right: 30px;
     -webkit-animation: fadeIn .5s cubic-bezier(0.645, 0.045, 0.355, 1) 3s forwards;
