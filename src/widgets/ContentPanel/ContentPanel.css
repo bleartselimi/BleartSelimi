@@ -4,14 +4,22 @@
 }
 
 .content-panel-body {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
     align-items: flex-end;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     padding-bottom: 15px;
 }
 
 .content-panel-body-wrapper {
     height: 0;
+    -webkit-transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
     transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
     overflow: hidden;
 }
@@ -43,6 +51,8 @@
 .area-one-mask * {
     color: rgba(0, 0, 0, 0);
     background-color: rgba(0, 0, 0, 0);
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
     transition: all .3s;
 }
 
@@ -51,20 +61,32 @@
 }
 
 .content-panel-footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: flex-start;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     padding-top: 15px;
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
     transform: translateY(-100%);
 }
 
 .content-panel-line {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     overflow: hidden;
     position: absolute;
     top: 0px;
     left: 0px;
     right: 0px;
+    -webkit-transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
     transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
@@ -77,6 +99,14 @@
     width: 50%;
     background-color: rgb(var(--gray-one));
     opacity: 0;
+    -webkit-transition: left 1s cubic-bezier(0.645, 0.045, 0.355, 1),
+        right 1s cubic-bezier(0.645, 0.045, 0.355, 1),
+        background-color .3s cubic-bezier(0.645, 0.045, 0.355, 1),
+        opacity .5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition: left 1s cubic-bezier(0.645, 0.045, 0.355, 1),
+        right 1s cubic-bezier(0.645, 0.045, 0.355, 1),
+        background-color .3s cubic-bezier(0.645, 0.045, 0.355, 1),
+        opacity .5s cubic-bezier(0.645, 0.045, 0.355, 1);
     transition: left 1s cubic-bezier(0.645, 0.045, 0.355, 1),
         right 1s cubic-bezier(0.645, 0.045, 0.355, 1),
         background-color .3s cubic-bezier(0.645, 0.045, 0.355, 1),
@@ -91,47 +121,77 @@
     right: -50%;
 }
 
-.content-panel-container.active .content-panel-line::after  {
+.content-panel-container.active .content-panel-line::after {
     right: 0;
     opacity: 1;
 }
 
-.content-panel-container.active .content-panel-line::before  {
+.content-panel-container.active .content-panel-line::before {
     left: 0;
     opacity: 1;
 }
 
-.content-panel-container.active .area-one-mask  {
+.content-panel-container.active .area-one-mask {
+    -webkit-animation: fadeIn .7s cubic-bezier(0.645, 0.045, 0.355, 1) 1.3s forwards;
     animation: fadeIn .7s cubic-bezier(0.645, 0.045, 0.355, 1) 1.3s forwards;
 }
 
-.content-panel-container.active .content-panel-line  {
+.content-panel-container.active .content-panel-line {
+    -webkit-animation: lineAnimation 1s cubic-bezier(0.645, 0.045, 0.355, 1) 1s forwards;
     animation: lineAnimation 1s cubic-bezier(0.645, 0.045, 0.355, 1) 1s forwards;
 }
 
-.content-panel-container.active .content-panel-footer  {
+.content-panel-container.active .content-panel-footer {
+    -webkit-animation: contentPanelFooter 1s cubic-bezier(0.645, 0.045, 0.355, 1) 2s forwards;
     animation: contentPanelFooter 1s cubic-bezier(0.645, 0.045, 0.355, 1) 2s forwards;
+}
+
+@-webkit-keyframes lineAnimation {
+    from {
+        top: 0;
+    }
+
+    to {
+        top: calc(100% - 1px);
+    }
 }
 
 @keyframes lineAnimation {
     from {
         top: 0;
     }
+
     to {
         top: calc(100% - 1px);
     }
 }
 
-@keyframes contentPanelFooter {
+@-webkit-keyframes contentPanelFooter {
     from {
+        -webkit-transform: translateY(-100%);
         transform: translateY(-100%);
     }
+
     to {
+        -webkit-transform: translateY(0%);
+        transform: translateY(0%);
+    }
+}
+
+@keyframes contentPanelFooter {
+    from {
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+    }
+
+    to {
+        -webkit-transform: translateY(0%);
         transform: translateY(0%);
     }
 }
 
 @media screen and (max-width: 768px) {
+
     .content-panel-body .area-two,
     .content-panel-body .area-four {
         margin-left: unset;

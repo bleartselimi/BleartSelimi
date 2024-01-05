@@ -4,15 +4,22 @@
     left: 0;
     right: 0;
     bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     background-color: rgba(var(--white-one), 0.3);
     z-index: 99999;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     visibility: hidden;
     opacity: 0;
     padding: 30px;
     overflow-y: auto;
+    -webkit-animation: fadeIn .5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
     animation: fadeIn .5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards
 }
 
@@ -30,10 +37,16 @@
 }
 
 .modal .modal-close {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
     justify-content: flex-end;
     padding: 30px;
-    background-image: linear-gradient(to bottom, rgb(var(--black-one)), rgba(0,0,0,0));
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(var(--black-one))), to(rgba(0, 0, 0, 0)));
+    background-image: -o-linear-gradient(top, rgb(var(--black-one)), rgba(0, 0, 0, 0));
+    background-image: linear-gradient(to bottom, rgb(var(--black-one)), rgba(0, 0, 0, 0));
     position: sticky;
     top: -31px;
 }

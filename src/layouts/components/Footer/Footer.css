@@ -6,20 +6,34 @@ footer {
 
 .footer-wrapper {
     border-top: 1px solid rgb(var(--gray-one));
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     margin-top: 100px;
     padding: 40px 0px;
 }
 
 .footer-avatar {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
 .footer-social-media {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -29,6 +43,9 @@ footer {
 
 @media screen and (min-width: 0px) and (max-width: 576px) {
     .footer-wrapper {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         padding: 30px 0px;
         margin-top: 50px;

@@ -19,17 +19,25 @@
     position: absolute;
     left: 30px;
     right: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
 }
 
 .project-card-container-header {
     top: 30px;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: flex-start;
 }
 
 .project-card-container-footer {
     bottom: 30px;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
     align-items: flex-end;
 }
 
@@ -37,6 +45,8 @@
 .project-card-container-footer .pill {
     visibility: hidden;
     opacity: 0;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
     transition: all 0.3s;
 }
 
@@ -47,11 +57,16 @@
 .project-card-img {
     height: 100%;
     width: 100%;
+    -o-object-fit: cover;
     object-fit: cover;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
     transition: all 0.3s;
 }
 
 .project-card-container:hover .project-card-img {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
     transform: scale(1.1);
 }
 

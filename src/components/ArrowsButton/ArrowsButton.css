@@ -6,23 +6,30 @@
 
 .arrows-button-chevron {
     display: inline-block;
+    -webkit-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
     transition: all .3s ease-out;
 }
 
 .arrows-button:hover .arrows-button-chevron {
+    -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
 }
 
 .arrows-button:active .arrows-button-chevron-one {
+    -webkit-transform: translateX(7px) rotateY(180deg);
     transform: translateX(7px) rotateY(180deg);
 }
 
 .arrows-button:active .arrows-button-chevron-two {
+    -webkit-transform: translateX(-7px) rotateY(180deg);
     transform: translateX(-7px) rotateY(180deg);
 }
 
 @media (hover: none) {
     .arrows-button:hover .arrows-button-chevron {
+        -webkit-transform: unset;
+        -ms-transform: unset;
         transform: unset;
     }
 }

@@ -5,6 +5,7 @@
   margin: 0;
   text-decoration: none;
   list-style: none;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -19,7 +20,12 @@ body {
 }
 
 body {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -27,7 +33,12 @@ body {
   width: 100%;
   max-width: 1840px;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -38,7 +49,7 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background:rgb(var(--gray-one));
+  background: rgb(var(--gray-one));
 }
 
 /* Handle */
@@ -48,7 +59,7 @@ body {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background:rgb(var(--white-one));
+  background: rgb(var(--white-one));
 }
 
 .lh-100 {
@@ -76,7 +87,7 @@ body {
 }
 
 button {
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
   border-style: none;
 }
 
@@ -658,4 +669,5 @@ button {
 .mb-100px {
   margin-bottom: 100px;
 }
+
 /* Margin - END */
