@@ -12,9 +12,12 @@ nav {
 }
 
 .navigation-links-container {
+    height: 100%;
     width: 100%;
     z-index: 9999;
     margin: auto 0;
+    display: flex;
+    flex-direction: column;
     overflow-y: auto;
 }
 
@@ -22,9 +25,8 @@ nav {
     text-align: right;
     opacity: 0;
     visibility: collapse;
-    position: absolute;
-    top: 35px;
-    right: 30px;
+    margin-top: 35px;
+    margin-right: 30px;
     animation: fadeIn .5s cubic-bezier(0.645, 0.045, 0.355, 1) 3s forwards
 }
 
@@ -60,8 +62,9 @@ nav {
 .navigation-links-wrapper {
     z-index: 999;
     width: 100%;
-    padding: 100px;
+    padding: 60px;
     opacity: 1;
+    margin: auto 0;
 }
 
 .navigation-content-panel {

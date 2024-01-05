@@ -87,7 +87,7 @@ const LinkMobile = () => {
               overview={
                 <>
                   <p className="fs-18px color-silver m-semibold lh-160">
-                    I developed Link, a social media mobile app using React Native, Redux, and React Context, the app leverages Axios for seamless communication with an ASP.NET backend powered by MSSQL, Entity Framework and MediatR while using Swagger for API Documentation. Authentication is fortified by JWT, ensuring secure connections. Figma sculpted the design, while functionalities like liking, commenting, sharing, saving posts, searching friends, and managing user profiles redefine the social experience.
+                    I developed Link, a social media mobile app using React Native, Redux, and React Context. It leverages Axios for seamless communication with an ASP.NET backend powered by MSSQL, Entity Framework and MediatR while using Swagger for API Documentation. Authentication is fortified by JWT, ensuring secure connections. Figma sculpted the design, while functionalities like liking, commenting, sharing, saving posts, searching friends, and managing user profiles redefine the social experience.
                   </p>
                 </>
               }
@@ -103,11 +103,7 @@ const LinkMobile = () => {
                 {
                   icon: AxiosImage,
                   title: "Axios"
-                },
-                {
-                  icon: CssImage,
-                  title: "CSS"
-                },
+                }
               ]}
               backendTechnologies={[
                 {
@@ -123,17 +119,17 @@ const LinkMobile = () => {
                   title: "MediatR"
                 },
                 {
+                  icon: SwaggerImage,
+                  title: "Swagger"
+                },
+                {
                   icon: JwtImage,
                   title: "JWT Bearer Authentication"
                 },
                 {
                   icon: MssqlImage,
                   title: "Microsoft SQL server"
-                },
-                {
-                  icon: SwaggerImage,
-                  title: "Swagger"
-                },
+                }
               ]}
               otherTechnologies={[
                 {
@@ -145,7 +141,6 @@ const LinkMobile = () => {
                 description:
                   <>
                     <p className="fs-18px color-silver m-semibold lh-160">
-
                       Within the framework of Link, I embraced Onion Architecture with MediatR, orchestrating a seamless blend of efficiency and scalability. The project's architecture unfolds across four distinct layers:
                     </p>
                     <br />
@@ -158,7 +153,7 @@ const LinkMobile = () => {
                         <span className="color-golden-haze">Core:</span> Holds entities and enums at its core, establishing the project's foundational elements.
                       </li>
                       <li>
-                        <span className="color-golden-haze">Infrastructure:</span> Home to DbContext and migrations intricately tied to Entity Framework, lays the groundwork for robust data management.
+                        <span className="color-golden-haze">Infrastructure:</span> Home to DbContext and migrations directly tied to Entity Framework, lays the groundwork for robust data management.
                       </li>
                       <li>
                         <span className="color-golden-haze">Services:</span> A testament to the CQRS(Command and Query Responsibility Segregation) pattern, hosts a symphony of handlers, orchestrating a harmonious integration of functionalities.

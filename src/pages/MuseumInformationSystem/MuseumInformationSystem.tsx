@@ -101,16 +101,13 @@ const MuseumInformationSystem = () => {
               overview={
                 <>
                   <p className="fs-18px color-silver m-semibold lh-160">
-                    I developed the Museum Information System, employing Windows Forms for the views and ASP.NET for the robust backend infrastructure. The custom design, crafted using Figma, boasts a responsive layout to diverse screen sizes, ensuring an optimal user experience.
+                    I developed the Museum Information System a desktop app for windows, employing Windows Forms for the views and ASP.NET for the robust backend infrastructure. The custom design, crafted using Figma, boasts a responsive layout to diverse screen sizes, ensuring an optimal user experience.
                     <br />
                     <br />
-                    Utilizing stored procedures in MSSQL, the system seamlessly manipulates the database using ADO.NET, with the project structured into distinct layers: Business Logic Layer (BLL), Business Object (BO), and Data Access Layer (DAL) in adherence to ASP.NET best practices.
+                    Utilizing stored procedures in MSSQL, the system seamlessly manipulates the database using ADO.NET, with the project structured into distinct layers: Business Logic Layer (BLL), Business Object (BO), and Data Access Layer (DAL).
                     <br />
                     <br />
                     This comprehensive system comprises two modules. The Client Module provides users with access to the museum map, an informative museum about page, an exhibition list detailing upcoming events, and a powerful search functionality for museum objects. Each object features a detailed description and is conveniently located on the map for user reference.
-                    <br />
-                    <br />
-                    The meticulous implementation of Windows Forms, ASP.NET, and MSSQL in conjunction with Figma's custom design results in an efficient and user-friendly Museum Information System, offering a seamless experience for museum visitors and administrators alike."
                   </p>
                 </>
               }
@@ -144,19 +141,19 @@ const MuseumInformationSystem = () => {
                 description:
                   <>
                     <p className="fs-18px color-silver m-semibold lh-160">
-                      I developed a Museum Information System with a well-defined architecture that includes:
+                      I developed the Museum Information System with a well-defined architecture that includes:
                     </p>
                     <br />
                     <br />
                     <ul className="fs-18px color-silver m-semibold lh-160">
                       <li>
-                        <span className="color-golden-haze">The Business Logic Layer (BLL):</span> Serves as the core of the application, housing the business logic that orchestrates the flow of data and operations. This layer ensures the integrity of the application's functionality, handling tasks such as processing user inputs, coordinating data retrieval and manipulation, and managing the overall application behavior.
+                        <span className="color-golden-haze">Business Logic Layer (BLL):</span> Serves as the core of the application, housing the business logic that orchestrates the flow of data and operations. This layer ensures the integrity of the application's functionality, handling tasks such as processing user inputs, coordinating data retrieval and manipulation, and managing the overall application behavior.
                       </li>
                       <li>
-                        <span className="color-golden-haze">The Business Object (BO):</span> Encapsulates the application's models, defining the structure and attributes of the entities within the system. These models represent the core data entities, such as museum objects, exhibitions, user profiles etc. The BO layer acts as a bridge between the BLL and the Data Access Layer (DAL), providing a clear and standardized representation of the data entities used throughout the application.
+                        <span className="color-golden-haze">Business Object (BO):</span> Encapsulates the application's models, defining the structure and attributes of the entities within the system. These models represent the core data entities, such as museum objects, exhibitions, user profiles etc. The BO layer acts as a bridge between the BLL and the Data Access Layer (DAL), providing a clear and standardized representation of the data entities used throughout the application.
                       </li>
                       <li>
-                        <span className="color-golden-haze">The Data Access Layer (DAL):</span> Is responsible for managing the communication with the database. It holds the configuration details and methods needed to connect to the database, execute queries, and retrieve or update data. By centralizing database interactions in the DAL, the application benefits from modularity and maintainability. Any changes to the database structure or access methods can be localized to this layer, minimizing the impact on the rest of the application.
+                        <span className="color-golden-haze">Data Access Layer (DAL):</span> Is responsible for managing the communication with the database. It holds the configuration details needed to connect to the database, execute queries, and retrieve or update data. By centralizing database interactions in the DAL, the application benefits from modularity and maintainability. Any changes to the database structure or access methods can be localized to this layer, minimizing the impact on the rest of the application.
                       </li>
                       <br />
                     </ul>

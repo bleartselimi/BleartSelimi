@@ -25,7 +25,7 @@ const Grocha = () => {
           hasAreaOneMask={true}
           className='content-panel-space-one project-content-panel'
           areaOne={
-            <h1 className='fs-64px color-white lh-100 text-shadow-white'>GROCHA, A CHAT<br />APPLICATION</h1>
+            <h1 className='fs-64px color-white lh-100 text-shadow-white'>GROCHA,<br />A CHAT APPLICATION</h1>
           }
           areaFour={
             <TechnicalDetailsButton onClick={() => setOpened(true)} />
@@ -139,7 +139,7 @@ const Grocha = () => {
                 description:
                   <>
                     <p className="fs-18px color-silver m-semibold lh-160">
-                      I designed and implemented a microservices architecture comprising five key components:
+                      I designed and implemented a microservice architecture comprising five key components:
                     </p>
                     <br />
                     <br />

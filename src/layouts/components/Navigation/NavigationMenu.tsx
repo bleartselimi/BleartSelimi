@@ -32,14 +32,14 @@ const NavigationMenu = () => {
         <div className="navigation" ref={navigationRef}>
             <Noise />
             <img className="tv-image" src={Tv} alt="tv image" />
-            <div className="navigation-close-button">
-                <ArrowsButton onClick={navigationState} text="CLOSE MENU" />
-            </div>
             <div className="navigation-links-container">
+                <div className="navigation-close-button">
+                    <ArrowsButton onClick={navigationState} text="CLOSE MENU" />
+                </div>
                 <div className="navigation-links-wrapper">
                     <div onClick={() => {
                         console.log(window.location.hash);
-                        
+
                         if (window.location.hash !== "" && window.location.hash !== "#/") {
                             transitionIn("/", true)
                         }

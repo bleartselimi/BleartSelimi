@@ -42,7 +42,7 @@ const LinkWeb = () => {
               <h1 className='fs-64px color-white lh-100 text-shadow-white'>About the<br />project</h1>
             }
             areaTwo={
-              <p className='project-content-panel-area-two fs-18px color-silver lh-150 m-semibold'>I developed Link, a mobile web app designed to seamlessly foster and strengthen connections. Link empowers users to effortlessly add or remove connections, share memorable moments through posts, like them, engage in meaningful conversations through comments, and privately connect via a secure chat feature.</p>
+              <p className='project-content-panel-area-two fs-18px color-silver lh-150 m-semibold'>I developed Link, a web app designed to seamlessly foster and strengthen connections. Link empowers users to effortlessly add or remove connections, share memorable moments through posts, like them, engage in meaningful conversations through comments, and privately connect via a secure chat feature.</p>
             }
             areaFour={
               <TechnicalDetailsButton onClick={() => setOpened(true)} />
@@ -154,19 +154,23 @@ const LinkWeb = () => {
                   title: "MediatR"
                 },
                 {
+                  icon: SwaggerImage,
+                  title: "Swagger"
+                },
+                {
                   icon: JwtImage,
                   title: "JWT Bearer Authentication"
                 },
                 {
                   icon: MssqlImage,
                   title: "Microsoft SQL server"
-                },
-                {
-                  icon: SwaggerImage,
-                  title: "Swagger"
-                },
+                }
               ]}
               otherTechnologies={[
+                {
+                  icon: FigmaImage,
+                  title: "Figma"
+                },
                 {
                   icon: AzureImage,
                   title: "Azure"
@@ -174,10 +178,6 @@ const LinkWeb = () => {
                 {
                   icon: AwsImage,
                   title: "Amazon Web Services"
-                },
-                {
-                  icon: FigmaImage,
-                  title: "Figma"
                 }
               ]}
               architecture={{
@@ -196,7 +196,7 @@ const LinkWeb = () => {
                         <span className="color-golden-haze">Core:</span> Holds entities and enums at its core, establishing the project's foundational elements.
                       </li>
                       <li>
-                        <span className="color-golden-haze">Infrastructure:</span> Home to DbContext and migrations intricately tied to Entity Framework, lays the groundwork for robust data management.
+                        <span className="color-golden-haze">Infrastructure:</span> Home to DbContext and migrations directly tied to Entity Framework, lays the groundwork for robust data management.
                       </li>
                       <li>
                         <span className="color-golden-haze">Services:</span> A testament to the CQRS(Command and Query Responsibility Segregation) pattern, hosts a symphony of handlers, orchestrating a harmonious integration of functionalities.
