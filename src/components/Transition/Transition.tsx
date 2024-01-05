@@ -19,7 +19,7 @@ const Transition = () => {
             dispatch({ type: "GLOBAL_LOADING_STATE", payload: false });
             slideTopRef.current!.style.transform = "translateY(calc(0% - 1px))";
             setTimeout(() => {
-                document.querySelector("body")!.scrollTop = 0;
+                document.body.scrollTop = 0;
                 menuOpend(false);
                 transitionOut(true);
                 navigate(state.transitionIn.to);
