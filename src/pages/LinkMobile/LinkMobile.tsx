@@ -1,4 +1,4 @@
-import { LinkMobileCoverImage, LinkMobileImageFive, LinkMobileImageFour, LinkMobileImageOne, LinkMobileImageEight, LinkMobileImageNine, LinkMobileImageSeven, LinkMobileImageSix, LinkMobileImageThree, LinkMobileImageTwo, ReactNativeImage, ReduxImage, AxiosImage, CssImage, FigmaImage, AspNetCoreImage, EntityFrameworkImage, MssqlImage, SwaggerImage, MediatrImage, JwtImage } from "../../assets"
+import { LinkMobileCoverImage, LinkMobileImageFive, LinkMobileImageFour, LinkMobileImageOne, LinkMobileImageEight, LinkMobileImageNine, LinkMobileImageSeven, LinkMobileImageSix, LinkMobileImageThree, LinkMobileImageTwo, ReactNativeImage, ReduxImage, AxiosImage, FigmaImage, AspNetCoreImage, EntityFrameworkImage, MssqlImage, SwaggerImage, MediatrImage, JwtImage } from "../../assets"
 import { Modal, TechnicalDetailsButton } from "../../components"
 import { ContentPanel, OtherProjects, TechnicalDetails } from "../../widgets"
 import { useEffect, useRef, useState } from "react";
