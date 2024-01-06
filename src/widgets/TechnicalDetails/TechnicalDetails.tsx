@@ -66,15 +66,13 @@ const TechnicalDetails = ({ overview, frontendTechnologies, backendTechnologies,
                 <>
                     <h1 className="technical-details-title fs-64px color-white mt-100px mb-20px">Architecture</h1>
                     {architecture.description}
-                    <div className="technologies-wrapper">
-                        {
-                            architecture.images?.map((img, i) => {
-                                return (
-                                    <img key={i} src={img} alt="" />
-                                )
-                            })
-                        }
-                    </div>
+                    {
+                        architecture.images?.map((img, i) => {
+                            return (
+                                <img className="technical-details-image mt-20px" key={i} src={img} alt="" />
+                            )
+                        })
+                    }
                 </>
             }
         </div>

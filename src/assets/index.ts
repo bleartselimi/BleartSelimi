@@ -47,6 +47,7 @@ import BootstrapImage from "./images/tenchnologies/bootstrap.png";
 //Images for Grocha - START
 import GrochaCardImage from "./images/grocha/card-image.jpg";
 import GrochaCoverImage from "./images/grocha/project-image-cover.jpg";
+import GrochaArchitectureImage from "./images/grocha/grocha-architecture.png";
 //Images for Grocha - END
 
 //Images for Link Mobile - START
@@ -172,6 +173,7 @@ export {
     //Grocha - START
     GrochaCardImage,
     GrochaCoverImage,
+    GrochaArchitectureImage,
     //Grocha - END
 
     //Link Mobile - START

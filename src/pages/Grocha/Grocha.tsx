@@ -1,4 +1,4 @@
-import { AspNetCoreImage, AxiosImage, CssImage, FigmaImage, GrochaCoverImage, JwtImage, MongodbImage, MysqlImage, ReactImage, RedisImage, SeriologImage, SignalrImage, SocketioImage, SwaggerImage, TypescriptImage, ViteImage } from "../../assets"
+import { AspNetCoreImage, AxiosImage, CssImage, FigmaImage, GrochaCoverImage, GrochaArchitectureImage, JwtImage, MongodbImage, MysqlImage, ReactImage, RedisImage, SeriologImage, SignalrImage, SocketioImage, SwaggerImage, TypescriptImage, ViteImage } from "../../assets"
 import { Modal, TechnicalDetailsButton } from "../../components"
 import { ContentPanel, OtherProjects, TechnicalDetails } from "../../widgets"
 import { useEffect, useRef, useState } from "react";
@@ -178,7 +178,7 @@ const Grocha = () => {
                       This architecture aims for a scalable, modular, and maintainable system, ensuring optimal performance, robust logging, and efficient data storage across microservices.
                     </p>
                   </>,
-                images: [""]
+                images: [GrochaArchitectureImage]
               }}
             />
           </div>
