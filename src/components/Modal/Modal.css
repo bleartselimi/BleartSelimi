@@ -20,6 +20,7 @@
     -webkit-animation: fadeIn .5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
     animation: fadeIn .5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
     height: 100%;
+    width: 100%;
 }
 
 .modal {
