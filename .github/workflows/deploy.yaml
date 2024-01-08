@@ -31,6 +31,9 @@ jobs:
           name: production-files
           path: ./build
 
+      - name: Create CNAME file
+        run: echo "bleartselimi.com" > CNAME
+
   deploy:
     name: Deploy
     needs: build
