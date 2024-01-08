@@ -15,7 +15,8 @@ jobs:
         uses: actions/checkout@v2
         
       - name: Create CNAME file
-        run: echo "bleartselimi.com" > CNAME
+        run: |
+          echo "bleartselimi.com" > CNAME
           cat CNAME
 
       - name: Setup Node
