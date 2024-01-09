@@ -43,7 +43,7 @@ const ProblemetNprishtine = () => {
             }
             areaTwo={
               <p className='project-content-panel-area-two fs-18px color-silver lh-150 m-semibold'>
-                Designed and built a simple Android application named "Problement n'Prishtine" which translates to "Problems in Prishtina" using Kotlin, empowering citizens to report issues within the city of Prishtina seamlessly.
+                Designed and built a simple Android application named "Problemet n'Prishtine" which translates to "Problems in Prishtina" using Kotlin, empowering citizens to report issues within the city of Prishtina seamlessly.
               </p>
             }
             areaFour={
