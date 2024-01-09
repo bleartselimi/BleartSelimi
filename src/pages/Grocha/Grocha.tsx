@@ -1,4 +1,4 @@
-import { AspNetCoreImage, AxiosImage, CssImage, FigmaImage, GrochaCoverImage, GrochaArchitectureImage, JwtImage, MongodbImage, MysqlImage, ReactImage, RedisImage, SeriologImage, SignalrImage, SocketioImage, SwaggerImage, TypescriptImage, ViteImage } from "../../assets"
+import { AspNetCoreImage, AxiosImage, CssImage, FigmaImage, GrochaCoverImage, GrochaArchitectureImage, JwtImage, MongodbImage, MysqlImage, ReactImage, RedisImage, SeriologImage, SignalrImage, SocketioImage, SwaggerImage, TypescriptImage, ViteImage, AdonetImage } from "../../assets"
 import { Modal, TechnicalDetailsButton } from "../../components"
 import { ContentPanel, OtherProjects, TechnicalDetails } from "../../widgets"
 import { useEffect, useRef, useState } from "react";
@@ -99,6 +99,10 @@ const Grocha = () => {
                 {
                   icon: AspNetCoreImage,
                   title: "ASP.NET Core"
+                },
+                {
+                  icon: AdonetImage,
+                  title: "ADO.NET"
                 },
                 {
                   icon: JwtImage,
