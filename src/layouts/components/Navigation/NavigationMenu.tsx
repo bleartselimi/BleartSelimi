@@ -37,25 +37,28 @@ const NavigationMenu = () => {
                     <ArrowsButton onClick={navigationState} text="CLOSE MENU" />
                 </div>
                 <div className="navigation-links-wrapper">
-                    <div onClick={() => {
-                        console.log(window.location.hash);
+                    {
+                        window.location.hash !== "" && window.location.hash !== "#/" &&
+                        <div onClick={() => {
+                            console.log(window.location.hash);
 
-                        if (window.location.hash !== "" && window.location.hash !== "#/") {
-                            transitionIn("/", true)
-                        }
-                    }}>
-                        <ContentPanel
-                            className="navigation-content-panel"
-                            hasAreaOneMask={true}
-                            areaOne={
-                                <h1 className='navigation-link-title fs-64px color-white lh-100 text-shadow-white'>PORTFOLIO</h1>
+                            if (window.location.hash !== "" && window.location.hash !== "#/") {
+                                transitionIn("/", true)
                             }
-                            areaTwo={
-                                <ArrowTopRightIcon className="navigation-link-icon" width={40} height={40} fill="#ffffff" />
-                            }
-                            delay={0.5}
-                        />
-                    </div>
+                        }}>
+                            <ContentPanel
+                                className="navigation-content-panel"
+                                hasAreaOneMask={true}
+                                areaOne={
+                                    <h1 className='navigation-link-title fs-64px color-white lh-100 text-shadow-white'>PORTFOLIO</h1>
+                                }
+                                areaTwo={
+                                    <ArrowTopRightIcon className="navigation-link-icon" width={40} height={40} fill="#ffffff" />
+                                }
+                                delay={0.5}
+                            />
+                        </div>
+                    }
                     <Link to="https://www.linkedin.com/in/bleart-selimi-677338224/" target="_blank">
                         <ContentPanel
                             className="navigation-content-panel"
