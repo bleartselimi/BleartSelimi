@@ -39,7 +39,10 @@ const Grocha = () => {
             hasAreaOneMask={true}
             className='project-about-content-panel'
             areaOne={
-              <h1 className='fs-64px color-white lh-100 text-shadow-white'>About the project<br />(project in progress) </h1>
+              <>
+                <h1 className='fs-64px color-white lh-100 text-shadow-white'>About the project</h1>
+                <h3 className='fs-20px color-white lh-100 text-shadow-white'>(project in progress) </h3>
+              </>
             }
             areaTwo={
               <p className='project-content-panel-area-two fs-18px color-silver lh-150 m-semibold'>Crafted and continue to evolve Grocha, a versatile group chat application. I designed the app's layout and interface using Figma, ensuring a seamless user experience. The application offers a range of features, including real-time individual/group chats, friend management, and effortless media file sharing.</p>
