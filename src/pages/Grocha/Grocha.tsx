@@ -40,8 +40,8 @@ const Grocha = () => {
             className='project-about-content-panel'
             areaOne={
               <>
-                <h1 className='fs-64px color-white lh-100 text-shadow-white'>About the project</h1>
-                <h3 className='fs-20px color-white lh-100 text-shadow-white'>(project in progress) </h3>
+                <h1 className='fs-64px color-white lh-100 text-shadow-white mb-15px'>About the<br />project</h1>
+                <h3 className='fs-20px color-white lh-100 text-shadow-white'>(project in progress)</h3>
               </>
             }
             areaTwo={
