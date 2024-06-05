@@ -1,6 +1,6 @@
 import "./OtherProjects.css";
 import projectsList from '../../assets/json/Projects.json';
-import { GrochaCardImage, LinkMobileCardImage, LinkWebCardImage, MobileShopCardImage, MuseumInformationSystemCardImage, ProblementNprishtineCardImage } from "../../assets";
+import { ChatlyCardImage, LinkMobileCardImage, LinkWebCardImage, MobileShopCardImage, MuseumInformationSystemCardImage, ProblementNprishtineCardImage } from "../../assets";
 import { ProjectCard } from "..";
 import { useLocation } from "react-router";
 
@@ -8,7 +8,7 @@ const OtherProjects = () => {
 
     const { pathname } = useLocation();
 
-    const images: string[] = [GrochaCardImage, LinkMobileCardImage, LinkWebCardImage, MuseumInformationSystemCardImage, MobileShopCardImage, ProblementNprishtineCardImage];
+    const images: string[] = [ChatlyCardImage, LinkMobileCardImage, LinkWebCardImage, MuseumInformationSystemCardImage, MobileShopCardImage, ProblementNprishtineCardImage];
 
     return (
         <>

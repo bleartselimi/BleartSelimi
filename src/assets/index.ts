@@ -44,11 +44,11 @@ import AdonetImage from "./images/tenchnologies/adonet.png";
 import BootstrapImage from "./images/tenchnologies/bootstrap.png";
 // Technologies - END
 
-//Images for Grocha - START
-import GrochaCardImage from "./images/grocha/card-image.jpg";
-import GrochaCoverImage from "./images/grocha/project-image-cover.jpg";
-import GrochaArchitectureImage from "./images/grocha/grocha-architecture.png";
-//Images for Grocha - END
+//Images for Chatly - START
+import ChatlyCardImage from "./images/chatly/card-image.jpg";
+import ChatlyCoverImage from "./images/chatly/project-image-cover.jpg";
+import ChatlyArchitectureImage from "./images/chatly/chatly-architecture.png";
+//Images for Chatly - END
 
 //Images for Link Mobile - START
 import LinkMobileCardImage from "./images/link-mobile/card-image.jpg";
@@ -170,11 +170,11 @@ export {
     BootstrapImage,
     // Technologies - END
 
-    //Grocha - START
-    GrochaCardImage,
-    GrochaCoverImage,
-    GrochaArchitectureImage,
-    //Grocha - END
+    //Chatly - START
+    ChatlyCardImage,
+    ChatlyCoverImage,
+    ChatlyArchitectureImage,
+    //Chatly - END
 
     //Link Mobile - START
     LinkMobileCardImage,

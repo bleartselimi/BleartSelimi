@@ -1,9 +1,9 @@
 {
     "projects": [
         {
-            "title": "Grocha, a chat<br />application",
+            "title": "Chatly, a chat<br />application",
             "year": 2024,
-            "link": "/grocha"
+            "link": "/chatly"
         },
         {
             "title": "Link, a social network<br />for Mobile",

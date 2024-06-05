@@ -1,10 +1,10 @@
-import { AspNetCoreImage, AxiosImage, CssImage, FigmaImage, GrochaCoverImage, GrochaArchitectureImage, JwtImage, MongodbImage, MysqlImage, ReactImage, RedisImage, SeriologImage, SignalrImage, SocketioImage, SwaggerImage, TypescriptImage, ViteImage, AdonetImage } from "../../assets"
+import { AspNetCoreImage, AxiosImage, CssImage, FigmaImage, ChatlyCoverImage, ChatlyArchitectureImage, JwtImage, MongodbImage, MysqlImage, ReactImage, RedisImage, SeriologImage, SignalrImage, SocketioImage, SwaggerImage, TypescriptImage, ViteImage, AdonetImage } from "../../assets"
 import { Modal, TechnicalDetailsButton } from "../../components"
 import { ContentPanel, OtherProjects, TechnicalDetails } from "../../widgets"
 import { useEffect, useRef, useState } from "react";
 import { useGeneralContext } from "../../hooks/useGeneralContext";
 
-const Grocha = () => {
+const Chatly = () => {
 
   const { state } = useGeneralContext();
 
@@ -25,7 +25,7 @@ const Grocha = () => {
           hasAreaOneMask={true}
           className='content-panel-space-one project-content-panel'
           areaOne={
-            <h1 className='fs-64px color-white lh-100 text-shadow-white'>GROCHA,<br />A CHAT APPLICATION</h1>
+            <h1 className='fs-64px color-white lh-100 text-shadow-white'>CHATLY,<br />A CHAT APPLICATION</h1>
           }
           areaFour={
             <TechnicalDetailsButton onClick={() => setOpened(true)} />
@@ -33,7 +33,7 @@ const Grocha = () => {
         />
         <div className="project-container" ref={projectContainer}>
           <div className="project-cover-image-wrapper">
-            <img src={GrochaCoverImage} alt="Grocha Project. Cover image." />
+            <img src={ChatlyCoverImage} alt="Chatly Project. Cover image." />
           </div>
           <ContentPanel
             hasAreaOneMask={true}
@@ -42,7 +42,7 @@ const Grocha = () => {
               <h1 className='fs-64px color-white lh-100 text-shadow-white'>About the<br />project</h1>
             }
             areaTwo={
-              <p className='project-content-panel-area-two fs-18px color-silver lh-150 m-semibold'>Crafted and continue to evolve Grocha, a versatile group chat application. I designed the app's layout and interface using Figma, ensuring a seamless user experience. The application offers a range of features, including real-time individual/group chats, friend management, and effortless media file sharing.</p>
+              <p className='project-content-panel-area-two fs-18px color-silver lh-150 m-semibold'>Crafted and continue to evolve Chatly, a versatile group chat application. I designed the app's layout and interface using Figma, ensuring a seamless user experience. The application offers a range of features, including real-time individual/group chats, friend management, and effortless media file sharing.</p>
             }
             areaFour={
               <TechnicalDetailsButton onClick={() => setOpened(true)} />
@@ -59,12 +59,12 @@ const Grocha = () => {
               overview={
                 <>
                   <p className="fs-18px color-silver m-semibold lh-160">
-                    I designed and currently develop Grocha(Gro-group, cha-chat), a comprehensive group chat application. Utilizing Figma, I
+                    I designed and currently develop Chatly(Gro-group, cha-chat), a comprehensive group chat application. Utilizing Figma, I
                     planned the app's layout and interface. For a robust front-end, I employed React + Vite + TypeScript.
                     <br />
                     The backend, built on ASP.NET Core, includes various libraries for authentication and logging. The database
                     utilizes Redis for quick caching, MySQL for structured data, and MongoDB for seamless chat message
-                    management. Grocha offers features like real-time individual/group chats, friend management, and easy
+                    management. Chatly offers features like real-time individual/group chats, friend management, and easy
                     media file sharing.
                   </p>
                 </>
@@ -182,7 +182,7 @@ const Grocha = () => {
                       This architecture aims for a scalable, modular, and maintainable system, ensuring optimal performance, robust logging, and efficient data storage across microservices.
                     </p>
                   </>,
-                images: [GrochaArchitectureImage]
+                images: [ChatlyArchitectureImage]
               }}
             />
           </div>
@@ -192,4 +192,4 @@ const Grocha = () => {
   )
 }
 
-export default Grocha;
+export default Chatly;

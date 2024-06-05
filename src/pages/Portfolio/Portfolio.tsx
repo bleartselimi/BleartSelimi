@@ -3,7 +3,7 @@ import { LinkedinButton } from '../../components';
 import { ContentPanel, ProjectCard } from '../../widgets';
 import projectsList from '../../assets/json/Projects.json';
 import {
-  GrochaCardImage,
+  ChatlyCardImage,
   LinkMobileCardImage,
   LinkWebCardImage,
   MuseumInformationSystemCardImage,
@@ -15,7 +15,7 @@ import { useGeneralContext } from '../../hooks/useGeneralContext';
 
 const Portfolio = () => {
 
-  const images: string[] = [GrochaCardImage, LinkMobileCardImage, LinkWebCardImage, MuseumInformationSystemCardImage, MobileShopCardImage, ProblementNprishtineCardImage];
+  const images: string[] = [ChatlyCardImage, LinkMobileCardImage, LinkWebCardImage, MuseumInformationSystemCardImage, MobileShopCardImage, ProblementNprishtineCardImage];
   
   const { state } = useGeneralContext();
 

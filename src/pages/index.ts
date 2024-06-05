@@ -1,4 +1,4 @@
-import Grocha from "./Grocha/Grocha";
+import Chatly from "./Chatly/Chatly";
 import Portfolio from "./Portfolio/Portfolio";
 import LinkMobile from "./LinkMobile/LinkMobile";
 import LinkWeb from "./LinkWeb/LinkWeb";
@@ -9,7 +9,7 @@ import NotFound from "./NotFound/NotFound";
 
 export {
     Portfolio,
-    Grocha,
+    Chatly,
     LinkMobile,
     LinkWeb,
     MuseumInformationSystem,
