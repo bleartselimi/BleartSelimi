@@ -7,6 +7,11 @@ import MobileShop from "./MobileShop/MobileShop";
 import ProblemetNprishtine from "./ProblemetNprishtine/ProblemetNprishtine";
 import NotFound from "./NotFound/NotFound";
 
+// Blogs - START
+import Blogs from "./Blog/Blogs";
+import BlogOne from "./Blog/Blogs/BlogOne";
+// Blogs - END
+
 export {
     Portfolio,
     Chatly,
@@ -15,5 +20,9 @@ export {
     MuseumInformationSystem,
     MobileShop,
     ProblemetNprishtine,
-    NotFound
+    NotFound,
+    // Blogs - START
+    Blogs,
+    BlogOne,
+    // Blogs - END 
 }
