@@ -1,4 +1,4 @@
-import { AspNetCoreImage, AxiosImage, CssImage, FigmaImage, ChatlyCoverImage, ChatlyArchitectureImage, JwtImage, MongodbImage, MysqlImage, ReactImage, RedisImage, SeriologImage, SignalrImage, SocketioImage, SwaggerImage, TypescriptImage, ViteImage, AdonetImage } from "../../assets"
+import { AspNetCoreImage, AxiosImage, CssImage, FigmaImage, ChatlyCoverImage, ChatlyArchitectureImage, JwtImage, MongodbImage, MysqlImage, RedisImage, SeriologImage, SignalrImage, SocketioImage, SwaggerImage, TypescriptImage,AdonetImage, NextjsImage } from "../../assets"
 import { Modal, TechnicalDetailsButton } from "../../components"
 import { ContentPanel, OtherProjects, TechnicalDetails } from "../../widgets"
 import { useEffect, useRef, useState } from "react";
@@ -74,12 +74,8 @@ const Chatly = () => {
               }
               frontendTechnologies={[
                 {
-                  icon: ReactImage,
-                  title: "React"
-                },
-                {
-                  icon: ViteImage,
-                  title: "Vite"
+                  icon: NextjsImage,
+                  title: "Next.js"
                 },
                 {
                   icon: TypescriptImage,
@@ -159,9 +155,6 @@ const Chatly = () => {
                       </li>
                       <li>
                         <span className="color-golden-haze">ConnectionHub:</span> Managing user connections, friendships, and requests.
-                      </li>
-                      <li>
-                        <span className="color-golden-haze">Media Handling:</span> Dedicated to file management, this microservice utilizes efficient handling of media files.
                       </li>
                       <li>
                         <span className="color-golden-haze">Analytics:</span> This microservice is responsible for collecting and analyzing user-related data for seamless expansion and maintenance.

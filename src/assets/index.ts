@@ -13,6 +13,7 @@ import Tv from "./images/other/tv.png";
 // Images - END
 
 // Technologies - END
+import NextjsImage from "./images/tenchnologies/nextjs.png";
 import ReactImage from "./images/tenchnologies/react.png";
 import ReactNativeImage from "./images/tenchnologies/react-native.png";
 import ReduxImage from "./images/tenchnologies/redux.png";
@@ -139,6 +140,7 @@ export {
     Tv,
 
     // Technologies - START
+    NextjsImage,
     ReactImage,
     ReactNativeImage,
     ReduxImage,
