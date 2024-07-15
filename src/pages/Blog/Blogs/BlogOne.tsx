@@ -50,7 +50,11 @@ const BlogOne = () => {
                         So in this blog, we will see how to implement HTTP-only cookies using Next.js and ASP.NET Core to enhance the security of JWT tokens.
                     </p>
                     <hr style={{ opacity: .3 }} className="my-50px" />
-                    <h1 className="color-white m-black fs-30px mb-10px">Next.js setup</h1>
+                    <h1 className="color-white m-black fs-30px">Next.js setup (v14.2.3)</h1>
+                    <p className="color-white m-medium fs-18px color-silver lh-150 mt-20px">Install Axios package</p>
+                    <div className="important-box mb-20px mt-10px">
+                        npm i axios
+                    </div>
                     <p className="color-white m-medium fs-18px color-silver lh-150">
                         We will be using <a className="color-golden-haze" href="HTTPs://axios-HTTP.com/docs/intro" target="_blank">Axios</a> for the HTTP client. For Axios, we need to configure a few things. First, we need to create a generic Axios instance that contains the configurations for the base URL, headers, and withCredentials.
                         <br />
@@ -150,7 +154,98 @@ const BlogOne = () => {
                     </div>
                 </div>
                 <hr style={{ opacity: .3 }} className="my-50px" />
-                <h1 className="color-white m-black fs-30px mb-10px">ASP.NET Core setup</h1>
+                <h1 className="color-white m-black fs-30px">ASP.NET Core setup (v8.0)</h1>
+                <p className="color-white m-medium fs-18px color-silver lh-150 mt-20px">Install JWT Bearer package</p>
+                <div className="important-box mb-20px mt-10px">
+                    NuGet Package - Microsoft.AspNetCore.Authentication.JwtBearer
+                </div>
+                <p className="color-white m-medium fs-18px color-silver lh-150">
+                    Once we've configured Next.js, we'll move on to the ASP.NET Core part. The first thing we'll do is edit appsettings.json where we'll add some properties we'll need to configure the JWT Token settings.
+                    <br />
+                    <br />
+                    The generation of Secret Key can be done randomly in a long string that has lowercase letters, uppercase letters, numbers and special characters
+                </p>
+                <div className="code-snippet">
+                    <pre>
+                        <code
+                            dangerouslySetInnerHTML={{
+                                __html:
+                                    colorizedCodeSnippet(`<r>"JwtSettings"</r><gr>: {</gr>
+  <r>"Issuer"</r><gr>:</gr> <g>"</g><b>https://localhost:44315</b><g>"</g><gr>,</gr> //The one that issues the token
+  <r>"Audience"</r><gr>:</gr> <g>"</g><b>https://localhost:3000</b><g>"</g><gr>,</gr> //The ones that uses the issued token
+  <r>"SecretKey"</r><gr>:</gr> <g>"your_secret_key_goes_here"</g><gr>,</gr> //The SecretKey should be saved in a key vault for security reasons
+  <r>"AccessTokenExpirationMinutes"</r><gr>:</gr> <o>15</o><gr>,</gr>
+  <r>"RefreshTokenExpirationDays"</r><gr>:</gr> <o>7</o>
+<gr>}</gr>`)
+                            }}>
+                        </code>
+                    </pre>
+                </div>
+                <p className="color-white m-medium fs-18px color-silver lh-150">
+                    Now we will add the configurations for JWT in a seperated file, in our case JwtConfig.cs, and we will explain some parts of the configuration.
+                    <ul>
+                        <li>
+                            <br />
+                            | Defaul Schemes |
+                            <br />
+                            Everything set as default for authentication will be replaced with JwtDefaults defaults after applying the configurations
+                        </li>
+                        <li>
+                            <br />
+                            | ValidIssuer |
+                            <br />
+                            ValidIssuer is the party that issues the Token for authentication
+                        </li>
+                        <li>
+                            <br />
+                            | ValidAudience |
+                            <br />
+                            ValidAudience is the recipient or figuratively the consumer of the Token that is expected to be used
+                        </li>
+                        <li>
+                            <br />
+                            | IssuerSigningKey |
+                            <br />
+                            IssuerSigningKey will help specify the key with which we will verify the token, in our case it is the secret key we added above in appsettings.json
+                        </li>
+                    </ul>
+                </p>
+                <div className="code-snippet">
+                    <pre>
+                        <code
+                            dangerouslySetInnerHTML={{
+                                __html:
+                                    colorizedCodeSnippet(`<p>using</p> <o>Microsoft</o><b>.</b><o>AspNetCore</o><b>.</b><o>Authentication</o><b>.</b><o>JwtBearer</o>;
+                                        
+<p>public static class</p> <o>JwtConfig</o>
+<gr>{</gr>
+    <p>public static void</p> <b>JwtConfigurations</b><gr>(</gr><p>this</p> <o>IServiceCollection</o> <r>services</r><gr>,</gr> <o>IConfiguration</o> <r>configuration</r><gr>)</gr>
+    <gr>{</gr>
+        <r>services</r><b>.AddAuthentication</b><gr>(</gr><r>x</r> <b>=></b>
+        <gr>{</gr>
+            <r>x</r><b>.</b><gr>DefaultAuthenticateScheme</gr> <b>=</b> <o>JwtBearerDefaults</o><b>.</b><gr>AuthenticationScheme;</gr>
+            <r>x</r><b>.</b><gr>DefaultChallengeScheme</gr> <b>=</b> <o>JwtBearerDefaults</o><b>.</b><gr>AuthenticationScheme;</gr>
+            <r>x</r><b>.</b><gr>DefaultScheme</gr> <b>=</b> <o>JwtBearerDefaults</o><b>.</b><gr>AuthenticationScheme;
+        })</gr><b>.AddJwtBearer</b><gr>(</gr><r>x</r> <b>=></b>
+        <gr>{</gr>
+            <r>x</r><b>.</b><gr>TokenValidationParameters</gr> <b>=</b> <p>new</p> <o>TokenValidationParameters</o>
+            <gr>{</gr>
+                <gr>ValidIssuer</gr> <b>=</b> <r>configuration</r><b>.GetValue</b><string><gr>(</gr><g>"Issuer"</g><gr>),</gr>
+                <gr>ValidAudience</gr> <b>=</b> <r>configuration</r><b>.GetValue</b><string><gr>(</gr><g>"Audience"</g><gr>),</gr>
+                <gr>IssuerSigningKey</gr> <b>=</b> <p>new</p> <o>SymmetricSecurityKey</o><gr>(</gr><o>Encoding</o><b>.</b><gr>UTF8</gr><b>.GetBytes</b><gr>(</gr><r>configuration</r><b>.GetValue</b><gr><</gr><p>string</p><gr>></gr><gr>(</gr><g>"SecretKey"</g><gr>)</gr><b>!</b><gr>)),</gr>
+                <gr>ValidateIssuer</gr> <b>=</b> <p>true</p><gr>,</gr>
+                <gr>ValidateAudience</gr> <b>=</b> <p>true</p><gr>,</gr>
+                <gr>ValidateLifetime</gr> <b>=</b> <p>true</p><gr>,</gr>
+                <gr>ValidateIssuerSigningKey</gr> <b>=</b> <p>true</p><gr>,</gr>
+                <gr>ClockSkew</gr> <b>=</b> <o>TimeSpan</o><b>.FromSeconds</b><gr>(</gr><o>5</o><gr>)</gr> //the default value is 5 min, and we dont want that since the expired token can still be valid even after 5 min, so we set it to only at 5 seconds since any network synchronized machine which all of them should be, are on the same time.
+            <gr>};</gr>
+        <gr>});</gr>
+    <gr>}</gr>
+<gr>}</gr>`)
+                            }}>
+                        </code>
+                    </pre>
+                </div>
             </div>
         </>
     )

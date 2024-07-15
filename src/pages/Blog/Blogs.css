@@ -31,6 +31,13 @@
     padding-bottom: 10px;
 }
 
+.important-box {
+    background-color: rgba(var(--golden-haze-one), .2);
+    color: rgba(var(--golden-haze-one));
+    padding: 20px;
+    font-size: var(--fs-18px);
+}
+
 .code-snippet pre code .purple {
     color: #C678DD;
 }
