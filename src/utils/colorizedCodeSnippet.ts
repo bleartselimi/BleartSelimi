@@ -6,6 +6,8 @@ export const colorizedCodeSnippet = (snippet: string): string => {
         .replaceAll('</o>', `</span>`)
         .replaceAll('<gr>', `<span class="gray">`)
         .replaceAll('</gr>', `</span>`)
+        .replaceAll('<lgr>', `<span class="lightgray">`)
+        .replaceAll('</lgr>', `</span>`)
         .replaceAll('<b>', `<span class="blue">`)
         .replaceAll('</b>', `</span>`)
         .replaceAll('<r>', `<span class="red">`)

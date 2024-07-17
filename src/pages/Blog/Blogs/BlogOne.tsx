@@ -43,7 +43,7 @@ const BlogOne = () => {
 
                     <h1 className="color-white m-black fs-30px mt-50px mb-10px">Storing the JWT Token</h1>
                     <p className="color-white m-medium fs-18px color-silver lh-150">
-                        The generated token must be used in subsequent calls to the API since it must be authorized to access the data. In most of the cases where I have had the experience to see how this is handled, the Token is stored in <a className="color-golden-haze" href="HTTPs://www.geeksforgeeks.org/javascript-localstorage/" target="_blank">Localstorage</a>,  <a className="color-golden-haze" href="HTTPs://en.wikipedia.org/wiki/HTTP_cookie#Session_cookie" target="_blank">Cookies (not HTTP only)</a> and Session storage. All of these are valid places where Token can be stored, but they are vulnerable to <a className="color-golden-haze" href="HTTPs://en.wikipedia.org/wiki/Cross-site_scripting" target="_blank">XSS attacks</a>.
+                        The generated token must be used in subsequent API calls because it authorizes access to the data. In most of the cases where I have had the experience to see how this is handled, the Token is stored in <a className="color-golden-haze" href="HTTPs://www.geeksforgeeks.org/javascript-localstorage/" target="_blank">Localstorage</a>,  <a className="color-golden-haze" href="HTTPs://en.wikipedia.org/wiki/HTTP_cookie#Session_cookie" target="_blank">Cookies (not HTTP only)</a> and Session storage. All of these are valid places where Token can be stored, but they are vulnerable to <a className="color-golden-haze" href="HTTPs://en.wikipedia.org/wiki/Cross-site_scripting" target="_blank">XSS attacks</a>.
                     </p>
 
                     <p className="color-white m-medium fs-18px color-silver lh-150 mt-50px">
@@ -78,7 +78,10 @@ const BlogOne = () => {
                         </pre>
                     </div>
                     <p className="color-white m-medium fs-18px color-silver lh-150">
-                        After setting up some properties in the Axios client, we now need to configure the interceptors as well. So why configure interceptors?
+                        After configuring some properties in the Axios client, we now need to configure the interceptors as well.
+                        <br />
+                        <br />
+                        So why configure interceptors?
                         <br />
                         <br />
                         Through interceptors we can modify the request we send or the response we receive. We will focus mainly on the response interceptor. Here we will refresh the Token with a new Token after the old one expires. We know about the expiration of the old Token because the API returns the response code <a className="color-golden-haze" href="HTTPs://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401" target="_blank">401 (unauthorized).</a>
@@ -160,7 +163,7 @@ const BlogOne = () => {
                     NuGet Package - Microsoft.AspNetCore.Authentication.JwtBearer
                 </div>
                 <p className="color-white m-medium fs-18px color-silver lh-150">
-                    Once we've configured Next.js, we'll move on to the ASP.NET Core part. The first thing we'll do is edit appsettings.json where we'll add some properties we'll need to configure the JWT Token settings.
+                    Once we've configured Next.js, we'll move on to the ASP.NET Core part. First, we'll edit appsettings.json to add the properties required for configuring the JWT token settings.
                     <br />
                     <br />
                     The generation of Secret Key can be done randomly in a long string that has lowercase letters, uppercase letters, numbers and special characters
@@ -186,27 +189,61 @@ const BlogOne = () => {
                     <ul>
                         <li>
                             <br />
-                            | Defaul Schemes |
+                            &bull; Default Schemes
                             <br />
-                            Everything set as default for authentication will be replaced with JwtDefaults defaults after applying the configurations
+                            Everything set as default for authentication will be replaced with JwtDefaults defaults after applying the configurations.
                         </li>
                         <li>
                             <br />
-                            | ValidIssuer |
+                            &bull; ValidIssuer
                             <br />
-                            ValidIssuer is the party that issues the Token for authentication
+                            Issuer validation is the party that issues the Token for authorization.
                         </li>
                         <li>
                             <br />
-                            | ValidAudience |
+                            &bull; ValidAudience
                             <br />
-                            ValidAudience is the recipient or figuratively the consumer of the Token that is expected to be used
+                            Audience validation is the recipient or figuratively the consumer of the Token that is expected to be used.
                         </li>
                         <li>
                             <br />
-                            | IssuerSigningKey |
+                            &bull; IssuerSigningKey
                             <br />
-                            IssuerSigningKey will help specify the key with which we will verify the token, in our case it is the secret key we added above in appsettings.json
+                            Issuer signing key will help specify the key with which we will verify the token, in our case it is the secret key we added above in appsettings.json.
+                        </li>
+                        <li>
+                            <br />
+                            &bull; ValidateIssuer
+                            <br />
+                            Issuer validation is used to validate whether the request is coming from a secure and trusted source, e.g. "https://bleartselimi.com".
+                        </li>
+                        <li>
+                            <br />
+                            &bull; ValidateAudience
+                            <br />
+                            Audience validation ensures that the token is intended for use in our app, e.g. "https://myapi.example.com".
+                        </li>
+                        <li>
+                            <br />
+                            &bull; ValidateLifetime
+                            <br />
+                            Lifetime validation takes into account checking the expiration time of the Token whether it should be checked or not.
+                        </li>
+                        <li>
+                            <br />
+                            &bull; ValidateIssuerSigningKey
+                            <br />
+                            ValidateIssuerSigningKey can also be considered the most important JWT configuration since we tell our application through this property that the token must be validated through its key, which in our case is the SecretKey of appsettings.json mentioned above.
+                        </li>
+                        <li>
+                            <br />
+                            &bull; ClockSkew
+                            <br />
+                            The ClockSkew property in the TokenValidationParameters class allows for a small clock offset between the token issuer and the consumer. This accounts for small time differences between systems, preventing valid arguments from being mistakenly rejected as expired or invalid.
+
+                            By default, ClockSkew is set to 5 minutes, allowing for a 5 minute difference between token expiration (exp) and non-expiration (nbf) claims and the actual server time. A value that is preferred to be set is between 5-30s as seen in the implementation below.
+
+                            For more on this property, watch <a className="color-golden-haze" href="https://www.youtube.com/watch?v=meBxWjA_2YY&ab_channel=NickChapsas" target="_blank">this detailed video</a> for more information by Nick Chapsas.
                         </li>
                     </ul>
                 </p>
@@ -242,6 +279,341 @@ const BlogOne = () => {
         <gr>});</gr>
     <gr>}</gr>
 <gr>}</gr>`)
+                            }}>
+                        </code>
+                    </pre>
+                </div>
+                <p className="color-white m-medium fs-18px color-silver lh-150">
+                    Inject services and middlewares in Program.cs
+                </p>
+                <div className="code-snippet">
+                    <pre>
+                        <code
+                            dangerouslySetInnerHTML={{
+                                __html:
+                                    colorizedCodeSnippet(`<gr><r>builder</r><b>.</b>Services<b>.JwtConfigurations</b>(<r>builder</r><b>.</b>Configuration<b>.GetSection</b>(<g>"JwtSettings"</g>));</gr>`)
+                            }}>
+                        </code>
+                    </pre>
+                </div>
+                <div className="code-snippet">
+                    <pre>
+                        <code
+                            dangerouslySetInnerHTML={{
+                                __html:
+                                    colorizedCodeSnippet(`<g><r>builder</r><b>.</b>Services<b>.</b><b>AddAuthorization</b>();</g>`)
+                            }}>
+                        </code>
+                    </pre>
+                </div>
+                <div className="code-snippet">
+                    <pre>
+                        <code
+                            dangerouslySetInnerHTML={{
+                                __html:
+                                    colorizedCodeSnippet(`<gr><r>app</r><b>.</b><b>UseAuthentication</b>();
+
+<r>app</r><b>.</b><b>UseAuthorization</b>();
+
+<r>app</r><b>.</b><b>MapControllers</b>();
+
+<r>app</r><b>.</b><b>Run</b>();</gr>`)
+                            }}>
+                        </code>
+                    </pre>
+                </div>
+                <p className="color-white m-medium fs-18px color-silver lh-150">
+                    The next thing we need to do is to create a middleware that intercepts the request to the api so we can take the token that we defined in HTTP Only Cookies and put it in the Authorization header. We'll do that in the RequestMiddleware.cs file.
+                </p>
+                <div className="code-snippet">
+                    <pre>
+                        <code
+                            dangerouslySetInnerHTML={{
+                                __html:
+                                    colorizedCodeSnippet(`<p>using</p> <o>System<b>.</b>Net<gr>;</gr></o>
+<p>using</p> <o>UserManagement<b>.</b>Domain<b>.</b>Enums<gr>;</gr></o>
+<p>using</p> <o>UserManagement<b>.</b>Domain<b>.</b>Interfaces<b>.</b>Jwt<gr>;</gr></o>
+
+<p>namespace</p> <o>UserManagement<b>.</b>API<b>.</b>Middlewares</o>
+<gr>{</gr>
+    <p>public class</p> <o>RequestMiddleware<gr>(</gr>RequestDelegate <r>next</r><gr>,</gr> IDomainJwtService <r>iDomainJwtService</r><gr>)</gr></o>
+    <gr>{</gr>
+        <p>private readonly</p> <o>RequestDelegate</o> <gr>_next</gr> <b>=</b> <r>next</r><gr>;</gr>
+        <p>private readonly</p> <o>IDomainJwtService</o> <gr>_iDomainJwtService</gr> <b>=</b> <r>iDomainJwtService</r><gr>;</gr>
+
+        <p>public async</p> <o>Task</o> <b>Invoke</b><gr>(</gr><o>HttpContext</o> <r>context</r><gr>)</gr>
+        <gr>{</gr>
+            <p>if</p> <gr>(</gr><b>!</b><r>context</r><b>.</b><gr>Request<b>.</b>Headers</gr><b>.ContainsKey</b><gr>(</gr><g>"Authorization"</g><gr>))</gr>
+            <gr>{</gr>
+                <p>if</p> <gr>(<r>context</r><b>.<gr>Request</gr>.<gr>Cookies</gr>.TryGetValue</b>(<g>"AccessToken"</g><gr>,</gr> <p>out string</p><b>?</b> <r>jwt</r>))</gr>
+                <gr>{</gr>
+                    <p>if</p> <gr>(_iDomainJwtService<b>.VerifyToken</b>(<r>jwt</r>, <o>TokenTypeEnum</o><b>.</b>AccessToken))</gr>
+                        <gr><r>context</r><b>.</b>Request<b>.</b>Headers<b>.Append</b>(<g>"Authorization"</g>, <g>$"Bearer <gr>{</gr><r>jwt</r><gr>}</gr>"</g>);</gr>
+                    <p>else</p>
+                    <gr>{</gr>
+                        <gr><r>context</r><b>.</b>Response<b>.</b>Cookies<b>.Delete</b>(<g>"AccessToken"</g>);</gr>
+                        <gr><r>context</r><b>.</b>Response<b>.</b>StatusCode <b>=</b> (<p>int</p>)<o>HttpStatusCode</o><b>.</b>Unauthorized;</gr>
+                        <p>return</p><gr>;</gr>
+                    <gr>}</gr>
+                <gr>}</gr>
+            <gr>}</gr>
+            <gr><p>await</p> _next(<r>context</r>);</gr>
+        <gr>}</gr>
+    <gr>}</gr>
+<gr>}</gr>`)
+                            }}>
+                        </code>
+                    </pre>
+                </div>
+                <p className="color-white m-medium fs-18px color-silver lh-150">
+                    Inject middleware before app.UseAuthentication() and app.UseAuthorization()  in Program.cs
+                </p>
+                <div className="code-snippet">
+                    <pre>
+                        <code
+                            dangerouslySetInnerHTML={{
+                                __html:
+                                    colorizedCodeSnippet(`<gr><r>app</r><b>.UseMiddleware</b><<o>RequestMiddleware</o>>();</gr>
+...the rest of request pipeline`)
+                            }}>
+                        </code>
+                    </pre>
+                </div>
+
+
+
+
+
+
+
+
+                <p className="color-white m-medium fs-18px color-silver lh-150">
+                    For our next steps, we need to create two methods, one that generates Tokens (Access and Refresh) based on the properties that we pass and the other that refreshes the Token. But first let's create a DTO, Claim Type and Enum.
+                </p>
+                <div className="code-snippet">
+                    <pre>
+                        <code
+                            dangerouslySetInnerHTML={{
+                                __html:
+                                    colorizedCodeSnippet(`<gr><p>public class</p> <o>UserTokenDto</o>
+{
+    <p>public required</p> <o>Guid</o> UserId { <p>get<gr>;</gr> set<gr>;</gr></p> }
+    <p>public required string</p> FirstName { <p>get<gr>;</gr> set<gr>;</gr></p> }
+    <p>public required string</p> LastName { <p>get<gr>;</gr> set<gr>;</gr></p> }
+    <p>public required string</p> Email { <p>get<gr>;</gr> set<gr>;</gr></p> }
+    <p>public string</p><b>?</b> CookieName { <p>get<gr>;</gr> set<gr>;</gr></p> }
+    <p>public</p> <o>DateTime</o><b>?</b> TokenExpirationDate { <p>get<gr>;</gr> set<gr>;</gr></p> }
+    <p>public</p> <o>List</o><<o>UserTokenClaim</o>><b>?</b> Claims { <p>get<gr>;</gr> set<gr>;</gr></p> }
+    <p>public</p> <o>TokenTypeEnum</o><b>?</b> TokenType { <p>get<gr>;</gr> set<gr>;</gr></p> }
+}
+
+<p>public class</p> <o>UserTokenClaim</o>
+{
+    <p>public required string</p> ClaimKey { <p>get<gr>;</gr> set<gr>;</gr></p> }
+    <p>public required string</p> ClaimValue { <p>get<gr>;</gr> set<gr>;</gr></p> }
+}
+
+<p>public enum</p> <o>TokenTypeEnum</o>
+{
+    AccessToken <b>=</b> <o>0</o>,
+    RefreshToken <b>=</b> <o>1</o>,
+    ResetPassword <b>=</b> <o>2</o>
+}</gr>`)
+                            }}>
+                        </code>
+                    </pre>
+                </div>
+                <div className="code-snippet">
+                    <pre>
+                        <code
+                            dangerouslySetInnerHTML={{
+                                __html:
+                                    colorizedCodeSnippet(`<gr><p>public string</p> <b>GenerateJwtToken</b>(<o>UserTokenDto</o> <r>user</r>)
+{
+    <p>try</p>
+    {
+        <p>if</p> (<r>user</r><b>.</b>TokenExpirationDate <p>is not null</p>)
+        {
+            <o>JwtSecurityTokenHandler</o> <r>tokenHandler</r> = <p>new</p>();
+            <p>byte</p>[] <r>key</r> = <o>Encoding</o><b>.</b>UTF8<b>.GetBytes</b>(<r>configuration</r><b>.GetSection</b>(<g>"JwtSettings:SecretKey"</g>)<b>.</b>Value<b>!</b>);
+
+            <p>var</p> <r>claims</r> <b>=</b> <p>new</p> <o>List</o><<o>Claim</o>>
+            {
+                <p>new</p>(<o>JwtRegisteredClaimNames</o>.Jti, <o>Guid</o><b>.NewGuid</b>()<b>.ToString</b>()),
+                <p>new</p>(<o>JwtRegisteredClaimNames</o>.Sub, <r>user</r>.Email),
+                <p>new</p>(<o>JwtRegisteredClaimNames</o>.Email, <r>user</r>.Email),
+                <p>new</p>(<g>"UserId"</g>, <r>user</r>.UserId<b>.ToString</b>()),
+                <p>new</p>(<g>"FirstName"</g>, <r>user</r>.FirstName),
+                <p>new</p>(<g>"LastName"</g>, <r>user</r>.LastName),
+                <p>new</p>(<g>"TokenType"</g>, <r>user</r>.TokenType<b>.ToString</b>()<b>!</b>),
+            };
+
+            <lgr>// Add aditional custom claims</lgr>
+            <p>if</p> (<r>user</r>.Claims <p>is not null</p>)
+                <p>foreach</p> (<p>var</p> <r>claim</r> <p>in</p> <r>user</r><b>.</b>Claims)
+                    <r>claims</r><b>.Add</b>(<p>new</p> <o>Claim</o>(<r>claim</r><b>.</b>ClaimKey, <r>claim</r><b>.</b>ClaimValue));
+
+            <o>SecurityTokenDescriptor</o> <r>tokenDescriptor</r> <b>=</b> <p>new</p>()
+            {
+                Issuer = <r>configuration</r>[<g>"JwtSettings:Issuer"</g>],
+                Audience = <r>configuration</r>[<g>"JwtSettings:Audience"</g>],
+                Subject = <p>new</p> <o>ClaimsIdentity</o>(<r>claims</r>),
+                Expires = <r>user</r><b>.</b>TokenExpirationDate,
+                SigningCredentials = <p>new</p> <o>SigningCredentials</o>(<p>new</p> <o>SymmetricSecurityKey</o>(<r>key</r>), <o>SecurityAlgorithms</o><b>.</b>HmacSha256Signature),
+            };
+
+            <p>string</p> <r>token</r> <b>=</b> <r>tokenHandler</r><b>.WriteToken</b>(<r>tokenHandler</r><b>.CreateToken</b>(<r>tokenDescriptor</r>));
+
+            <p>return</p> <r>token</r>;
+        }
+        <p>else throw new</p> <o>Exception</o>(<g>"TokenExpirationDate might be null while generating a token."</g>);
+    }
+    <p>catch</p> (<o>Exception</o> <r>ex</r>)
+    {
+        <p>throw new</p> <o>Exception</o>(<g>"Failed to generate access token or failed to provide the necessary token properties!"</g>);
+    }
+}</gr>`)
+                            }}>
+                        </code>
+                    </pre>
+                </div>
+                <div className="code-snippet">
+                    <pre>
+                        <code
+                            dangerouslySetInnerHTML={{
+                                __html:
+                                    colorizedCodeSnippet(`<gr><p>public async</p> <o>Task</o><<o>ApiResponse</o><<p>object</p>>> <b>RefreshToken</b>()
+{
+    <p>try</p>
+    {
+        <r>_httpContextAccessor</r><b>.</b>HttpContext<b>!.</b>Request<b>.</b>Cookies<b>.TryGetValue</b>(<g>"RefreshToken"</g>, <p>out string</p><b>?</b> <r>token</r>);
+        <p>if</p> (<r>token</r> <p>is not null</p> <b>&& VerifyToken</b>(<r>token</r>, <o>TokenTypeEnum</o><b>.</b>RefreshToken))
+        {
+            <p>var</p> <r>jwtSecurityToken</r> <b>=</b> <p>new</p> <o>JwtSecurityTokenHandler</o>()<b>.ReadJwtToken</b>(<r>token</r>>);
+
+            <p>using var</p> <r>connection</r> <b>=</b> <r>_mySqlDatabaseService</r><b>.CreateConnection</b>();
+            connection.Open();
+
+            <p>using var</p> <r>command</r> = <p>new</p> <o>MySqlCommand</o>(<g>"user_get_authenticated_user"</g>, (<o>MySqlConnection</o>)<r>connection</r>);
+
+            <r>command</r><b>.</b>CommandType = <o>CommandType</o><b>.</b>StoredProcedure;
+            <r>command</r><b>.</b>Parameters<b>.AddWithValue</b>("@p_user_id", <r>jwtSecurityToken</r><b>.</b>Claims<b>.First</b>(<r>x</r> <b>=></b> <r>x</r><b>.</b>Type <b>==</b> <g>"UserId"</g>)<b>.</b>Value);
+
+            <p>using var</p> <r>reader</r> <b>=</b> <p>await</p> <r>command</r><b>.ExecuteReaderAsync</b>();
+            <p>if</p> (<p>await</p> <r>reader</r><b>.ReadAsync</b>())
+            {
+                <o>UserDto</o> <r>response</r> <b>=</b> <o>JsonConvert</o><b>.DeserializeObject</b><<o>UserDto</o>>((<p>string</p>)<r>reader</r>[<g>"user_details"</g>])<b>!</b>;
+
+                <o>UserTokenDto</o> <r>newAccessTokenDto</r> = new()
+                {
+                    UserId <b>=</b> <r>response</r><b>.</b>UserId,
+                    Email <b>=</b> <r>response</r>.Emails<b>.FirstOrDefault</b>(<r>x</r> <b>=></b> <r>x</r><b>.</b>IsPrimaryEmail)<b>!.</b>Email,
+                    FirstName <b>=</b> <r>response</r>.FirstName,
+                    LastName <b>=</b> <r>response</r>.LastName,
+                    CookieName <b>=</b> <g>"AccessToken"</g>,
+                    TokenExpirationDate = <o>DateTime</o><b>.</b>UtcNow<b>.AddMinutes</b>(<p>int</p><b>.Parse</b>(<r>configuration</r>[<g>"JwtSettings:AccessTokenExpirationMinutes"</g>]<b>!</b>)),
+                    TokenType = <o>TokenTypeEnum</o><b>.</b>AccessToken
+                };
+
+               <o>UserTokenDto</o> <r>newAccessTokenDto</r> = new()
+                {
+                    UserId <b>=</b> <r>response</r><b>.</b>UserId,
+                    Email <b>=</b> <r>response</r>.Emails<b>.FirstOrDefault</b>(<r>x</r> <b>=></b> <r>x</r><b>.</b>IsPrimaryEmail)<b>!.</b>Email,
+                    FirstName <b>=</b> <r>response</r>.FirstName,
+                    LastName <b>=</b> <r>response</r>.LastName,
+                    CookieName = <g>"RefreshToken"</g>,
+                    TokenExpirationDate = <o>DateTime</o><b>.</b>UtcNow<b>.AddDays</b>(<p>int</p><b>.Parse</b>(<r>configuration</r>[<g>"JwtSettings:RefreshTokenExpirationDays"</g>]<b>!</b>)),
+                    TokenType = <o>TokenTypeEnum</o><b>.</b>RefreshToken
+                };
+
+                <p>string</p> <r>newAccessToken</r> <b>= GenerateJwtToken</b>(<r>newAccessTokenDto</r>);
+                <p>string</p> <r>newRefreshToken</r> <b>= GenerateJwtToken</b>(<r>newRefreshTokenDto</r>);
+
+                <b>SetTokenCookies</b>(<r>newAccessTokenDto</r><b>.</b>CookieName, <r>newAccessToken</r>, <r>newAccessTokenDto</r><b>.</b>TokenExpirationDate);
+                <b>SetTokenCookies</b>(<r>newRefreshTokenDto</r><b>.</b>CookieName, <r>newRefreshToken</r>, <r>newRefreshTokenDto</r><b>.</b>TokenExpirationDate);
+
+                <p>return new</p> <o>ApiResponse</o><<p>object</p>>(<o>HttpStatusCode</o><b>.</b>OK, <p>true</p>, <g>"Token refreshed successfully."</g>);
+            }
+            <p>else throw new</p> <o>Exception</o>(<g>""</g>);
+        }
+         <p>else throw new</p> <o>ApiResponse</o><<p>object</p>>(<o>HttpStatusCode</o><b>.</b>BadRequest, <p>false</p>, <g>"Failed to refresh token!"</g>);
+    }
+    <p>catch</p> (<o>Exception</o> <r>ex</r>)
+    {
+        <p>throw new</p> <o>Exception</o>(<g>"Failed to refresh token!"</g>);
+    }
+}</gr>`)
+                            }}>
+                        </code>
+                    </pre>
+                </div>
+                <p className="color-white m-medium fs-18px color-silver lh-150">
+                    Now let's create a function that sets Access and Refresh Tokens in the response that we access through the injected dependency _httpContextAccessor (IHttpContextAccessor).
+                </p>
+                <div className="code-snippet">
+                    <pre>
+                        <code
+                            dangerouslySetInnerHTML={{
+                                __html:
+                                    colorizedCodeSnippet(`<gr><p>public void</p> <b>SetTokenCookies</b>(<p>string</p> <r>cookieName</r>, <p>string</p> <r>token</r>, <o>DateTime</o><b>?</b> <r>expires</r>)
+{
+    <p>try</p>
+    {
+        <o>CookieOptions</o> <r>cookieOptions</r> <b>=</b> <p>new</p>()
+        {
+            HttpOnly <b>=</b> <p>true</p>,
+            Secure <b>=</b> <p>true</p>,
+            SameSite <b>=</b> <o>SameSiteMode</o><b>.</b>Strict,
+            Expires <b>=</b> <r>expires</r>
+        };
+
+        <r>_httpContextAccessor</r><b>.</b>HttpContext<b>!.</b>Response<b>.</b>Cookies<b>.Append</b>(<r>cookieName</r>, <r>token</r>, <r>cookieOptions</r>);
+    }
+    <p>catch</p> (<o>Exception</o> <r>ex</r>)
+    {
+        <p>throw new</p> <o>Exception</o>(<g>"Failed to set token on cookies!"</g>);
+    }
+}</gr>`)
+                            }}>
+                        </code>
+                    </pre>
+                </div>
+                <p className="color-white m-medium fs-18px color-silver lh-150">
+                    Another function that will come into play is the verification of the Token whether it is valid or not. I will do this by checking the validTo and the token type enum (AccessToken or RefreshToken).
+                </p>
+                <div className="code-snippet">
+                    <pre>
+                        <code
+                            dangerouslySetInnerHTML={{
+                                __html:
+                                    colorizedCodeSnippet(`<gr><p>public bool</p> <b>VerifyToken</b>(<p>string</p> <r>token</r>, <o>TokenTypeEnum</o> <r>type</r>)
+{
+    <p>var</p> <r>tokenHandler</r> <b>=</b> <p>new</p> <o>JwtSecurityTokenHandler</o>();
+    <p>var</p> <r>key</r>  <b>=</b> <o>Encoding</o><b>.</b>UTF8<b>.GetBytes</b>(<r>configuration</r>[<g>"JwtSettings:SecretKey"</g>]<b>!</b>);
+
+    <p>try</p>
+    {
+        <r>tokenHandler</r><b>.ValidateToken</b>(<r>token</r>, <p>new</p> <o>TokenValidationParameters</o>
+        {
+            ValidateIssuer = <p>true</p>,
+            ValidateAudience = <p>true</p>,
+            ValidateLifetime = <p>true</p>,
+            ValidateIssuerSigningKey = <p>true</p>,
+            ValidIssuer = <r>configuration</r>[<g>"JwtSettings:Issuer"</g>],
+            ValidAudience = <r>configuration</r>[<g>"JwtSettings:Audience"</g>],
+            IssuerSigningKey = <p>new</p> <o>SymmetricSecurityKey</o>(<r>key</r>)
+        }, out SecurityToken validatedToken);
+
+        <o>JwtSecurityToken</o> <r>jwtSecurityToken</r> <p>=</p> (<o>JwtSecurityToken</o>)<r>validatedToken</r>;
+        <p>var</p> <r>tokenType</r> <b>=</b> <r>jwtSecurityToken</r><b>.</b>Claims<b>.FirstOrDefault</b>(<r>x</r> <b>=></b> <r>x</r><b>.</b>Type <b>==</b> <g>"TokenType"</g>)<b>?.</b>Value;
+
+        <p>return</p> <r>tokenType</r> == <r>type</r><b>.ToString</b>() <b>&&</b> <r>jwtSecurityToken</r><b>.</b>ValidTo <b>></b> <o>DateTime</o><b>.</b>UtcNow;
+    }
+    <p>catch</p> (<o>Exception</o> <r>ex</r>)
+    {
+        <p>return false</p>;
+    }
+}</gr>`)
                             }}>
                         </code>
                     </pre>

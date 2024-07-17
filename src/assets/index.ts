@@ -43,6 +43,7 @@ import SwaggerImage from "./images/tenchnologies/swagger.png";
 import SwiperImage from "./images/tenchnologies/swiper.png";
 import AdonetImage from "./images/tenchnologies/adonet.png";
 import BootstrapImage from "./images/tenchnologies/bootstrap.png";
+import TailwindImage from "./images/tenchnologies/tailwind.png";
 // Technologies - END
 
 //Images for Chatly - START
@@ -170,6 +171,7 @@ export {
     SwiperImage,
     AdonetImage,
     BootstrapImage,
+    TailwindImage,
     // Technologies - END
 
     //Chatly - START

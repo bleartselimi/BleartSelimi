@@ -1,4 +1,4 @@
-import { AspNetCoreImage, AxiosImage, CssImage, FigmaImage, ChatlyCoverImage, ChatlyArchitectureImage, JwtImage, MongodbImage, MysqlImage, RedisImage, SeriologImage, SignalrImage, SocketioImage, SwaggerImage, TypescriptImage,AdonetImage, NextjsImage } from "../../assets"
+import { AspNetCoreImage, AxiosImage, CssImage, FigmaImage, ChatlyCoverImage, ChatlyArchitectureImage, JwtImage, MongodbImage, MysqlImage, RedisImage, SeriologImage, SignalrImage, SocketioImage, SwaggerImage, TypescriptImage,AdonetImage, NextjsImage, TailwindImage } from "../../assets"
 import { Modal, TechnicalDetailsButton } from "../../components"
 import { ContentPanel, OtherProjects, TechnicalDetails } from "../../widgets"
 import { useEffect, useRef, useState } from "react";
@@ -90,8 +90,8 @@ const Chatly = () => {
                   title: "Socket.io"
                 },
                 {
-                  icon: CssImage,
-                  title: "CSS"
+                  icon: TailwindImage,
+                  title: "Tailwind"
                 }
               ]}
               backendTechnologies={[
