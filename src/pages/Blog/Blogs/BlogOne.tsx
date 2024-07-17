@@ -579,7 +579,7 @@ const BlogOne = () => {
                     </pre>
                 </div>
                 <p className="color-white m-medium fs-18px color-silver lh-150">
-                    Another function that will come into play is the verification of the Token whether it is valid or not. I will do this by checking the validTo and the token type enum (AccessToken or RefreshToken).
+                    Another function that will come into play is the verification of the Token whether it is valid or not. I will do this by checking the token type enum (AccessToken or RefreshToken) and ValidTo.
                 </p>
                 <div className="code-snippet">
                     <pre>
