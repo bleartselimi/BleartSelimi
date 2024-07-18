@@ -52,7 +52,7 @@ const ContentPanel = ({ className = "", areaOne, hasAreaOneMask = false, areaTwo
             <div className="content-panel-body-container" ref={panelBodyContainer}>
                 <div className="content-panel-body-wrapper" ref={panelBodyWrapper}>
                     <div className="content-panel-body" ref={panelBody}>
-                        <div className={`area-one ${hasAreaOneMask ? "has-mask" : ""}`}>{areaOne}</div>
+                        <div style={{ paddingRight: hasAreaOneMask ? '60px' : "unset" }} className={`area-one ${hasAreaOneMask ? "has-mask" : ""}`}>{areaOne}</div>
                         <div className="area-two">{areaTwo}</div>
                     </div>
                 </div>

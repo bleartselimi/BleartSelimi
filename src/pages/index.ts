@@ -7,10 +7,10 @@ import MobileShop from "./MobileShop/MobileShop";
 import ProblemetNprishtine from "./ProblemetNprishtine/ProblemetNprishtine";
 import NotFound from "./NotFound/NotFound";
 
-// Blogs - START
-import Blogs from "./Blog/Blogs";
-import BlogOne from "./Blog/Blogs/BlogOne";
-// Blogs - END
+// Articles - START
+import Articles from "./Article/Articles";
+import ArticleOne from "./Article/Articles/ArticleOne";
+// Articles - END
 
 export {
     Portfolio,
@@ -21,8 +21,8 @@ export {
     MobileShop,
     ProblemetNprishtine,
     NotFound,
-    // Blogs - START
-    Blogs,
-    BlogOne,
-    // Blogs - END 
+    // Articles - START
+    Articles,
+    ArticleOne,
+    // Articles - END 
 }

@@ -91,6 +91,10 @@ button {
   border-style: none;
 }
 
+.underline {
+  text-decoration: underline;
+}
+
 /* Text color - START */
 .color-white {
   color: rgb(var(--white-one));

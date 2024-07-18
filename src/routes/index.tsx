@@ -1,8 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import { MainLayout } from '../layouts'
-import { BlogOne, Blogs, Chatly, LinkMobile, LinkWeb, MobileShop, MuseumInformationSystem, NotFound, Portfolio, ProblemetNprishtine } from '../pages'
-import { blogLinks } from '../pages/Blog/BlogLinks'
-
+import { ArticleOne, Articles, Chatly, LinkMobile, LinkWeb, MobileShop, MuseumInformationSystem, NotFound, Portfolio, ProblemetNprishtine } from '../pages'
+import { articleLinks } from '../pages/Article/ArticleLinks'
 
 const Routing = () => {
   return (
@@ -15,9 +14,10 @@ const Routing = () => {
         <Route path='/museum-information-system' element={<MuseumInformationSystem />} />
         <Route path='/mobile-shop' element={<MobileShop />} />
         <Route path='/problemet-nprishtine' element={<ProblemetNprishtine />} />
-        <Route path='/blogs' element={<Blogs />}>
-          <Route path={blogLinks.blogOne} element={<BlogOne />} />
-        </Route>
+        {/* Articles - START */}
+        <Route path='/articles' element={<Articles />} />
+        <Route path={articleLinks.articleOne} element={<ArticleOne />} />
+        {/* Articles - END */}
       </Route>
       <Route path='*' element={<NotFound />} />
     </Routes>

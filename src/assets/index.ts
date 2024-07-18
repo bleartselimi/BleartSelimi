@@ -4,6 +4,7 @@ import { ArrowTopRightIcon } from "./icons/Icons";
 import { ArrowRightIcon } from "./icons/Icons";
 import { GithubIcon } from "./icons/Icons";
 import { EmailIcon } from "./icons/Icons";
+import { InfoIcon } from "./icons/Icons";
 // Icons - END
 
 // Images - START
@@ -136,6 +137,7 @@ export {
     ArrowRightIcon,
     GithubIcon,
     EmailIcon,
+    InfoIcon,
     BleartSelimiProfile,
     Noise,
     Tv,

@@ -127,3 +127,25 @@ export const EmailIcon = ({ width = 20, height = 20, className, onClick, fill = 
         </svg>
     );
 }
+
+export const InfoIcon = ({ width = 24, height = 24, className, onClick, fill = "#DBC282" }: IconsType) => {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            width={width}
+            height={height}
+            className={className}
+            onClick={onClick}
+        >
+            <path
+                stroke={fill}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zM12 16v-4M12 8h.01"
+            ></path>
+        </svg>
+    );
+}

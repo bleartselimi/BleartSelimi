@@ -29,10 +29,6 @@
     overflow: hidden;
 }
 
-.content-panel-body .area-one {
-    padding-right: 60px;
-}
-
 .area-one.has-mask * {
     text-shadow: none;
 }
