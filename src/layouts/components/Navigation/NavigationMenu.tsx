@@ -58,9 +58,9 @@ const NavigationMenu = () => {
                         </div>
                     }
                     {
-                        window.location.hash !== "" && window.location.hash !== "#/articles" &&
+                        window.location.hash !== "#/articles" &&
                         <div onClick={() => {
-                            if (window.location.hash !== "" && window.location.hash !== "#/articles") {
+                            if (window.location.hash !== "#/articles") {
                                 transitionIn("/articles", true)
                             }
                         }}>
