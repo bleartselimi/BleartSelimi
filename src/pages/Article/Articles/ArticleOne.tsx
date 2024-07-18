@@ -40,7 +40,7 @@ const ArticleOne = () => {
                     <h1 className="color-white m-black fs-30px mb-10px mt-50px">What is a JWT Token?</h1>
 
                     <p className="color-white m-medium fs-18px color-silver lh-150">
-                        A <a className="color-golden-haze" href="HTTPs://en.wikipedia.org/wiki/JSON_Web_Token" target="_blank">JWT token</a> is a form of authentication and authorization that is used in a variety of small, medium, and enterprise applications. This is achieved by generating a token from the issuer to the audience (e.g. the user attempting to authenticate). The JWT Token is encrypted using a secret key that must be stored in a place where only authorized parties can access it (e.g.  <a className="color-golden-haze" href="HTTPs://azure.microsoft.com/en-us/products/key-vault" target="_blank">Azure key vault</a>).
+                        A <a className="color-golden-haze underline" href="HTTPs://en.wikipedia.org/wiki/JSON_Web_Token" target="_blank">JWT token</a> is a form of authentication and authorization that is used in a variety of small, medium, and enterprise applications. This is achieved by generating a token from the issuer to the audience (e.g. the user attempting to authenticate). The JWT Token is encrypted using a secret key that must be stored in a place where only authorized parties can access it (e.g.  <a className="color-golden-haze underline" href="HTTPs://azure.microsoft.com/en-us/products/key-vault" target="_blank">Azure key vault</a>).
                     </p>
 
                     <h1 className="color-white m-black fs-30px mt-50px mb-10px">Storing the JWT Token</h1>
@@ -53,7 +53,7 @@ const ArticleOne = () => {
                     </p>
                     <hr style={{ opacity: .3 }} className="my-50px" />
                     <div className="important-box mb-20px mb-50px">
-                        <InfoIcon /> <p>THE CODE I AM USING IN THIS ARTICLE IS FROM AN APPLICATION USING CLEAN ARCHITECTURE AND FOR THIS REASON SOME OF THE CODE IS NOT INCLUDED. FOR ANY QUESTION OR SUGGESTIONS, FEEL FREE TO WRITE ME VIA <Link className="m-semibold color-golden-haze underline fs-18px mr-7px" to="mailto: bleart.selimi@outlook.com">EMAIL</Link>OR <Link className="m-semibold color-golden-haze underline fs-18px mr-7px" to="https://www.linkedin.com/in/bleart-selimi-677338224/">LINKEDIN</Link></p>
+                        <InfoIcon /> <p>THE CODE I AM USING IN THIS ARTICLE IS FROM AN APPLICATION USING CLEAN ARCHITECTURE AND FOR THIS REASON SOME OF THE CODE IS NOT INCLUDED. FOR ANY QUESTION OR SUGGESTIONS, FEEL FREE TO WRITE ME VIA <Link className="m-semibold color-golden-haze underline fs-18px mr-7px" to="mailto: bleart.selimi@outlook.com">EMAIL</Link>OR <Link className="m-semibold color-golden-haze underline fs-18px mr-7px" to="https://www.linkedin.com/in/bleart-selimi-677338224/" target="_blank">LINKEDIN</Link></p>
                     </div>
                     <h1 className="color-white m-black fs-30px">Next.js setup (v14.2.3)</h1>
                     <p className="color-white m-medium fs-18px color-silver lh-150 mt-20px">Install Axios package</p>
