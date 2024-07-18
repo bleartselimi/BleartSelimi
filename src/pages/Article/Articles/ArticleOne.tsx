@@ -28,7 +28,7 @@ const ArticleOne = () => {
                         <h1 className='fs-36px color-white lh-100 text-shadow-white'>Securing JWT Tokens with HTTP-Only Cookies using Next.js and ASP.NET Core: A Defense Against XSS Attacks</h1>
                     }
                     areaThree={
-                        <img src="HTTPs://images.unsplash.com/photo-1555529902-5261145633bf?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                        <img src="https://images.unsplash.com/photo-1555529902-5261145633bf?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
                     }
                 />
                 <div className="project-container" ref={projectContainer}>
@@ -40,12 +40,12 @@ const ArticleOne = () => {
                     <h1 className="color-white m-black fs-30px mb-10px mt-50px">What is a JWT Token?</h1>
 
                     <p className="color-white m-medium fs-18px color-silver lh-150">
-                        A <a className="color-golden-haze underline" href="HTTPs://en.wikipedia.org/wiki/JSON_Web_Token" target="_blank">JWT token</a> is a form of authentication and authorization that is used in a variety of small, medium, and enterprise applications. This is achieved by generating a token from the issuer to the audience (e.g. the user attempting to authenticate). The JWT Token is encrypted using a secret key that must be stored in a place where only authorized parties can access it (e.g.  <a className="color-golden-haze underline" href="HTTPs://azure.microsoft.com/en-us/products/key-vault" target="_blank">Azure key vault</a>).
+                        A <a className="color-golden-haze underline" href="https://en.wikipedia.org/wiki/JSON_Web_Token" target="_blank">JWT token</a> is a form of authentication and authorization that is used in a variety of small, medium, and enterprise applications. This is achieved by generating a token from the issuer to the audience (e.g. the user attempting to authenticate). The JWT Token is encrypted using a secret key that must be stored in a place where only authorized parties can access it (e.g.  <a className="color-golden-haze underline" href="https://azure.microsoft.com/en-us/products/key-vault" target="_blank">Azure key vault</a>).
                     </p>
 
                     <h1 className="color-white m-black fs-30px mt-50px mb-10px">Storing the JWT Token</h1>
                     <p className="color-white m-medium fs-18px color-silver lh-150">
-                        The generated token must be used in subsequent API calls because it authorizes access to the data. In most of the cases where I have had the experience to see how this is handled, the Token is stored in <a className="color-golden-haze underline" href="HTTPs://www.geeksforgeeks.org/javascript-localstorage/" target="_blank">Localstorage</a>,  <a className="color-golden-haze underline" href="HTTPs://en.wikipedia.org/wiki/HTTP_cookie#Session_cookie" target="_blank">Cookies (not HTTP only)</a> and Session storage. All of these are valid places where Token can be stored, but they are vulnerable to <a className="color-golden-haze underline" href="HTTPs://en.wikipedia.org/wiki/Cross-site_scripting" target="_blank">XSS attacks</a>.
+                        The generated token must be used in subsequent API calls because it authorizes access to the data. In most of the cases where I have had the experience to see how this is handled, the Token is stored in <a className="color-golden-haze underline" href="https://www.geeksforgeeks.org/javascript-localstorage/" target="_blank">Localstorage</a>,  <a className="color-golden-haze underline" href="https://en.wikipedia.org/wiki/HTTP_cookie#Session_cookie" target="_blank">Cookies (not HTTP only)</a> and Session storage. All of these are valid places where Token can be stored, but they are vulnerable to <a className="color-golden-haze underline" href="https://en.wikipedia.org/wiki/Cross-site_scripting" target="_blank">XSS attacks</a>.
                     </p>
 
                     <p className="color-white m-medium fs-18px color-silver lh-150 mt-50px">
@@ -53,7 +53,7 @@ const ArticleOne = () => {
                     </p>
                     <hr style={{ opacity: .3 }} className="my-50px" />
                     <div className="important-box mb-20px mb-50px">
-                        <InfoIcon /> <p>THE CODE I AM USING IN THIS ARTICLE IS FROM AN APPLICATION USING CLEAN ARCHITECTURE AND FOR THIS REASON SOME OF THE CODE IS NOT INCLUDED. FOR ANY QUESTION OR SUGGESTIONS, FEEL FREE TO WRITE ME VIA <Link className="m-semibold color-golden-haze underline fs-18px mr-7px" to="mailto: bleart.selimi@outlook.com">EMAIL</Link>OR <Link className="m-semibold color-golden-haze underline fs-18px mr-7px" to="https://www.linkedin.com/in/bleart-selimi-677338224/" target="_blank">LINKEDIN</Link></p>
+                        <InfoIcon /> <p>THE CODE I AM USING IN THIS ARTICLE IS FROM AN APPLICATION USING CLEAN ARCHITECTURE AND FOR THIS REASON SOME OF THE CODE IS NOT INCLUDED. FOR ANY QUESTIONS OR SUGGESTIONS, FEEL FREE TO WRITE ME VIA <Link className="m-semibold color-golden-haze underline fs-18px mr-7px" to="mailto: bleart.selimi@outlook.com">EMAIL</Link>OR <Link className="m-semibold color-golden-haze underline fs-18px mr-7px" to="https://www.linkedin.com/in/bleart-selimi-677338224/" target="_blank">LINKEDIN</Link></p>
                     </div>
                     <h1 className="color-white m-black fs-30px">Next.js setup (v14.2.3)</h1>
                     <p className="color-white m-medium fs-18px color-silver lh-150 mt-20px">Install Axios package</p>
@@ -61,7 +61,7 @@ const ArticleOne = () => {
                         npm i axios
                     </div>
                     <p className="color-white m-medium fs-18px color-silver lh-150">
-                        We will be using <a className="color-golden-haze underline" href="HTTPs://axios-HTTP.com/docs/intro" target="_blank">Axios</a> for the HTTP client. For Axios, we need to configure a few things. First, we need to create a generic Axios instance that contains the configurations for the base URL, headers, and withCredentials.
+                        We will be using <a className="color-golden-haze underline" href="https://axios-HTTP.com/docs/intro" target="_blank">Axios</a> for the HTTP client. For Axios, we need to configure a few things. First, we need to create a generic Axios instance that contains the configurations for the base URL, headers, and withCredentials.
                         <br />
                         <br />
                         The withCredentials property indicates whether cookies, authorization headers, and the TLS certificate should be sent in the request or not.
@@ -80,7 +80,7 @@ const ArticleOne = () => {
                         So why configure interceptors?
                         <br />
                         <br />
-                        Through interceptors we can modify the request we send or the response we receive. We will focus mainly on the response interceptor. Here we will refresh the Token with a new Token after the old one expires. We know about the expiration of the old Token because the API returns the response code <a className="color-golden-haze underline" href="HTTPs://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401" target="_blank">401 (unauthorized).</a>
+                        Through interceptors we can modify the request we send or the response we receive. We will focus mainly on the response interceptor. Here we will refresh the Token with a new Token after the old one expires. We know about the expiration of the old Token because the API returns the response code <a className="color-golden-haze underline" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401" target="_blank">401 (unauthorized).</a>
                         <br />
                         <br />
                         After the 401 is returned, we need to save the previous request, refresh the Token, and then retry the previously saved request.
@@ -123,14 +123,14 @@ const ArticleOne = () => {
 <y>)</y><gr>;</gr>`} />
                     <h1 className="color-white m-black fs-30px mb-10px mt-50px">One last thing...</h1>
                     <p className="color-white m-medium fs-18px color-silver lh-150">
-                        Now add a small configuration in package.json, more specifically in the scripts section where we have to modify the "start" and "dev" key to start the local server with the <a className="color-golden-haze underline" href="HTTPs://en.wikipedia.org/wiki/HTTPS" target="_blank">HTTPS protocol</a>.
+                        Now add a small configuration in package.json, more specifically in the scripts section where we have to modify the "start" and "dev" key to start the local server with the <a className="color-golden-haze underline" href="https://en.wikipedia.org/wiki/HTTPS" target="_blank">HTTPS protocol</a>.
                         <br />
                         <br />
                         Why is that? Because the communication between the Frontend and the Backend must be done only using HTTPS protocol to enable the access of HTTP only cookies.
                     </p>
                     <ArticleCodeSnippet snippet={`<r>"scripts":</r> <gr>{</gr>
-  <r>"dev"</r><gr>:</gr> <g>"next dev --experimental-HTTPs"</g><gr>,</gr>
-  <r>"start"</r><gr>:</gr> <g>"next start --experimental-HTTPs"</g>
+  <r>"dev"</r><gr>:</gr> <g>"next dev --experimental-https"</g><gr>,</gr>
+  <r>"start"</r><gr>:</gr> <g>"next start --experimental-https"</g>
   ...other configs
 <gr>}</gr>`} />
                 </div>

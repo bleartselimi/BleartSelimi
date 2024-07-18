@@ -6,7 +6,7 @@ import { useGeneralContext } from "../../hooks/useGeneralContext";
 const ContentPanel = ({ className = "", areaOne, hasAreaOneMask = false, areaTwo, areaThree, areaFour, delay = 0 }: ContentPanelType) => {
 
     const { state } = useGeneralContext();
-
+    
     const contentPanelContainer = useRef<HTMLDivElement | null>(null);
     const panelBodyContainer = useRef<HTMLDivElement | null>(null);
     const panelBodyWrapper = useRef<HTMLDivElement | null>(null);
@@ -52,7 +52,7 @@ const ContentPanel = ({ className = "", areaOne, hasAreaOneMask = false, areaTwo
             <div className="content-panel-body-container" ref={panelBodyContainer}>
                 <div className="content-panel-body-wrapper" ref={panelBodyWrapper}>
                     <div className="content-panel-body" ref={panelBody}>
-                        <div style={{ paddingRight: hasAreaOneMask ? '60px' : "unset" }} className={`area-one ${hasAreaOneMask ? "has-mask" : ""}`}>{areaOne}</div>
+                        <div style={{ paddingRight: areaOne ? '60px' : "unset" }} className={`area-one ${hasAreaOneMask ? "has-mask" : ""}`}>{areaOne}</div>
                         <div className="area-two">{areaTwo}</div>
                     </div>
                 </div>

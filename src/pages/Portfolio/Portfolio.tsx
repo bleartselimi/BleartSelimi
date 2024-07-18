@@ -1,5 +1,5 @@
 import './Portfolio.css';
-import { LinkedinButton } from '../../components';
+import { ArticlesButton, LinkedinButton } from '../../components';
 import { ContentPanel, ProjectCard } from '../../widgets';
 import projectsList from '../../assets/json/Projects.json';
 import {
@@ -16,7 +16,7 @@ import { useGeneralContext } from '../../hooks/useGeneralContext';
 const Portfolio = () => {
 
   const images: string[] = [ChatlyCardImage, LinkMobileCardImage, LinkWebCardImage, MuseumInformationSystemCardImage, MobileShopCardImage, ProblementNprishtineCardImage];
-  
+
   const { state } = useGeneralContext();
 
   const portfolioProjectsWrapper = useRef<HTMLDivElement | null>(null)
@@ -43,7 +43,11 @@ const Portfolio = () => {
             <h1 className='fs-20px color-white m-semibold'>Bleart Selimi</h1>
           }
           areaFour={
-            <LinkedinButton />
+            <div className='portfolio-content-panel-area-three'>
+              <ArticlesButton />
+              <span className='color-golden-haze fs-18px'>|</span>
+              <LinkedinButton />
+            </div>
           }
         />
       </div>

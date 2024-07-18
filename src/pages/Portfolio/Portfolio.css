@@ -30,6 +30,12 @@
     max-width: 373px;
 }
 
+.portfolio-content-panel-area-three {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
 @media screen and (max-width: 768px) {
     .portfolio-projects-wrapper {
         -ms-grid-columns: 1fr;
