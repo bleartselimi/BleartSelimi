@@ -532,7 +532,7 @@ const ArticleOne = () => {
                 <hr style={{ opacity: .3 }} className="my-50px" />
                 <h1 className="color-white m-black fs-30px mt-50px">Thanks a Bunch 👏</h1>
                 <p className="color-white m-medium fs-18px color-silver lh-150 mt-10px">
-                    Thanks for sticking around and reading this article! If you have any questions or suggestions, write me on <Link className="m-semibold color-golden-haze underline fs-18px mr-7px" to="https://www.linkedin.com/in/bleart-selimi-677338224/">LinkedIn</Link> or email me at <Link className="m-semibold color-golden-haze underline fs-18px mr-7px" to="mailto: bleart.selimi@outlook.com">bleart.selimi@outlook.com</Link>
+                    Thanks for sticking around and reading this article! If you have any questions or suggestions, write me on <Link className="m-semibold color-golden-haze underline fs-18px mr-7px" to="https://www.linkedin.com/in/bleart-selimi-677338224/" target="_blank">LinkedIn</Link>or email me at <Link className="m-semibold color-golden-haze underline fs-18px mr-7px" to="mailto: bleart.selimi@outlook.com">bleart.selimi@outlook.com</Link>
                 </p>
             </div>
         </>
