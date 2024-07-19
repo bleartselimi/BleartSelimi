@@ -146,6 +146,10 @@ const ArticleOne = () => {
                     <br />
                     The generation of Secret Key can be done randomly in a long string that has lowercase letters, uppercase letters, numbers and special characters
                 </p>
+                <div className="important-box mb-20px mt-10px">
+                    <InfoIcon />
+                    The secret key should be at least 256 bits (32 bytes) since we are using HMAC SHA-256 (HS256) algorithm.
+                </div>
                 <ArticleCodeSnippet snippet={`<r>"JwtSettings"</r><gr>: {</gr>
   <r>"Issuer"</r><gr>:</gr> <g>"</g><b>https://localhost:44315</b><g>"</g><gr>,</gr> //The one that issues the token
   <r>"Audience"</r><gr>:</gr> <g>"</g><b>https://localhost:3000</b><g>"</g><gr>,</gr> //The ones that uses the issued token
@@ -231,8 +235,8 @@ const ArticleOne = () => {
         <gr>{</gr>
             <r>x</r><b>.</b><gr>TokenValidationParameters</gr> <b>=</b> <p>new</p> <o>TokenValidationParameters</o>
             <gr>{</gr>
-                <gr>ValidIssuer</gr> <b>=</b> <r>configuration</r><b>.GetValue</b><string><gr>(</gr><g>"Issuer"</g><gr>),</gr>
-                <gr>ValidAudience</gr> <b>=</b> <r>configuration</r><b>.GetValue</b><string><gr>(</gr><g>"Audience"</g><gr>),</gr>
+                <gr>ValidIssuer</gr> <b>=</b> <r>configuration</r><b>.GetValue</b><gr><</gr><p>string</p><gr>></gr><gr>(</gr><g>"Issuer"</g><gr>),</gr>
+                <gr>ValidAudience</gr> <b>=</b> <r>configuration</r><b>.GetValue</b><gr><</gr><p>string</p><gr>></gr><gr>(</gr><g>"Audience"</g><gr>),</gr>
                 <gr>IssuerSigningKey</gr> <b>=</b> <p>new</p> <o>SymmetricSecurityKey</o><gr>(</gr><o>Encoding</o><b>.</b><gr>UTF8</gr><b>.GetBytes</b><gr>(</gr><r>configuration</r><b>.GetValue</b><gr><</gr><p>string</p><gr>></gr><gr>(</gr><g>"SecretKey"</g><gr>)</gr><b>!</b><gr>)),</gr>
                 <gr>ValidateIssuer</gr> <b>=</b> <p>true</p><gr>,</gr>
                 <gr>ValidateAudience</gr> <b>=</b> <p>true</p><gr>,</gr>
@@ -248,6 +252,7 @@ const ArticleOne = () => {
                 </p>
                 <ArticleCodeSnippet snippet={`<gr><r>builder</r><b>.</b>Services<b>.JwtConfigurations</b>(<r>builder</r><b>.</b>Configuration<b>.GetSection</b>(<g>"JwtSettings"</g>));</gr>`} />
                 <ArticleCodeSnippet snippet={`<gr><r>builder</r><b>.</b>Services<b>.</b><b>AddAuthorization</b>();</gr>`} />
+                <ArticleCodeSnippet snippet={`<gr><r>builder</r><b>.</b>Services<b>.</b><b>AddHttpContextAccessor</b>();</gr>`} />
                 <p className="color-white m-medium fs-18px color-silver lh-150">
                     The correct order is UseAuthentication first and then UseAuthorization second.
                 </p>
@@ -261,31 +266,28 @@ const ArticleOne = () => {
 <p>using</p> <o>UserManagement<b>.</b>Domain<b>.</b>Enums<gr>;</gr></o>
 <p>using</p> <o>UserManagement<b>.</b>Domain<b>.</b>Interfaces<b>.</b>Jwt<gr>;</gr></o>
 
-<p>namespace</p> <o>UserManagement<b>.</b>API<b>.</b>Middlewares</o>
+<p>public class</p> <o>RequestMiddleware<gr>(</gr>RequestDelegate <r>next</r><gr>,</gr> IDomainJwtService <r>iDomainJwtService</r><gr>)</gr></o>
 <gr>{</gr>
-    <p>public class</p> <o>RequestMiddleware<gr>(</gr>RequestDelegate <r>next</r><gr>,</gr> IDomainJwtService <r>iDomainJwtService</r><gr>)</gr></o>
-    <gr>{</gr>
-        <p>private readonly</p> <o>RequestDelegate</o> <gr>_next</gr> <b>=</b> <r>next</r><gr>;</gr>
-        <p>private readonly</p> <o>IDomainJwtService</o> <gr>_iDomainJwtService</gr> <b>=</b> <r>iDomainJwtService</r><gr>;</gr>
+    <p>private readonly</p> <o>RequestDelegate</o> <gr>_next</gr> <b>=</b> <r>next</r><gr>;</gr>
+    <p>private readonly</p> <o>IDomainJwtService</o> <gr>_iDomainJwtService</gr> <b>=</b> <r>iDomainJwtService</r><gr>;</gr>
 
-        <p>public async</p> <o>Task</o> <b>Invoke</b><gr>(</gr><o>HttpContext</o> <r>context</r><gr>)</gr>
+    <p>public async</p> <o>Task</o> <b>Invoke</b><gr>(</gr><o>HttpContext</o> <r>context</r><gr>)</gr>
+    <gr>{</gr>
+        <p>if</p> <gr>(</gr><b>!</b><r>context</r><b>.</b><gr>Request<b>.</b>Headers</gr><b>.ContainsKey</b><gr>(</gr><g>"Authorization"</g><gr>))</gr>
         <gr>{</gr>
-            <p>if</p> <gr>(</gr><b>!</b><r>context</r><b>.</b><gr>Request<b>.</b>Headers</gr><b>.ContainsKey</b><gr>(</gr><g>"Authorization"</g><gr>))</gr>
+            <p>if</p> <gr>(<r>context</r><b>.<gr>Request</gr>.<gr>Cookies</gr>.TryGetValue</b>(<g>"AccessToken"</g><gr>,</gr> <p>out string</p><b>?</b> <r>jwt</r>))</gr>
             <gr>{</gr>
-                <p>if</p> <gr>(<r>context</r><b>.<gr>Request</gr>.<gr>Cookies</gr>.TryGetValue</b>(<g>"AccessToken"</g><gr>,</gr> <p>out string</p><b>?</b> <r>jwt</r>))</gr>
+                <p>if</p> <gr>(_iDomainJwtService<b>.VerifyToken</b>(<r>jwt</r>, <o>TokenTypeEnum</o><b>.</b>AccessToken))</gr>
+                    <gr><r>context</r><b>.</b>Request<b>.</b>Headers<b>.Append</b>(<g>"Authorization"</g>, <g>$"Bearer <gr>{</gr><r>jwt</r><gr>}</gr>"</g>);</gr>
+                <p>else</p>
                 <gr>{</gr>
-                    <p>if</p> <gr>(_iDomainJwtService<b>.VerifyToken</b>(<r>jwt</r>, <o>TokenTypeEnum</o><b>.</b>AccessToken))</gr>
-                        <gr><r>context</r><b>.</b>Request<b>.</b>Headers<b>.Append</b>(<g>"Authorization"</g>, <g>$"Bearer <gr>{</gr><r>jwt</r><gr>}</gr>"</g>);</gr>
-                    <p>else</p>
-                    <gr>{</gr>
-                        <gr><r>context</r><b>.</b>Response<b>.</b>Cookies<b>.Delete</b>(<g>"AccessToken"</g>);</gr>
-                        <gr><r>context</r><b>.</b>Response<b>.</b>StatusCode <b>=</b> (<p>int</p>)<o>HttpStatusCode</o><b>.</b>Unauthorized;</gr>
-                        <p>return</p><gr>;</gr>
-                    <gr>}</gr>
+                    <gr><r>context</r><b>.</b>Response<b>.</b>Cookies<b>.Delete</b>(<g>"AccessToken"</g>);</gr>
+                    <gr><r>context</r><b>.</b>Response<b>.</b>StatusCode <b>=</b> (<p>int</p>)<o>HttpStatusCode</o><b>.</b>Unauthorized;</gr>
+                    <p>return</p><gr>;</gr>
                 <gr>}</gr>
             <gr>}</gr>
-            <gr><p>await</p> _next(<r>context</r>);</gr>
         <gr>}</gr>
+        <gr><p>await</p> _next(<r>context</r>);</gr>
     <gr>}</gr>
 <gr>}</gr>`} />
                 <p className="color-white m-medium fs-18px color-silver lh-150">
