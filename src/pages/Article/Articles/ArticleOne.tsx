@@ -154,7 +154,7 @@ const ArticleOne = () => {
   <r>"RefreshTokenExpirationDays"</r><gr>:</gr> <o>7</o>
 <gr>}</gr>`} />
                 <p className="color-white m-medium fs-18px color-silver lh-150">
-                    Now we will add the configurations for JWT in a seperated file, in our case JwtConfig.cs, and we will explain some parts of the configuration.
+                    Now we will add the configurations for JWT in a seperate file, in our case JwtConfig.cs, and we will explain some parts of the configuration.
                 </p>
                 <ul className="color-white m-medium fs-18px color-silver lh-150">
                     <li>
@@ -396,7 +396,7 @@ const ArticleOne = () => {
     }
 }</gr>`} />
                 <p className="color-white m-medium fs-18px color-silver lh-150">
-                    And now, the RefreshToken function. Here, we access the MySQL database through a call to the stored procedure where we get the user's information to update the new claims data of the JWT token. You can manage this part by adapting it to your current infrastructure.
+                    And now, let's create the RefreshToken function. Here, we access MySQL database through a call to the stored procedure where we get the user's information to update the new claims data of the JWT token. You can change and manage this part by adapting it to your current infrastructure.
                     <br />
                     <br />
                     In this implementation, we save the refresh token together with the access token in HTTP-only cookies. However, it is preferable to store the refresh token in the database. Every time we try to refresh the token, we validate the token from the database to create a new access token.
@@ -485,7 +485,7 @@ const ArticleOne = () => {
     }
 }</gr>`} />
                 <p className="color-white m-medium fs-18px color-silver lh-150">
-                    After we implement everything, we will see an example of the implementation, more precisely, at sign-in.
+                    After we add everything, we will see an example of the implementation, more precisely, at sign-in.
                     <br />
                     <br />
                     Here we will create a Dto for the user who is signed in (we get the data from database).
