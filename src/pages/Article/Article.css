@@ -53,6 +53,7 @@
     padding-bottom: 10px;
     margin: 20px 0px;
     position: relative;
+    font-size: var(--fs-18px);
 }
 
 .code-snippet .see-more {
@@ -70,27 +71,16 @@
     transition: opacity .2s;
 }
 
-.code-snippet .see-more:hover {
-    opacity: .5;
-}
-
 .code-snippet pre {
-    font-size: var(--fs-18px) !important;
     line-height: 140%;
     color: #5C6370;
-    /* overflow-y: auto; */
     padding-bottom: 10px;
 }
 
 .code-snippet code {
     max-height: 250px;
     overflow: hidden;
-    display: inline-block;
-    font-size: var(--fs-18px) !important;
-}
-
-.code-snippet pre code span {
-    font-size: var(--fs-18px) !important;
+    display: block;
 }
 
 .important-box {

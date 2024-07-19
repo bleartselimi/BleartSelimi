@@ -27,8 +27,8 @@ const ArticleCodeSnippet = ({ snippet }: { snippet: string }) => {
 
     return (
         <div className="code-snippet" ref={codeSnippetRef}>
-            <pre style={{
-                overflow: codeSnippetPreRef.current?.clientHeight! > 250 ? "hidden" : "auto"
+            <pre className="" style={{
+                overflow: codeSnippetPreRef.current?.clientHeight! > 250 ? "hidden" : "auto",
             }} ref={codeSnippetPreRef}>
                 <code ref={codeRef}
                     dangerouslySetInnerHTML={{
