@@ -22,11 +22,16 @@
     font-size: var(--fs-18px);
 }
 
-.articlesc-content-panel-area-one {
+.content-panel-article .area-one {
+    padding-right: 0 !important;
+}
+
+.articles-content-panel-area-one {
     display: flex;
     flex-direction: column;
     align-items: baseline;
     gap: 40px;
+    padding: 0 !important;
 }
 
 .content-panel-article .area-three {
