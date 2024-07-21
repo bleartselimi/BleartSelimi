@@ -256,7 +256,9 @@ const ArticleOne = () => {
                 <p className="color-white m-medium fs-18px color-silver lh-150">
                     The correct order is UseAuthentication first and then UseAuthorization second.
                 </p>
-                <ArticleCodeSnippet snippet={`<gr><r>app</r><b>.</b><b>UseAuthentication</b>();
+                <ArticleCodeSnippet snippet={`<gr><r>app</r><b>.</b><b>UseHttpsRedirection</b>();
+                
+<gr><r>app</r><b>.</b><b>UseAuthentication</b>();
 
 <r>app</r><b>.</b><b>UseAuthorization</b>();`} />
                 <p className="color-white m-medium fs-18px color-silver lh-150">
