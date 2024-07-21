@@ -171,13 +171,13 @@ const ArticleOne = () => {
                         <br />
                         &bull; ValidIssuer
                         <br />
-                        Issuer validation is the party that issues the Token for authorization.
+                        Valid issuer is the party that issues the Token for authorization.
                     </li>
                     <li>
                         <br />
                         &bull; ValidAudience
                         <br />
-                        Audience validation is the recipient or figuratively the consumer of the Token that is expected to be used.
+                        Valid audience is the recipient or figuratively the consumer of the Token that is expected to be used.
                     </li>
                     <li>
                         <br />
