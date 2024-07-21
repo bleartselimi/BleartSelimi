@@ -42,7 +42,7 @@ const ArticleCodeSnippet = ({ snippet }: { snippet: string }) => {
                 <h1 style={{
                     position: open ? "relative" : "absolute",
                     backgroundImage: open ?
-                        "linear-gradient(to bottom,  rgba(0,0,0), rgba(0,0,0))"
+                        "unset"
                         :
                         "linear-gradient(to bottom,  rgba(0,0,0,0), rgba(0,0,0) 80%)",
                     marginTop: open ? "10px" : ""
