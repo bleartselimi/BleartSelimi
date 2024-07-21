@@ -217,7 +217,7 @@ const ArticleOne = () => {
 
                         By default, ClockSkew is set to 5 minutes, allowing for a 5 minute difference between token expiration (exp) and non-expiration (nbf) claims and the actual server time. A value that is preferred to be set is between 5-30s as seen in the implementation below.
 
-                        For more on this property, watch <a className="color-golden-haze underline" href="https://www.youtube.com/watch?v=meBxWjA_2YY&ab_channel=NickChapsas" target="_blank">this detailed video</a> for more information by Nick Chapsas.
+                        For more on this property, watch <a className="color-golden-haze underline" href="https://www.youtube.com/watch?v=meBxWjA_2YY&ab_channel=NickChapsas" target="_blank">this detailed video</a> by Nick Chapsas.
                     </li>
                 </ul>
                 <ArticleCodeSnippet snippet={`<p>using</p> <o>Microsoft</o><b>.</b><o>AspNetCore</o><b>.</b><o>Authentication</o><b>.</b><o>JwtBearer</o>;
