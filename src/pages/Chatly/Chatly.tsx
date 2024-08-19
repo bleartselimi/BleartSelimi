@@ -63,7 +63,7 @@ const Chatly = () => {
                 <>
                   <p className="fs-18px color-silver m-semibold lh-160">
                     I designed and currently develop Chatly(Gro-group, cha-chat), a comprehensive group chat application. Utilizing Figma, I
-                    planned the app's layout and interface. For a robust front-end, I employed React + Vite + TypeScript.
+                    planned the app's layout and interface. For a robust front-end, I employed Next.js + TypeScript.
                     <br />
                     The backend, built on ASP.NET Core, includes various libraries for authentication and logging. The database
                     utilizes Redis for quick caching, MySQL for structured data, and MongoDB for seamless chat message
