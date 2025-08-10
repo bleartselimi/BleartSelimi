@@ -34,7 +34,7 @@ const Portfolio = () => {
           hasAreaOneMask={true}
           className='content-panel-space-one portfolio-content-panel'
           areaOne={
-            <h1 className='fs-64px color-white lh-100 text-shadow-white'>FRONTEND<br />SOFTWARE<br />ENGINEER</h1>
+            <h1 className='fs-64px color-white lh-100 text-shadow-white'>SOFTWARE<br />ENGINEER</h1>
           }
           areaTwo={
             <p className='portfolio-content-panel-area-two fs-24px color-silver lh-120 m-semibold'>Step into a preview of my portfolio a collection of digital initiatives and solutions showcasing my commitment to software engineering.</p>
