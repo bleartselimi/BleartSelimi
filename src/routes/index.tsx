@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import { MainLayout } from '../layouts'
-import { ArticleOne, Articles, Chatly, LinkMobile, LinkWeb, MobileShop, MuseumInformationSystem, NotFound, Portfolio, ProblemetNprishtine } from '../pages'
+import { ArticleOne, Articles, Chatly, LinkMobile, LinkWeb, MobileShop, MuseumInformationSystem, NotFound, Portfolio } from '../pages'
 import { articleLinks } from '../pages/Article/ArticleLinks'
 
 const Routing = () => {
