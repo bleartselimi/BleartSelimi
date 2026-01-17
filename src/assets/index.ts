@@ -45,7 +45,31 @@ import SwiperImage from "./images/tenchnologies/swiper.png";
 import AdonetImage from "./images/tenchnologies/adonet.png";
 import BootstrapImage from "./images/tenchnologies/bootstrap.png";
 import TailwindImage from "./images/tenchnologies/tailwind.png";
+import HetznerImage from "./images/tenchnologies/hetzner.png";
 // Technologies - END
+
+//Images for TempoZone - START
+import TempoZoneCardImage from "./images/tempo-zone/card-image.jpg";
+import TempoZoneCoverImage from "./images/tempo-zone/project-image-cover.png";
+import TempoZoneImageOne from "./images/tempo-zone/project-image-1.png";
+import TempoZoneImageTwo from "./images/tempo-zone/project-image-2.png";
+import TempoZoneImageThree from "./images/tempo-zone/project-image-3.png";
+import TempoZoneImageFour from "./images/tempo-zone/project-image-4.png";
+import TempoZoneImageFive from "./images/tempo-zone/project-image-5.png";
+import TempoZoneImageSix from "./images/tempo-zone/project-image-6.png";
+import TempoZoneImageSeven from "./images/tempo-zone/project-image-7.png";
+import TempoZoneImageEight from "./images/tempo-zone/project-image-8.png";
+import TempoZoneImageNine from "./images/tempo-zone/project-image-9.png";
+import TempoZoneImageTen from "./images/tempo-zone/project-image-10.png";
+import TempoZoneImageEleven from "./images/tempo-zone/project-image-11.png";
+import TempoZoneImageTwelve from "./images/tempo-zone/project-image-12.png";
+import TempoZoneImageThirteen from "./images/tempo-zone/project-image-13.png";
+import TempoZoneImageFourteen from "./images/tempo-zone/project-image-14.png";
+import TempoZoneImageFifteen from "./images/tempo-zone/project-image-15.png";
+import TempoZoneImageSixteen from "./images/tempo-zone/project-image-16.png";
+import TempoZoneImageSeventeen from "./images/tempo-zone/project-image-17.png";
+import TempoZoneImageEighteen from "./images/tempo-zone/project-image-18.png";
+//Images for TempoZone - END
 
 //Images for Chatly - START
 import ChatlyCardImage from "./images/chatly/card-image.jpg";
@@ -120,143 +144,146 @@ import MobileShopImageNine from "./images/mobile-shop/project-image-9.jpg";
 import MobileShopImageTen from "./images/mobile-shop/project-image-10.jpg";
 //Images for Mobile Shop - END
 
-//Images for Problement N'prishtine - START
-import ProblementNprishtineCardImage from "./images/problemet-nprishtine/card-image.jpg";
-import ProblementNprishtineCoverImage from "./images/problemet-nprishtine/project-image-cover.jpg";
-import ProblementNprishtineImageOne from "./images/problemet-nprishtine/project-image-1.jpg";
-import ProblementNprishtineImageTwo from "./images/problemet-nprishtine/project-image-2.jpg";
-import ProblementNprishtineImageThree from "./images/problemet-nprishtine/project-image-3.jpg";
-import ProblementNprishtineImageFour from "./images/problemet-nprishtine/project-image-4.jpg";
-import ProblementNprishtineImageFive from "./images/problemet-nprishtine/project-image-5.jpg";
-import ProblementNprishtineImageSix from "./images/problemet-nprishtine/project-image-6.jpg";
-//Images for Problement N'prishtine - END
-
 export {
-    LogoIcon,
-    ArrowTopRightIcon,
-    ArrowRightIcon,
-    GithubIcon,
-    EmailIcon,
-    InfoIcon,
-    BleartSelimiProfile,
-    Noise,
-    Tv,
+  LogoIcon,
+  ArrowTopRightIcon,
+  ArrowRightIcon,
+  GithubIcon,
+  EmailIcon,
+  InfoIcon,
+  BleartSelimiProfile,
+  Noise,
+  Tv,
 
-    // Technologies - START
-    NextjsImage,
-    ReactImage,
-    ReactNativeImage,
-    ReduxImage,
-    ViteImage,
-    TypescriptImage,
-    AxiosImage,
-    I18nextImage,
-    WindowsFormsImage,
-    KotlinImage,
-    CssImage,
-    AspNetImage,
-    AspNetCoreImage,
-    MssqlImage,
-    EntityFrameworkImage,
-    JwtImage,
-    MediatrImage,
-    AzureImage,
-    AwsImage,
-    FigmaImage,
-    SocketioImage,
-    MongodbImage,
-    MysqlImage,
-    SeriologImage,
-    RedisImage,
-    SignalrImage,
-    SwaggerImage,
-    SwiperImage,
-    AdonetImage,
-    BootstrapImage,
-    TailwindImage,
-    // Technologies - END
+  // Technologies - START
+  NextjsImage,
+  ReactImage,
+  ReactNativeImage,
+  ReduxImage,
+  ViteImage,
+  TypescriptImage,
+  AxiosImage,
+  I18nextImage,
+  WindowsFormsImage,
+  KotlinImage,
+  CssImage,
+  AspNetImage,
+  AspNetCoreImage,
+  MssqlImage,
+  EntityFrameworkImage,
+  JwtImage,
+  MediatrImage,
+  AzureImage,
+  AwsImage,
+  FigmaImage,
+  SocketioImage,
+  MongodbImage,
+  MysqlImage,
+  SeriologImage,
+  RedisImage,
+  SignalrImage,
+  SwaggerImage,
+  SwiperImage,
+  AdonetImage,
+  BootstrapImage,
+  TailwindImage,
+  HetznerImage,
+  // Technologies - END
 
-    //Chatly - START
-    ChatlyCardImage,
-    ChatlyCoverImage,
-    ChatlyArchitectureImage,
-    //Chatly - END
+  //TempoZone - START
+  TempoZoneCardImage,
+  TempoZoneCoverImage,
+  TempoZoneImageOne,
+  TempoZoneImageTwo,
+  TempoZoneImageThree,
+  TempoZoneImageFour,
+  TempoZoneImageFive,
+  TempoZoneImageSix,
+  TempoZoneImageSeven,
+  TempoZoneImageEight,
+  TempoZoneImageNine,
+  TempoZoneImageTen,
+  TempoZoneImageEleven,
+  TempoZoneImageTwelve,
+  TempoZoneImageThirteen,
+  TempoZoneImageFourteen,
+  TempoZoneImageFifteen,
+  TempoZoneImageSixteen,
+  TempoZoneImageSeventeen,
+  TempoZoneImageEighteen,
 
-    //Link Mobile - START
-    LinkMobileCardImage,
-    LinkMobileCoverImage,
-    LinkMobileImageOne,
-    LinkMobileImageTwo,
-    LinkMobileImageThree,
-    LinkMobileImageFour,
-    LinkMobileImageFive,
-    LinkMobileImageSix,
-    LinkMobileImageSeven,
-    LinkMobileImageEight,
-    LinkMobileImageNine,
-    //Link Mobile - END
+  //TempoZone - END
 
-    //Link Web - START
-    LinkWebCardImage,
-    LinkWebCoverImage,
-    LinkWebImageOne,
-    LinkWebImageTwo,
-    LinkWebImageThree,
-    LinkWebImageFour,
-    LinkWebImageFive,
-    LinkWebImageSix,
-    LinkWebImageSeven,
-    LinkWebImageEight,
-    LinkWebImageNine,
-    LinkWebImageTen,
-    LinkWebImageEleven,
-    LinkWebImageTwelve,
-    LinkWebImageThirteen,
-    LinkWebImageFourteen,
-    //Link Web - END
+  //Chatly - START
+  ChatlyCardImage,
+  ChatlyCoverImage,
+  ChatlyArchitectureImage,
+  //Chatly - END
 
-    //Museum Information System - START
-    MuseumInformationSystemCardImage,
-    MuseumInformationSystemCoverImage,
-    MuseumInformationSystemImageOne,
-    MuseumInformationSystemImageTwo,
-    MuseumInformationSystemImageThree,
-    MuseumInformationSystemImageFour,
-    MuseumInformationSystemImageFive,
-    MuseumInformationSystemImageSix,
-    MuseumInformationSystemImageSeven,
-    MuseumInformationSystemImageEight,
-    MuseumInformationSystemImageNine,
-    MuseumInformationSystemImageTen,
-    MuseumInformationSystemImageEleven,
-    MuseumInformationSystemImageTwelve,
-    MuseumInformationSystemImageThirteen,
-    MuseumInformationSystemImageFourteen,
-    //Museum Information System - END
+  //Link Mobile - START
+  LinkMobileCardImage,
+  LinkMobileCoverImage,
+  LinkMobileImageOne,
+  LinkMobileImageTwo,
+  LinkMobileImageThree,
+  LinkMobileImageFour,
+  LinkMobileImageFive,
+  LinkMobileImageSix,
+  LinkMobileImageSeven,
+  LinkMobileImageEight,
+  LinkMobileImageNine,
+  //Link Mobile - END
 
-    //Mobile Shop - START
-    MobileShopCardImage,
-    MobileShopCoverImage,
-    MobileShopImageOne,
-    MobileShopImageTwo,
-    MobileShopImageThree,
-    MobileShopImageFour,
-    MobileShopImageFive,
-    MobileShopImageSix,
-    MobileShopImageSeven,
-    MobileShopImageEight,
-    MobileShopImageNine,
-    MobileShopImageTen,
-    //Mobile Shop - END
+  //Link Web - START
+  LinkWebCardImage,
+  LinkWebCoverImage,
+  LinkWebImageOne,
+  LinkWebImageTwo,
+  LinkWebImageThree,
+  LinkWebImageFour,
+  LinkWebImageFive,
+  LinkWebImageSix,
+  LinkWebImageSeven,
+  LinkWebImageEight,
+  LinkWebImageNine,
+  LinkWebImageTen,
+  LinkWebImageEleven,
+  LinkWebImageTwelve,
+  LinkWebImageThirteen,
+  LinkWebImageFourteen,
+  //Link Web - END
 
-    //Problement N'prishtine - START
-    ProblementNprishtineCardImage,
-    ProblementNprishtineCoverImage,
-    ProblementNprishtineImageOne,
-    ProblementNprishtineImageTwo,
-    ProblementNprishtineImageThree,
-    ProblementNprishtineImageFour,
-    ProblementNprishtineImageFive,
-    ProblementNprishtineImageSix,
-    //Problement N'prishtine - END
-}
+  //Museum Information System - START
+  MuseumInformationSystemCardImage,
+  MuseumInformationSystemCoverImage,
+  MuseumInformationSystemImageOne,
+  MuseumInformationSystemImageTwo,
+  MuseumInformationSystemImageThree,
+  MuseumInformationSystemImageFour,
+  MuseumInformationSystemImageFive,
+  MuseumInformationSystemImageSix,
+  MuseumInformationSystemImageSeven,
+  MuseumInformationSystemImageEight,
+  MuseumInformationSystemImageNine,
+  MuseumInformationSystemImageTen,
+  MuseumInformationSystemImageEleven,
+  MuseumInformationSystemImageTwelve,
+  MuseumInformationSystemImageThirteen,
+  MuseumInformationSystemImageFourteen,
+  //Museum Information System - END
+
+  //Mobile Shop - START
+  MobileShopCardImage,
+  MobileShopCoverImage,
+  MobileShopImageOne,
+  MobileShopImageTwo,
+  MobileShopImageThree,
+  MobileShopImageFour,
+  MobileShopImageFive,
+  MobileShopImageSix,
+  MobileShopImageSeven,
+  MobileShopImageEight,
+  MobileShopImageNine,
+  MobileShopImageTen,
+  //Mobile Shop - END
+};

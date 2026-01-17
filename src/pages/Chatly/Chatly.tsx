@@ -1,35 +1,54 @@
-import { AspNetCoreImage, AxiosImage, FigmaImage, ChatlyCoverImage, ChatlyArchitectureImage, JwtImage, MongodbImage, MysqlImage, RedisImage, SeriologImage, SignalrImage, SocketioImage, SwaggerImage, TypescriptImage,AdonetImage, NextjsImage, TailwindImage } from "../../assets"
-import { Modal, TechnicalDetailsButton } from "../../components"
-import { ContentPanel, OtherProjects, TechnicalDetails } from "../../widgets"
+import {
+  AspNetCoreImage,
+  AxiosImage,
+  FigmaImage,
+  ChatlyCoverImage,
+  ChatlyArchitectureImage,
+  JwtImage,
+  MongodbImage,
+  MysqlImage,
+  RedisImage,
+  SeriologImage,
+  SignalrImage,
+  SocketioImage,
+  SwaggerImage,
+  TypescriptImage,
+  AdonetImage,
+  NextjsImage,
+  TailwindImage,
+} from "../../assets";
+import { Modal, TechnicalDetailsButton } from "../../components";
+import { ContentPanel, OtherProjects, TechnicalDetails } from "../../widgets";
 import { useEffect, useRef, useState } from "react";
 import { useGeneralContext } from "../../hooks/useGeneralContext";
 
 const Chatly = () => {
-
   const { state } = useGeneralContext();
 
-  const projectContainer = useRef<HTMLDivElement | null>(null)
+  const projectContainer = useRef<HTMLDivElement | null>(null);
 
   const [opened, setOpened] = useState(false);
 
   useEffect(() => {
     if (state.globalLoadingState) {
-      projectContainer.current!.style.animation = "fadeIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 3s forwards"
+      projectContainer.current!.style.animation =
+        "fadeIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 3s forwards";
     }
   }, [state.globalLoadingState]);
 
   return (
     <>
-      <div className='container-one'>
+      <div className="container-one">
         <ContentPanel
           hasAreaOneMask={true}
-          className='content-panel-space-one project-content-panel'
+          className="content-panel-space-one project-content-panel"
           areaOne={
-            <h1 className='fs-64px color-white lh-100 text-shadow-white'>CHATLY,<br />A CHAT APPLICATION</h1>
+            <h1 className="fs-64px color-white lh-100 text-shadow-white">
+              CHATLY,
+              <br />A CHAT APPLICATION
+            </h1>
           }
-          areaFour={
-            <TechnicalDetailsButton onClick={() => setOpened(true)} />
-          }
+          areaFour={<TechnicalDetailsButton onClick={() => setOpened(true)} />}
         />
         <div className="project-container" ref={projectContainer}>
           <div className="project-cover-image-wrapper">
@@ -37,15 +56,24 @@ const Chatly = () => {
           </div>
           <ContentPanel
             hasAreaOneMask={true}
-            className='project-about-content-panel'
+            className="project-about-content-panel"
             areaOne={
               <>
-                <h1 className='fs-64px color-white lh-100 text-shadow-white mb-15px'>About the<br />project</h1>
-                <h3 className='fs-20px color-white lh-100 text-shadow-white'>(project in progress)</h3>
+                <h1 className="fs-64px color-white lh-100 text-shadow-white mb-15px">
+                  About the
+                  <br />
+                  project
+                </h1>
               </>
             }
             areaTwo={
-              <p className='project-content-panel-area-two fs-18px color-silver lh-150 m-semibold'>Crafted and continue to evolve Chatly, a versatile group chat application. I designed the app's layout and interface using Figma, ensuring a seamless user experience. The application offers a range of features, including real-time individual/group chats, friend management, and effortless media file sharing.</p>
+              <p className="project-content-panel-area-two fs-18px color-silver lh-150 m-semibold">
+                Crafted Chatly, a versatile group chat application. I designed
+                the app's layout and interface using Figma, ensuring a seamless
+                user experience. The application offers a range of features,
+                including real-time individual/group chats, friend management,
+                and effortless media file sharing.
+              </p>
             }
             areaFour={
               <TechnicalDetailsButton onClick={() => setOpened(true)} />
@@ -54,138 +82,169 @@ const Chatly = () => {
           <OtherProjects />
         </div>
       </div>
-      {
-        opened &&
+      {opened && (
         <Modal opened={opened} setOpened={setOpened}>
           <div className="modal-boundries">
             <TechnicalDetails
               overview={
                 <>
                   <p className="fs-18px color-silver m-semibold lh-160">
-                    I designed and currently develop Chatly, a comprehensive group chat application. Utilizing Figma, I
-                    planned the app's layout and interface. For a robust front-end, I employed Next.js + TypeScript.
+                    I designed and developed Chatly, a comprehensive group chat
+                    application. Utilizing Figma, I planned the app's layout and
+                    interface. For a robust front-end, I employed Next.js +
+                    TypeScript.
                     <br />
-                    The backend, built on ASP.NET Core, includes various libraries for authentication and logging. The database
-                    utilizes Redis for quick caching, MySQL for structured data, and MongoDB for seamless chat message
-                    management. Chatly offers features like real-time individual/group chats, friend management, and easy
-                    media file sharing.
+                    The backend, built on ASP.NET Core, includes various
+                    libraries for authentication and logging. The database
+                    utilizes Redis for quick caching, MySQL for structured data,
+                    and MongoDB for seamless chat message management. Chatly
+                    offers features like real-time individual/group chats,
+                    friend management, and easy media file sharing.
                   </p>
                 </>
               }
               frontendTechnologies={[
                 {
                   icon: NextjsImage,
-                  title: "Next.js"
+                  title: "Next.js",
                 },
                 {
                   icon: TypescriptImage,
-                  title: "Typescript"
+                  title: "Typescript",
                 },
                 {
                   icon: AxiosImage,
-                  title: "Axios"
+                  title: "Axios",
                 },
                 {
                   icon: SocketioImage,
-                  title: "Socket.io"
+                  title: "Socket.io",
                 },
                 {
                   icon: TailwindImage,
-                  title: "Tailwind"
-                }
+                  title: "Tailwind",
+                },
               ]}
               backendTechnologies={[
                 {
                   icon: AspNetCoreImage,
-                  title: "ASP.NET Core"
+                  title: "ASP.NET Core",
                 },
                 {
                   icon: AdonetImage,
-                  title: "ADO.NET"
+                  title: "ADO.NET",
                 },
                 {
                   icon: JwtImage,
-                  title: "JWT Bearer Authentication"
+                  title: "JWT Bearer Authentication",
                 },
                 {
                   icon: MongodbImage,
-                  title: "Mongodb"
+                  title: "Mongodb",
                 },
                 {
                   icon: MysqlImage,
-                  title: "Mysql"
+                  title: "Mysql",
                 },
                 {
                   icon: SeriologImage,
-                  title: "Seriolog"
+                  title: "Seriolog",
                 },
                 {
                   icon: RedisImage,
-                  title: "Redis"
+                  title: "Redis",
                 },
                 {
                   icon: SignalrImage,
-                  title: "SignalR"
+                  title: "SignalR",
                 },
                 {
                   icon: SwaggerImage,
-                  title: "Swagger"
-                }
+                  title: "Swagger",
+                },
               ]}
               otherTechnologies={[
                 {
                   icon: FigmaImage,
-                  title: "Figma"
-                }
+                  title: "Figma",
+                },
               ]}
               architecture={{
-                description:
+                description: (
                   <>
                     <p className="fs-18px color-silver m-semibold lh-160">
-                      I designed and implemented a microservice architecture comprising five key components:
+                      I designed and implemented a microservice architecture
+                      comprising five key components:
                     </p>
                     <br />
                     <br />
                     <ul className="fs-18px color-silver m-semibold lh-160">
                       <li>
-                        <span className="color-golden-haze">User Management:</span> This microservice is dedicated to handling authentication, registration, profiles, and permissions.
+                        <span className="color-golden-haze">
+                          User Management:
+                        </span>{" "}
+                        This microservice is dedicated to handling
+                        authentication, registration, profiles, and permissions.
                       </li>
                       <li>
-                        <span className="color-golden-haze">Communication:</span> Focused on real-time chatting and notifications.
+                        <span className="color-golden-haze">
+                          Communication:
+                        </span>{" "}
+                        Focused on real-time chatting and notifications.
                       </li>
                       <li>
-                        <span className="color-golden-haze">ConnectionHub:</span> Managing user connections, friendships, and requests.
+                        <span className="color-golden-haze">
+                          ConnectionHub:
+                        </span>{" "}
+                        Managing user connections, friendships, and requests.
                       </li>
                       <li>
-                        <span className="color-golden-haze">Analytics:</span> This microservice is responsible for collecting and analyzing user-related data for seamless expansion and maintenance.
+                        <span className="color-golden-haze">Analytics:</span>{" "}
+                        This microservice is responsible for collecting and
+                        analyzing user-related data for seamless expansion and
+                        maintenance.
                       </li>
                       <br />
                     </ul>
                     <br />
                     <p className="fs-18px color-silver m-semibold lh-160">
-                      This architecture incorporates a repository and interface-based services model, promoting separation of concerns and facilitating modularity. To ensure robust logging, the system utilizes Serilog to log information both in files and database.
+                      This architecture incorporates a repository and
+                      interface-based services model, promoting separation of
+                      concerns and facilitating modularity. To ensure robust
+                      logging, the system utilizes Serilog to log information
+                      both in files and database.
                     </p>
                     <br />
                     <p className="fs-18px color-silver m-semibold lh-160">
-                      Caching systems, such as Redis, are integrated to enhance performance and responsiveness across communication microservices, optimizing data retrieval and reducing latency.
+                      Caching systems, such as Redis, are integrated to enhance
+                      performance and responsiveness across communication
+                      microservices, optimizing data retrieval and reducing
+                      latency.
                     </p>
                     <br />
                     <p className="fs-18px color-silver m-semibold lh-160">
-                      Structured data, including user profiles and permissions, is stored in MySQL to maintain data integrity and enable efficient querying. On the other hand, unstructured data, like chat messages, finds its home in MongoDB, providing flexibility and scalability for seamless management.
+                      Structured data, including user profiles and permissions,
+                      is stored in MySQL to maintain data integrity and enable
+                      efficient querying. On the other hand, unstructured data,
+                      like chat messages, finds its home in MongoDB, providing
+                      flexibility and scalability for seamless management.
                     </p>
                     <br />
                     <p className="fs-18px color-silver m-semibold lh-160">
-                      This architecture aims for a scalable, modular, and maintainable system, ensuring optimal performance, robust logging, and efficient data storage across microservices.
+                      This architecture aims for a scalable, modular, and
+                      maintainable system, ensuring optimal performance, robust
+                      logging, and efficient data storage across microservices.
                     </p>
-                  </>,
-                images: [ChatlyArchitectureImage]
+                  </>
+                ),
+                images: [ChatlyArchitectureImage],
               }}
             />
           </div>
         </Modal>
-      }
+      )}
     </>
-  )
-}
+  );
+};
 
 export default Chatly;

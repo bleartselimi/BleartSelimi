@@ -1,19 +1,25 @@
-import { ReactElement } from "react"
+import { ReactElement } from "react";
 
 export type TechnicalDetailsType = {
-    overview: ReactElement,
-    frontendTechnologies?: TechnologyType[],
-    backendTechnologies?: TechnologyType[],
-    otherTechnologies?: TechnologyType[],
-    architecture?: ArchitectureType
-}
+  overview: ReactElement;
+  frontendTechnologies?: TechnologyType[];
+  backendTechnologies?: TechnologyType[];
+  otherTechnologies?: TechnologyType[];
+  architecture?: ArchitectureType;
+  infrastructure?: InfrastructureType;
+};
 
 type TechnologyType = {
-    title: string,
-    icon: string
-}
+  title: string;
+  icon: string;
+};
 
 type ArchitectureType = {
-    description: ReactElement,
-    images: string[]
-}
+  description: ReactElement;
+  images?: string[];
+};
+
+type InfrastructureType = {
+  description: ReactElement;
+  images?: string[];
+};

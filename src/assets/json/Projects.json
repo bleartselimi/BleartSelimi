@@ -1,29 +1,34 @@
 {
-    "projects": [
-        {
-            "title": "Chatly, a chat<br />application",
-            "year": 2024,
-            "link": "/chatly"
-        },
-        {
-            "title": "Link, a social network<br />for Mobile",
-            "year": 2023,
-            "link": "/link-mobile"
-        },
-        {
-            "title": "Link, a social network<br />for Web",
-            "year": 2023,
-            "link": "/link-web"
-        },
-        {
-            "title": "Museum Information<br />system",
-            "year": 2022,
-            "link": "/museum-information-system"
-        },
-        {
-            "title": "Mobile Shop",
-            "year": 2022,
-            "link": "/mobile-shop"
-        }
-    ]
+  "projects": [
+    {
+      "title": "TempoZone,<br />time & attendance tracking",
+      "year": 2025,
+      "link": "/tempo-zone"
+    },
+    {
+      "title": "Chatly, a chat<br />application",
+      "year": 2024,
+      "link": "/chatly"
+    },
+    {
+      "title": "Link, a social network<br />for Mobile",
+      "year": 2023,
+      "link": "/link-mobile"
+    },
+    {
+      "title": "Link, a social network<br />for Web",
+      "year": 2023,
+      "link": "/link-web"
+    },
+    {
+      "title": "Museum Information<br />system",
+      "year": 2022,
+      "link": "/museum-information-system"
+    },
+    {
+      "title": "Mobile Shop",
+      "year": 2022,
+      "link": "/mobile-shop"
+    }
+  ]
 }
